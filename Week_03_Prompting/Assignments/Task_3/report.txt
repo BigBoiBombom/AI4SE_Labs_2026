@@ -1,0 +1,61 @@
+TASK 3 - NEW METRIC: ROW-LEVEL F1 / JACCARD SIMILARITY
+========================================================
+
+PROPOSED METRIC
+----------------
+For each question, treat the predicted and expected result rows as multisets
+and score the overlap instead of requiring an exact match:
+  precision = |predicted ∩ expected| / |predicted|
+  recall    = |predicted ∩ expected| / |expected|
+  F1        = harmonic mean of precision and recall
+  Jaccard   = |predicted ∩ expected| / |predicted ∪ expected|
+Both empty -> score 1.0. SQL execution error -> score 0.0 (run continues).
+Final score per framework = macro-average F1/Jaccard over all 155 questions.
+Implementation: Task_3/data/calculate_row_f1.py (stdlib only, reuses the
+schema/DB-loading logic from Task_2's evaluate_retrieval_predictions.py).
+
+WHY THIS METRIC
+----------------
+The original metric (exact multiset match) is binary: a question scores 0
+whether the model returned nothing, one wrong row, or 9 out of 10 correct
+rows. It cannot tell "completely wrong" apart from "nearly right." Row-level
+F1 gives partial credit proportional to how many correct rows were actually
+retrieved, which is exactly what happened in Task 2: some failures returned
+almost all the right rows, others returned almost none.
+
+COMPLEMENTS OR REPLACES?
+--------------------------
+Complements, does not replace. Exact-match answers the practical question
+"would the end user get a fully correct answer?" (partial results are often
+still unusable). F1 answers "how close was the model, and how severe are its
+mistakes?" Keeping both gives a pass/fail number plus a severity/quality
+signal behind the failures.
+
+RESULTS ON TASK 2 PREDICTIONS
+-------------------------------
+Framework | Exact Acc. | Avg F1 | Avg Jaccard | Avg Precision | Avg Recall
+RTF       | 83.87%     | 0.8970 | 0.8836      | 0.9841        | 0.8866
+ICIO      | 83.87%     | 0.8970 | 0.8836      | 0.9841        | 0.8866
+CoT       | 94.84%     | 0.9851 | 0.9836      | 0.9836        | 0.9871
+
+The overall averages track exact-match accuracy as expected, but the metric's
+real value shows up when looking only at the questions each framework got
+"wrong" (exact-match = 0):
+
+  RTF / ICIO (25 wrong each): avg F1 among wrong = 0.36
+  CoT (8 wrong):              avg F1 among wrong = 0.71
+
+Exact-match reports all 33 total failures as equally "0% correct." F1 reveals
+RTF/ICIO's mistakes are far more severe (they typically returned only 1 row
+when a dozen+ were expected, confirming the LIMIT-1 bug from the Task 2
+report) than CoT's mistakes, which were mostly near-complete answers missing
+a few rows on large city-wide queries. High precision (~0.98) across all
+three frameworks also confirms that whatever rows a model did return were
+almost always correct - the weakness is incomplete recall, not noisy output.
+
+CONCLUSION
+-----------
+Row-level F1 confirms CoT is the strongest prompt overall and, crucially,
+shows its failure mode is mild (near-complete results) while RTF/ICIO's
+shared failure mode is severe (returning almost nothing of what was asked).
+This distinction is invisible to exact-match accuracy alone.

@@ -1,0 +1,42 @@
+FRAMEWORK: ICIO (Input, Context, Instruction, Output)
+
+INPUT:
+The file `Week_03_Prompting/Assignments/Task_2/data/restaurants_dataset.csv` (relative to the repository root), a CSV with header `question,result` and one row per natural-language question about restaurants, their food types, ratings, locations, and the geographic area (county/region) of the city they are in. Read the entire file and process every row's `question` value, in file order, including exact duplicates (do not deduplicate, reorder, or skip rows).
+
+CONTEXT:
+Each question must be answered against a SQLite database with exactly the following three tables:
+
+Table RESTAURANT:
+  - ID (INTEGER, primary key)
+  - NAME (TEXT)
+  - FOOD_TYPE (TEXT)
+  - CITY_NAME (TEXT, foreign key -> GEOGRAPHIC.CITY_NAME)
+  - RATING (REAL, decimal(1,1), higher is better)
+
+Table LOCATION:
+  - RESTAURANT_ID (INTEGER, primary key, foreign key -> RESTAURANT.ID)
+  - HOUSE_NUMBER (INTEGER)
+  - STREET_NAME (TEXT)
+  - CITY_NAME (TEXT, foreign key -> GEOGRAPHIC.CITY_NAME)
+
+Table GEOGRAPHIC:
+  - CITY_NAME (TEXT, primary key)
+  - COUNTY (TEXT)
+  - REGION (TEXT)
+
+Notes on the data: city, county, region, food type, and restaurant names are stored in lowercase in the database. "Best" or "highest-rated" implies ordering by RESTAURANT.RATING descending. Street addresses come from LOCATION, not RESTAURANT. Every query that returns restaurants (e.g., "the best place", "a restaurant", "restaurants in X") must SELECT exactly two columns, in this order: LOCATION.HOUSE_NUMBER and RESTAURANT.NAME — joining RESTAURANT to LOCATION on RESTAURANT.ID = LOCATION.RESTAURANT_ID. This applies even when the question does not mention a street or address at all. Do NOT select RESTAURANT.ID, and do NOT select RESTAURANT.NAME alone without HOUSE_NUMBER — the expected results always pair HOUSE_NUMBER with NAME, never the restaurant's own ID.
+
+INSTRUCTION:
+For each question from Input, write one syntactically valid SQLite query that PREDICTS the answer, using only the tables/columns described in Context. Join RESTAURANT, LOCATION, and GEOGRAPHIC only when the question requires columns from more than one of them (e.g., via RESTAURANT.CITY_NAME = GEOGRAPHIC.CITY_NAME or RESTAURANT.ID = LOCATION.RESTAURANT_ID). Match text values case-insensitively (e.g., using LOWER() or COLLATE NOCASE) since the question wording may not match the stored casing. If the question asks for "the best"/"a place", limit to the top result(s) by rating; if it asks for all matches, do not limit.
+
+IMPORTANT — this must be a genuine prediction, not a verified lookup:
+- Do NOT read, open, or inspect `restaurants-db.txt` (the actual database contents) at any point.
+- Do NOT read or use the `result` column of the Input CSV — it contains the ground-truth labels and looking at it (even to "sanity check" a query) is data leakage and invalidates the experiment.
+- Treat each question's query as an independent best-guess based solely on Context and the question's wording.
+
+OUTPUT:
+Write a new CSV file named `restaurants_dataset_predictions.csv` in the same folder as the Input file, with header `question,predicted_sql`, and exactly one output row per input row, in the same order. Each `predicted_sql` value must be a single, syntactically valid SQLite statement terminated by exactly one semicolon, with no explanation, markdown fences, or multiple statements — this file will be read by a validation script that executes each query verbatim with sqlite3's single-statement execute(); anything else in that field will cause execution to fail outright (a hard error) rather than simply being scored as an incorrect answer. Do not print the queries to chat — write them directly to the output CSV file. Additionally, before you read the Input file or process any question, run a shell command (e.g., `date +%s.%N`) to record a start timestamp; after you finish writing the Output CSV, run the same command again for an end timestamp, compute the elapsed wall-clock time in seconds, and write it to a new file named `restaurants_dataset_predictions_timing_ICIO.txt` in the same folder, containing exactly two lines: `elapsed_seconds: <value>` and `questions_processed: <count>`.
+
+---
+RATIONALE / WHAT IS EXPECTED:
+ICIO was chosen because it cleanly separates the data being processed (Input = the dataset file and its questions) from the stable schema/context, the behavioral rules (Instruction), and the strict Output contract. This structure maps naturally onto a batch NL2SQL pipeline where the same Context/Instruction/Output rules apply uniformly across every row of Input. Expectation: higher accuracy than RTF on edge cases involving joins and case sensitivity, because the Context section explicitly documents pitfalls (lowercase data, which table holds addresses) that a bare RTF prompt leaves implicit. Possible cost: slightly longer inference time per question due to the larger prompt. Since these are blind, independent predictions against an unseen database, perfect (100%) accuracy would be suspicious and should prompt a manual spot-check of generated queries for signs of data leakage rather than genuine prediction.

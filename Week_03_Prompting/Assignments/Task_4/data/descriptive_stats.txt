@@ -1,0 +1,26 @@
+DESCRIPTIVE STATISTICS (n=155 questions per framework)
+=======================================================
+
+RTF:
+  Exact-match accuracy : 0.8387 (130/155)
+  F1       mean=0.8970  median=1.0000  sd=0.2681
+  Jaccard  mean=0.8836  median=1.0000  sd=0.2931
+  Precision mean=0.9841  sd=0.1163
+  Recall    mean=0.8866  sd=0.2929
+  Elapsed time (s): 288.854
+
+ICIO:
+  Exact-match accuracy : 0.8387 (130/155)
+  F1       mean=0.8970  median=1.0000  sd=0.2681
+  Jaccard  mean=0.8836  median=1.0000  sd=0.2931
+  Precision mean=0.9841  sd=0.1163
+  Recall    mean=0.8866  sd=0.2929
+  Elapsed time (s): 251.720
+
+CoT:
+  Exact-match accuracy : 0.9484 (147/155)
+  F1       mean=0.9851  median=1.0000  sd=0.1142
+  Jaccard  mean=0.9836  median=1.0000  sd=0.1163
+  Precision mean=0.9836  sd=0.1163
+  Recall    mean=0.9871  sd=0.1132
+  Elapsed time (s): 134.018

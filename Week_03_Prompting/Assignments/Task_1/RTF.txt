@@ -1,0 +1,26 @@
+FRAMEWORK: RTF (Role, Task, Format)
+
+ROLE:
+You are an expert SQLite query writer specializing in translating natural-language questions into precise, executable SQL queries against a relational restaurant database.
+
+TASK:
+Read the file `Week_03_Prompting/Assignments/Task_2/data/restaurants_dataset.csv` (relative to the repository root). It is a CSV with header `question,result` and one row per natural-language question. For every row, in file order (including exact duplicate questions — do not deduplicate, do not reorder, do not skip any row), take ONLY the `question` column value. Convert each question into a single SQLite SQL query that PREDICTS how it would be answered, using only the tables and columns defined in the schema below. Do not invent columns or tables that are not listed. Use JOINs where necessary to connect tables via their shared keys.
+
+IMPORTANT — this must be a genuine prediction, not a verified lookup:
+- Do NOT read, open, or inspect `restaurants-db.txt` (the actual database contents) at any point.
+- Do NOT read or use the `result` column of `restaurants_dataset.csv` — it contains the ground-truth labels and looking at it (even to "sanity check" a query) is data leakage and invalidates the experiment.
+- Base every query purely on the schema below and your understanding of each question's intent, as an independent guess for every row.
+
+Schema:
+- RESTAURANT(ID PK, NAME, FOOD_TYPE, CITY_NAME FK -> GEOGRAPHIC.CITY_NAME, RATING)
+- LOCATION(RESTAURANT_ID PK/FK -> RESTAURANT.ID, HOUSE_NUMBER, STREET_NAME, CITY_NAME FK -> GEOGRAPHIC.CITY_NAME)
+- GEOGRAPHIC(CITY_NAME PK, COUNTY, REGION)
+
+Every query that returns restaurants (e.g., "the best place", "a restaurant", "restaurants in X") must SELECT exactly two columns, in this order: LOCATION.HOUSE_NUMBER and RESTAURANT.NAME — joining RESTAURANT to LOCATION on RESTAURANT.ID = LOCATION.RESTAURANT_ID. This applies even when the question does not mention a street or address at all. Do NOT select RESTAURANT.ID, and do NOT select RESTAURANT.NAME alone without HOUSE_NUMBER — the expected results always pair HOUSE_NUMBER with NAME, never the restaurant's own ID.
+
+FORMAT:
+Write a new CSV file named `restaurants_dataset_predictions.csv` in the same folder as the input file, with header `question,predicted_sql`, and exactly one output row per input row, in the same order. Each `predicted_sql` value must be a single, syntactically valid SQLite statement ending with exactly one semicolon, with no explanations, markdown code fences, comments, or multiple statements — this file will be read by a validation script that executes each query verbatim with sqlite3's single-statement execute(); anything else in that field will cause execution to fail outright rather than just be scored incorrect. Do not print the queries to chat — write them directly to the output CSV file. Additionally, before you read the input CSV or process any question, run a shell command (e.g., `date +%s.%N`) to record a start timestamp; after you finish writing the output CSV, run the same command again for an end timestamp, compute the elapsed wall-clock time in seconds, and write it to a new file named `restaurants_dataset_predictions_timing_RTF.txt` in the same folder, containing exactly two lines: `elapsed_seconds: <value>` and `questions_processed: <count>`.
+
+---
+RATIONALE / WHAT IS EXPECTED:
+RTF is the most minimal of the three chosen frameworks. It gives the model just enough structure (who it is, what to do, how to respond) without extra reasoning scaffolding. Expectation: fast inference time (short prompt per question, short expected output), and a useful baseline accuracy number to compare against the more elaborate ICIO and Chain-of-Thought prompts. If RTF performs comparably to the others, it suggests the task does not benefit much from extra context/reasoning structure; if it performs worse, it highlights what the richer frameworks contribute. Because every query is a genuine, independent prediction against an unseen database (no peeking at restaurants-db.txt or the result column), 100% accuracy is not expected and would itself be a red flag of data leakage.

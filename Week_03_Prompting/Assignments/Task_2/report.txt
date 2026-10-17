@@ -1,0 +1,32 @@
+TASK 2 REPORT: Comparing RTF, ICIO, and Chain-of-Thought on NL2SQL Prediction
+
+Each prompt was run in its own session on all 155 questions, using only the
+question text and embedded schema (no access to the real database or labels).
+
+Results:
+  RTF  - 83.87% accuracy (130/155), 288.85s
+  ICIO - 83.87% accuracy (130/155), 251.72s
+  CoT  - 94.84% accuracy (147/155), 134.02s
+
+No SQL syntax errors occurred in any run; all failures were wrong-result
+mismatches.
+
+RTF and ICIO failed on the exact same 25 questions, despite near-fully
+different SQL text. Both wrongly added LIMIT 1 to open/plural questions
+("give me a restaurant in X"), returning only the top match instead of all
+qualifying restaurants, confusing them with true superlative "best place"
+questions.
+
+Chain-of-Thought mostly avoided this: its explicit step to distinguish
+"single best" vs. "all matching rows" fixed nearly all 25 cases, leaving only
+8 errors, all partial-coverage misses on large city-wide queries (missing a
+few rows, not wrong logic).
+
+CoT was also fastest overall, despite doing more per-question reasoning -
+likely reflecting overall agent efficiency rather than pure inference cost.
+
+Conclusion: Chain-of-Thought's explicit reasoning step was the main driver of
+its higher accuracy and lower time. RTF and ICIO performed identically,
+showing that a more elaborate single-shot prompt (ICIO) alone did not improve
+correctness over a minimal one (RTF) - only CoT's forced disambiguation step
+did.

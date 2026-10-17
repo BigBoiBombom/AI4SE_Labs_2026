@@ -1,0 +1,16 @@
+STATISTICAL SIGNIFICANCE TESTS
+=======================================================
+
+Friedman test across RTF/ICIO/CoT on per-question F1 scores:
+  chi-square=38.0000, p-value=0.000000
+  -> Significant difference among the three frameworks (p < 0.05).
+
+Pairwise Wilcoxon signed-rank tests on F1 (Bonferroni-corrected, m=3):
+  RTF vs ICIO: all differences are zero -> p=1.0000 (identical)
+  RTF vs CoT: W=0.0000, p=0.000129, Bonferroni-corrected p=0.000386 -> significant
+  ICIO vs CoT: W=0.0000, p=0.000129, Bonferroni-corrected p=0.000386 -> significant
+
+Pairwise McNemar's tests on exact-match accuracy (Bonferroni-corrected, m=3):
+  RTF vs ICIO: discordant pairs (RTF-wrong/ICIO-right=0, RTF-right/ICIO-wrong=0), chi2=0.0000, p=1.000000, Bonferroni-corrected p=1.000000 -> not significant
+  RTF vs CoT: discordant pairs (RTF-wrong/CoT-right=17, RTF-right/CoT-wrong=0), chi2=15.0588, p=0.000104, Bonferroni-corrected p=0.000313 -> significant
+  ICIO vs CoT: discordant pairs (ICIO-wrong/CoT-right=17, ICIO-right/CoT-wrong=0), chi2=15.0588, p=0.000104, Bonferroni-corrected p=0.000313 -> significant

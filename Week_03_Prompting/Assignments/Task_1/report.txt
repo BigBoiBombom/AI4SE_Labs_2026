@@ -1,0 +1,58 @@
+Frameworks chosen: RTF, ICIO, Chain-of-Thought (CoT)
+
+1) RTF (Role, Task, Format)
+   Found at: frompting.com/frameworks
+   Why chosen: RTF is the most minimal structured framework available (role,
+   task, output format only, no dedicated context/examples section). It was
+   chosen as a lightweight baseline to see how much a short, direct prompt
+   can achieve on a schema-grounded generation task when the schema is
+   compressed into a single short paragraph.
+   What is expected: Fastest inference time of the three (shortest prompt,
+   shortest expected output: just the SQL). Accuracy expected to be
+   reasonable on simple, single-table questions, but weaker on questions that
+   require joining across RESTAURANT / LOCATION / GEOGRAPHIC or handling the
+   lowercase text data, since RTF leaves little room to call out such
+   pitfalls explicitly.
+
+2) ICIO (Input, Context, Instruction, Output)
+   Found at: frompting.com/frameworks
+   Why chosen: ICIO was chosen because it cleanly separates the part of the
+   prompt that changes every call (Input = the question) from the stable
+   schema/domain knowledge (Context), the behavioral rules (Instruction), and
+   the strict response contract (Output). This separation mirrors how a real
+   NL2SQL pipeline would template its prompts, and it gives an explicit place
+   to document known pitfalls of this dataset (values stored in lowercase,
+   addresses living in LOCATION rather than RESTAURANT, which tables must be
+   joined and on what keys).
+   What is expected: Higher accuracy than RTF on join-heavy and
+   case-sensitivity-related questions, because the Context/Instruction
+   sections make these rules explicit rather than implicit. Expected cost:
+   slightly longer prompt and marginally slower inference than RTF, but
+   still a single-shot (non-reasoning) response.
+
+3) Chain-of-Thought (CoT)
+   Found at: frompting.com/frameworks (also a standard prompting technique
+   in the prompt-engineering literature, e.g. Wei et al., 2022)
+   Why chosen: CoT was chosen to directly test the effect of explicit
+   intermediate reasoning on this task. Many questions in the dataset are
+   compositional (e.g., "best place for X food in city Y" implicitly
+   requires identifying the filter columns, the join needed for city/food
+   type, and an ORDER BY + LIMIT for "best"). Forcing the model to decompose
+   the question into entities, required joins, filters, and
+   ordering/limiting logic before writing the query was expected to reduce
+   reasoning errors in exactly these cases.
+   What is expected: Potentially the highest raw accuracy of the three,
+   at the cost of being the slowest and most token-heavy prompt
+   to run, since the model must produce reasoning text in addition to the
+   final query. This makes CoT the most interesting comparison point for
+   the accuracy-vs-inference-time tradeoff required by Task 2.
+
+Summary of expected contrast across the three prompts:
+   RTF  -> fastest, simplest, likely weakest on hard/join/case-sensitivity
+           cases (lower bound baseline).
+   ICIO -> same single-shot cost profile as RTF but with explicit schema and
+           data-quirk documentation, expected to recover most of the
+           accuracy RTF loses on harder questions.
+   CoT  -> slowest and most verbose, expected to recover the most accuracy on
+           compositional/superlative questions via explicit stepwise
+           reasoning, directly testing the reasoning-vs-latency tradeoff.
