@@ -1,0 +1,2627 @@
+{
+  "title": "Refined Software Requirements",
+  "generated_at": "2026-10-22T19:29:45.481033+00:00",
+  "input_directory": "/Users/S4T9A/Desktop/AI4SE/AI4SE_Labs_2026/Week_04_Requirements/Task_1/data/corpus",
+  "priority_scale": {
+    "Critical": "Legal, privacy, security, safety, or data-integrity requirement.",
+    "High": "Core operational capability or repeatedly confirmed requirement.",
+    "Medium": "Important usability, reporting, or administrative capability.",
+    "Low": "Useful enhancement or exploratory request."
+  },
+  "requirements": [
+    {
+      "id": "REQ-02D88AA9",
+      "name": "Transfer Undo",
+      "description": "Provide an undo function for mistaken item transfers.",
+      "category": "configuration",
+      "priority": "High",
+      "source_ids": [
+        "conversations/conv_pines018_item_transfer.eml"
+      ],
+      "evidence": [
+        "An undo function is requested for transfers initiated by mistake.",
+        "And we need an undo function! What if someone clicks the wrong button?",
+        "Provide undo for an incorrectly initiated transfer."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-05BBDD0B",
+      "name": "Patron Characteristics Reporting",
+      "description": "Allow patron queries and reports to be limited or grouped by age range, zip code, county, home branch, patron type, and preferred language.",
+      "category": "reporting",
+      "priority": "Critical",
+      "source_ids": [
+        "conversations/conv_pines023_patron_characteristics.eml",
+        "early_draft_srs_galecia.txt"
+      ],
+      "evidence": [
+        "Limit or group queries and reports by the listed patron characteristics.",
+        "Queries and reports can be limited or grouped by various patron characteristics, including: age range; zip code; county of residence; home branch; patron type; preferred language",
+        "The system should allow queries and reports to be limited or grouped by various patron characteristics, including: Age range; Zip code; County of residence; Home branch; Patron type; Preferred language"
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-070B4C8A",
+      "name": "Missing and Damaged Items",
+      "description": "Provide reports of missing and damaged items organized by branch.",
+      "category": "reporting",
+      "priority": "Critical",
+      "source_ids": [
+        "conversations/conv_pines019_020_missing_intransit.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "I need a report that shows all missing and damaged items per branch.",
+        "Provide missing- and damaged-item reports per branch.",
+        "System provides reports of missing and damaged items per branch.",
+        "The system should provide reports of missing and damaged items per branch."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-077EC40C",
+      "name": "Staff Login Methods",
+      "description": "Support optional streamlined staff login methods such as card swipe while retaining traditional individual username-and-password login as a fallback; card-based login must not be required.",
+      "category": "configuration",
+      "priority": "Critical",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "email_staff_login.eml"
+      ],
+      "evidence": [
+        "The system should not REQUIRE card-based login - traditional username/password should also be available as a fallback.",
+        "The system should support BOTH methods - streamlined login (e.g. card swipe) AND traditional login (individual login and password). The streamlined method should be optional but available.",
+        "The system supports (but does not require) streamlined staff login methods, e.g. card swipe or individual login/password."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-0B705AF3",
+      "name": "Last Copy Report",
+      "description": "Provide a last-copy report identifying a library system's remaining last copies, available per library and per system, to assist catalogers editing WorldCat entries.",
+      "category": "reporting",
+      "priority": "Critical",
+      "source_ids": [
+        "conversations/conv_pines021_item_purging.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "CRITICAL: We need a \"last copy report\" that identifies our library system's last copies.",
+        "Provide a last copy report singling out a library system's last copies, to assist catalogers who need to edit WorldCat entries.",
+        "The last copy report is CRITICAL. This singles out a library system's last copies, to assist catalogers who need to edit WorldCat entries.",
+        "The last-copy report identifies a library system's last copies and assists catalogers editing WorldCat entries.",
+        "The report should be available per library and per system.",
+        "The sources explicitly identify the last copy report as critical and require it to identify system last copies for WorldCat editing."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-0C9516DA",
+      "name": "Report Output Formats",
+      "description": "Support report output in Excel, HTML, and CSV formats, with CSV serving as a reliable data-export format. This is distinct from use-case-specific CSV exports.",
+      "category": "export",
+      "priority": "High",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "evergreen_reference_2009.txt",
+        "meeting_tech_subcommittee_2009-06-30.txt"
+      ],
+      "evidence": [
+        "Required report formats are Excel, HTML, and CSV; CSV is identified as a reliable export format."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-0D2EBFC9",
+      "name": "Volume and Orphan Record Deletion",
+      "description": "Provide a quick, effective method to delete volume entries together with copy entries and delete records that have no attached items.",
+      "category": "configuration",
+      "priority": "High",
+      "source_ids": [
+        "conversations/conv_pines021_item_purging.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "Delete volume entries with their copy entries and remove records with no attached items.",
+        "quick effective method of deleting volume entries along with copy entries, as well as records with no items attached",
+        "Right now, cleaning up these orphaned records takes forever.",
+        "We also need a quick way to delete volume entries along with copy entries, and delete records with no items attached."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-0EFA2466",
+      "name": "Report Output Formats",
+      "description": "Support report output in Excel, HTML, and CSV formats, with CSV serving as a reliable data-export format.",
+      "category": "export",
+      "priority": "High",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "evergreen_reference_2009.txt",
+        "meeting_tech_subcommittee_2009-06-30.txt"
+      ],
+      "evidence": [
+        "Excel, HTML, and CSV formats are required.",
+        "Excel, HTML, and CSV formats are required; CSV is identified as a reliable export format.",
+        "Multiple output formats (CSV, HTML, sometimes Excel)",
+        "Output would be in Excel, HTML, and CSV format"
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-15215CF7",
+      "name": "Shelf Space Analysis",
+      "description": "For each genre and format, compare the percentages of total circulations, the collection, and total shelf space.",
+      "category": "reporting",
+      "priority": "Critical",
+      "source_ids": [
+        "conversations/conv_pines016_shelf_space.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "Compare circulation percentage, collection percentage, and shelf-space percentage for each genre and format.",
+        "For each genre and format of material, ability to compare: The percentage of total circulations; The percentage of the collection; The percentage of total shelf space",
+        "for each genre and format of material, compare: 1. Percentage of total circulations 2. Percentage of the collection 3. Percentage of total shelf space",
+        "The shelf space report is important for collection management. For each genre and format, I need to compare: Percentage of total circulations; Percentage of the collection; Percentage of total shelf space"
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-179FAD82",
+      "name": "CSV Report Export",
+      "description": "Allow applicable capacity and outreach reports to be exported in CSV format for spreadsheets and external outreach systems. This requirement covers use-case-specific exports; general report format support is specified separately.",
+      "category": "export",
+      "priority": "Medium",
+      "source_ids": [
+        "conversations/conv_pines015_capacity_interface.eml",
+        "conversations/conv_pines024_inactive_patrons.eml"
+      ],
+      "evidence": [
+        "Export capacity data to CSV for directors' spreadsheets.",
+        "Export inactive-patron reports for upload to an outreach system."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-17C68F53",
+      "name": "Report Queue Status",
+      "description": "Show a submitted report's queue position and status, including waiting, running, completed, or failed, along with submission timing.",
+      "category": "reporting",
+      "priority": "Critical",
+      "source_ids": [
+        "conversations/conv_pines015_capacity_interface.eml",
+        "early_draft_srs_galecia.txt",
+        "email_report_features.eml"
+      ],
+      "evidence": [
+        "Ability to see where your report is in the queue of reports waiting to run.",
+        "Show queue position, number ahead, submission time, and waiting, running, completed, or failed status.",
+        "The system should be able to see: That their report is in the queue; How many reports are ahead of theirs; When their report was submitted; Status (waiting, running, completed, failed)"
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-23DA9F79",
+      "name": "Purge Safety and Audit",
+      "description": "Use read-only purge-candidate reports, a separate confirmation step for deletions, and an audit trail for all purges.",
+      "category": "configuration",
+      "priority": "Critical",
+      "source_ids": [
+        "conversations/conv_pines021_item_purging.eml",
+        "early_draft_srs_galecia.txt"
+      ],
+      "evidence": [
+        "A separate confirmation step for actual deletions",
+        "Audit trail for all purges",
+        "Purge candidates are read-only; actual deletion requires confirmation and produces an audit trail.",
+        "Reports show candidates for purging (read-only)",
+        "Safety measures: Read-only reports for identifying candidates; Separate confirmation step for actual deletions; Audit trail for all purges"
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-27A867C1",
+      "name": "Transfer Preview and Confirmation",
+      "description": "Show how many items will be moved and require confirmation before applying a transfer.",
+      "category": "configuration",
+      "priority": "High",
+      "source_ids": [
+        "conversations/conv_pines018_item_transfer.eml"
+      ],
+      "evidence": [
+        "Preview the number and route of items and require confirmation before changes.",
+        "The utility should show a preview before making changes. \"If you run this now, 25 items will be moved from Dalton-Whitman to Mobile Library Unit 3. Confirm?\""
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-2B75C104",
+      "name": "Transfer Location Updates",
+      "description": "Change selected item records to a new location and support transfer mechanisms such as updating the location field and generating pull lists.",
+      "category": "merging records",
+      "priority": "Critical",
+      "source_ids": [
+        "conversations/conv_pines018_item_transfer.eml",
+        "early_draft_srs_galecia.txt"
+      ],
+      "evidence": [
+        "Ability to change records of selected items to move to new location - Mechanisms for moving items: changing location field, generating pull lists",
+        "Change records of selected items to new location",
+        "Change selected records to a new location using location-field updates and pull lists.",
+        "Mechanisms: changing location field, generating pull lists"
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-3024171F",
+      "name": "Patron Query Logic",
+      "description": "Support patron-report filtering and grouping, combining filters with AND or OR logic, and configuring age brackets.",
+      "category": "sorting",
+      "priority": "High",
+      "source_ids": [
+        "conversations/conv_pines023_patron_characteristics.eml",
+        "early_draft_srs_galecia.txt"
+      ],
+      "evidence": [
+        "Combining filters is also doable - just add WHERE clauses. We can support both AND and OR logic.",
+        "I need to be able to both LIMIT and GROUP BY patron characteristics.",
+        "Support LIMIT and GROUP BY behavior, configurable age ranges, and AND or OR filter logic.",
+        "The age ranges need to be configurable too."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-35A2FB82",
+      "name": "Capacity Sorting and Filtering",
+      "description": "Allow capacity data to be sorted and filtered by region, library type, current load, and other supported dimensions.",
+      "category": "sorting",
+      "priority": "High",
+      "source_ids": [
+        "conversations/conv_pines015_capacity_interface.eml"
+      ],
+      "evidence": [
+        "I'd want to be able to sort and filter. By region, by library type, by current load...",
+        "Sort and filter by region, library type, and current load.",
+        "Sorting and filtering capabilities (region, type, load)"
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-37829332",
+      "name": "Item Last Edit Date",
+      "description": "Expose an item's last edit date in reports without conflating it with the item's last circulation date.",
+      "category": "reporting",
+      "priority": "Low",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "evergreen_reference_2009.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "I need to be able to see the last edit date on reports, but it should be only when the item is edited and not include the last circulation. The current system combines these dates.",
+        "Last edit date not including last circulation - does not exist",
+        "Show the last edit date separately from last circulation.",
+        "Show the last edit date separately from last circulation; the current system combines them and does not provide the requested field.",
+        "The last edit date not including last circulation - does not exist"
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-44319E0E",
+      "name": "Material Volume Categories",
+      "description": "Break down material-volume reports by total items, holds, adult fiction, board books, and other customizable categories.",
+      "category": "sorting",
+      "priority": "High",
+      "source_ids": [
+        "conversations/conv_pines014_material_volume.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "Ability to report on the volume of material in a given library at any point in time, based on new acquisitions, items on the shelf, and items out in circulation. The report should allow breaking down volume in categories such as: total items in library, number of holds, number of adult fiction, number of board books, etc.",
+        "Break volume down into total items, holds, adult fiction, board books, and other customizable categories.",
+        "I need to report on volume based on acquisitions, items on the shelf, and items in circulation, broken down by categories like total items, holds, adult fiction, board books, etc.",
+        "The report should allow breaking down volume in categories such as: Total items in library; Number of holds; Number of adult fiction; Number of board books; Other customizable categories",
+        "The report should allow breaking down volume into total items, holds, adult fiction, board books, and other customizable categories."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-516ADFB1",
+      "name": "Item Value Reporting",
+      "description": "Generate reports aggregating item purchase-price values for the entire collection or a filtered portion, including filters by item status and collection subset.",
+      "category": "reporting",
+      "priority": "High",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "email_financial_reports.eml"
+      ],
+      "evidence": [
+        "Report the value of all items or filtered subsets such as long-overdue items or children's DVDs.",
+        "System can generate a report of the value of items (based on data in item record) in the entire collection or a portion.",
+        "Value of all items with status of \"longoverdue\"; value of all DVDs in children's collection; value of entire collection."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-5425B331",
+      "name": "Historical Reporting",
+      "description": "Generate reports for a specified historical point in time or date range, rather than only current data, to support historical comparisons.",
+      "category": "reporting",
+      "priority": "High",
+      "source_ids": [
+        "conversations/conv_pines014_material_volume.eml",
+        "early_draft_srs_galecia.txt",
+        "meeting_tech_subcommittee_2009-06-30.txt",
+        "survey_results_2009.txt"
+      ],
+      "evidence": [
+        "Ability to have historical reporting - a reporting warehouse such that data can be acquired on a given date or date range for historical comparisons.",
+        "Ability to report on the volume of material in a given library at any point in time, based on new acquisitions, items on the shelf, and items out in circulation.",
+        "Historical reporting - I want to see what the data looked like on a specific date in the past, even if the shelving location has changed",
+        "Historical reporting should acquire data for a specified date or date range, including data as it existed before shelving-location changes.",
+        "Support date-specific and date-range historical reporting, including a reporting warehouse where needed.",
+        "We can also add date filters - volume at any point in time, not just current. This would be useful for historical comparisons.",
+        "We probably need a reporting warehouse for historical data."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-59EA18EC",
+      "name": "Transfer History",
+      "description": "Track item transfer history, including the number of times an item has been transferred during a specified period.",
+      "category": "reporting",
+      "priority": "Medium",
+      "source_ids": [
+        "conversations/conv_pines018_item_transfer.eml"
+      ],
+      "evidence": [
+        "Can we track transfer history? Like, \"this item has been transferred 5 times in the past year.\"",
+        "Track how many times an item was transferred during a period such as the past year.",
+        "Transfer history tracking"
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-5B20E54B",
+      "name": "Query Tool",
+      "description": "Provide a user-friendly query designer for all record types with field selection, picklist values, regular-expression choices, and Boolean operators.",
+      "category": "configuration",
+      "priority": "Critical",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "email_report_features.eml"
+      ],
+      "evidence": [
+        "Query all record types using selectable fields, picklists, regular-expression choices, and Boolean operators.",
+        "The system should provide a user-friendly interface for designing queries against all record types... Staff should be able to: Select fields to query; Select values from a picklist; Select regular expressions from a drop-down menu; Use a full range of Boolean operators"
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-611ED553",
+      "name": "Financial Reports",
+      "description": "Provide financial reports showing patron account balances by patron, home library, and system; fines and charges by time period and charge type; waived fines by time period and branch; and payments by time period and payment method.",
+      "category": "reporting",
+      "priority": "Critical",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "email_financial_reports.eml"
+      ],
+      "evidence": [
+        "Report account balances, accrued charges, waived fines, and payments using the specified dimensions.",
+        "Report account balances, accrued charges, waived fines, and payments using the specified patron, organizational, time, branch, charge-type, and payment-method dimensions.",
+        "The system provides financial reports including: Patron account balances by patron, home library, and system; Fines and charges accrued per time period ... and per type of charge; Fines waived per time period and per branch; Payments made per time period and per payment method"
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-6565926C",
+      "name": "Transfer Permissions",
+      "description": "Restrict use of the item-transfer utility to authorized roles such as managers, administrators, and transfer coordinators.",
+      "category": "configuration",
+      "priority": "Critical",
+      "source_ids": [
+        "conversations/conv_pines018_item_transfer.eml"
+      ],
+      "evidence": [
+        "Limit item transfers to designated roles such as managers, administrators, and transfer coordinators.",
+        "Permission control (limited to managers/admins)",
+        "the utility should be careful about permissions here. Not every staff member should be able to transfer items between branches. This should be limited to certain roles (managers, administrators, transfer coordinators).",
+        "Transfer access should be limited to designated roles."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-665721B2",
+      "name": "Report Cancellation",
+      "description": "Allow users to cancel scheduled reports and reports that are currently running.",
+      "category": "configuration",
+      "priority": "Medium",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "email_report_features.eml",
+        "evergreen_reference_2009.txt",
+        "meeting_tech_subcommittee_2009-06-30.txt",
+        "survey_results_2009.txt"
+      ],
+      "evidence": [
+        "5.3 REPORT CANCELLATION The ability to cancel a scheduled or running report is technically feasible",
+        "Ability to cancel a report that has already been scheduled to run or is currently running",
+        "Ability to cancel a scheduled or running report",
+        "No ability to cancel a running report",
+        "Support cancellation of scheduled and currently running reports; the sources also note current lack of running-report cancellation.",
+        "The sources request cancellation of scheduled and currently running reports and identify the capability as technically feasible."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-68BD25E9",
+      "name": "Transfer Delay Alerts",
+      "description": "Notify users when an item transfer is delayed or has an issue.",
+      "category": "reporting",
+      "priority": "Low",
+      "source_ids": [
+        "conversations/conv_pines018_item_transfer.eml"
+      ],
+      "evidence": [
+        "And can we set up alerts? If an item transfer is delayed or has issues, notify me.",
+        "Notify users about delayed or problematic transfers.",
+        "Transfer delay alerts"
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-6C6CEBFC",
+      "name": "Item Purge Identification",
+      "description": "Provide utilities and reports for identifying item records eligible for purging using customizable status-, time-, activity-, and combined criteria.",
+      "category": "configuration",
+      "priority": "Critical",
+      "source_ids": [
+        "conversations/conv_pines021_item_purging.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "Can we combine these? Like \"items with status 'missing' for more than 6 months AND haven't circulated in 2 years\"?",
+        "identify item records to purge based on customizable criteria. For example: Item has been in status \"missing\" for more than X months; Item has status \"discard/weed\"",
+        "Identify purge candidates using criteria such as missing duration, discard/weed status, and combinations of missing duration with circulation history.",
+        "Identify purge candidates using customizable criteria, including missing duration, discard/weed status, and combinations such as missing for more than six months and no circulation for two years.",
+        "The system should provide a utility and reports for identifying item records to purge, based on customizable criteria such as: An item has been in status \"missing\" for more than X months; An item has status \"discard/weed\"",
+        "Weeding reports are my most-used report type. I need to identify items for purging based on customizable criteria."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-6DB96402",
+      "name": "Inactive Patron Scope",
+      "description": "Allow inactive-patron reports to be configured at levels such as system, home library, and county.",
+      "category": "configuration",
+      "priority": "High",
+      "source_ids": [
+        "conversations/conv_pines024_inactive_patrons.eml",
+        "early_draft_srs_galecia.txt"
+      ],
+      "evidence": [
+        "Configure the inactive-patron list at system, home-library, county, and similar levels.",
+        "The list should be configurable to different levels - System, Home Library, County, etc.",
+        "The list should be configurable to System, Home Library, County, etc."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-6FBAEAA3",
+      "name": "Cross-Tabulated Board Reports",
+      "description": "Provide predefined board or activity reports with basic statistics cross-tabulated by terminal, branch, system, hour, patron age range, patron type, and patron location.",
+      "category": "reporting",
+      "priority": "Medium",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "email_report_features.eml"
+      ],
+      "evidence": [
+        "Activity reports showing traffic and volume of use... Cross-tabulated per terminal, per branch, per system, per hour, per age range, per patron type, per patron location.",
+        "Cross-tabulate activity, traffic, and usage statistics by terminal, branch, system, hour, age range, patron type, and patron location.",
+        "It should be possible to cross-tabulate per terminal, per branch, per library system, per hour, per patron age range, per patron type, and per patron location."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-73D4F3AA",
+      "name": "Transit Labels",
+      "description": "Generate printable transit labels and barcodes for items being transferred.",
+      "category": "export",
+      "priority": "Low",
+      "source_ids": [
+        "conversations/conv_pines018_item_transfer.eml"
+      ],
+      "evidence": [
+        "Also, can we generate transit labels? Like, printable barcodes for the items being transferred?",
+        "Generate printable barcoded transit labels.",
+        "Printable transit labels"
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-7599D70F",
+      "name": "Material Volume Reporting",
+      "description": "Report material volume for a library at any point in time using new acquisitions, checked-in shelf items, and checked-out circulating items.",
+      "category": "reporting",
+      "priority": "High",
+      "source_ids": [
+        "conversations/conv_pines014_material_volume.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "Ability to report on the volume of material in a given library at any point in time, based on new acquisitions, items on the shelf, and items out in circulation.",
+        "I need to report on volume based on acquisitions, items on the shelf, and items in circulation, broken down by categories like total items, holds, adult fiction, board books, etc.",
+        "Report volume at any point in time based on acquisitions, checked-in shelf items, and checked-out circulating items.",
+        "Report volume at any point in time based on new acquisitions, items on the shelf, and items out in circulation.",
+        "The system should provide the ability to report on the volume of material in a given library at any point in time, based on: New acquisitions; Items on the shelf (checked in); Items out in circulation (checked out)"
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-76C914C4",
+      "name": "Capacity Trends",
+      "description": "Show branch capacity trends, including growth or shrinkage patterns, to support long-term planning.",
+      "category": "reporting",
+      "priority": "Medium",
+      "source_ids": [
+        "conversations/conv_pines015_capacity_interface.eml"
+      ],
+      "evidence": [
+        "One more thing - can the capacity interface also show trends? Like, is this branch growing or shrinking? That helps with long-term planning.",
+        "Show whether a branch is growing or shrinking to support long-term planning.",
+        "Trend data (growth/shrink patterns)"
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-7812746B",
+      "name": "In-Transit Items",
+      "description": "List items that have been in transit longer than a configurable number of days, with reporting by branch and system.",
+      "category": "reporting",
+      "priority": "Critical",
+      "source_ids": [
+        "conversations/conv_pines019_020_missing_intransit.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "List items in transit longer than configurable X days per branch and per system.",
+        "System generates a list of items that have been in-transit for more than X days (X configurable), per branch and per system.",
+        "The report should show items that have been in-transit for more than X days (configurable), per branch and per system.",
+        "The system should generate a list of items that have been in-transit for more than X days (X configurable), per branch and per system."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-7DAF3E55",
+      "name": "Transit Due-Date Sorting",
+      "description": "Allow in-transit reports to be sorted by due date so staff can pursue the oldest items first.",
+      "category": "sorting",
+      "priority": "Low",
+      "source_ids": [
+        "conversations/conv_pines019_020_missing_intransit.eml"
+      ],
+      "evidence": [
+        "Also, for the in-transit report - can we sort by due date? Front-line staff need to chase the oldest items first.",
+        "Sort in-transit reports by due date to pursue the oldest items first."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-882453F6",
+      "name": "Report Templates",
+      "description": "Allow administrators to create staff-available report templates that can run as-is or be modified, while controlling which filters and display fields non-administrators may alter without compromising result accuracy.",
+      "category": "configuration",
+      "priority": "Critical",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "email_report_features.eml"
+      ],
+      "evidence": [
+        "Administrators create templates, control alterable filters and fields, and make templates runnable as-is or modifiable without compromising accuracy.",
+        "Admins create templates available to staff. Run as-is or modified. Limit alterable filters/fields. Clone capability.",
+        "System administrators should be able to create report templates that are available to staff. These templates should be runnable as-is or modifiable for individual needs. Changes to templates should not compromise the accuracy of results. Administrators should be able to limit which filters and display fields can be altered."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-90083BDF",
+      "name": "Payment Audit Ledger",
+      "description": "Maintain a ledger linking each patron payment to the specific charges it paid to support financial reconciliation.",
+      "category": "reporting",
+      "priority": "Critical",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "email_financial_reports.eml"
+      ],
+      "evidence": [
+        "the financial audit trail is CRITICAL ... They need to be able to trace every payment back to the specific charge it was applied to",
+        "The financial audit trail is explicitly identified as critical and must trace every payment to the specific charge to which it was applied.",
+        "The system maintains a ledger of patron payments, including which charges payments are applied to, to facilitate reconciliation.",
+        "Trace every payment to the specific charge to which it was applied."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-9103154E",
+      "name": "Inactive Patron Addresses",
+      "description": "Include current mailing addresses in inactive-patron reports for outreach.",
+      "category": "reporting",
+      "priority": "High",
+      "source_ids": [
+        "conversations/conv_pines024_inactive_patrons.eml"
+      ],
+      "evidence": [
+        "Inactive-patron reports must include current mailing addresses.",
+        "The report needs to include current mailing addresses."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-9B66D7D5",
+      "name": "Shelf Space Scope",
+      "description": "Run shelf-space reports for an individual library or the entire library system, with branch-level and system-level views.",
+      "category": "configuration",
+      "priority": "High",
+      "source_ids": [
+        "conversations/conv_pines016_shelf_space.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "The report should be able to run per library and per system.",
+        "The report should be available per library and per system.",
+        "The shelf-space report should be available per library and per system."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-9CFD8667",
+      "name": "Shelf Space Comparison View",
+      "description": "Provide a side-by-side comparison view of each library's shelf-space breakdown to help identify outliers.",
+      "category": "reporting",
+      "priority": "Low",
+      "source_ids": [
+        "conversations/conv_pines016_shelf_space.eml"
+      ],
+      "evidence": [
+        "can we include a \"comparison\" view that shows each library's breakdown side by side? That would make it easy to spot outliers.",
+        "Show each library's breakdown side by side to identify outliers.",
+        "Show each library's shelf-space breakdown side by side to identify outliers."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-9D7B675D",
+      "name": "General and Use-Case CSV Export",
+      "description": "Support CSV export for applicable reports, including capacity and inactive-patron outreach reports; general report output formats are specified separately.",
+      "category": "export",
+      "priority": "Medium",
+      "source_ids": [
+        "conversations/conv_pines015_capacity_interface.eml",
+        "conversations/conv_pines024_inactive_patrons.eml"
+      ],
+      "evidence": [
+        "Export capacity data to CSV for spreadsheets and inactive-patron reports for an outreach system."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-9F12175A",
+      "name": "Role-Based Access Control",
+      "description": "Control user rights and privileges through security groups or roles so changing a user's role assignment updates access permissions.",
+      "category": "configuration",
+      "priority": "Critical",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "email_staff_login.eml",
+        "interview_sysadmin_2009-05-10.txt",
+        "meeting_minutes/meeting_2009-03-15_minutes.txt"
+      ],
+      "evidence": [
+        "CO-4: User rights and privileges will be controlled through security groups and/or \"roles\" that allow access control...",
+        "Security groups or roles control rights and privileges; changing role assignment changes permissions.",
+        "The permission system needs to be controlled through security groups and/or \"roles.\" ... Changing someone's permissions should be a simple matter of changing their role assignment.",
+        "User rights and privileges controlled through security groups/roles."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-A6F40A33",
+      "name": "Financial Retention and Compliance",
+      "description": "Apply retention and archiving policies to reports and financial data in accordance with accounting practices and applicable state, county, and municipal auditing requirements.",
+      "category": "configuration",
+      "priority": "High",
+      "source_ids": [
+        "email_financial_reports.eml"
+      ],
+      "evidence": [
+        "all reports and data archiving must comply with standard accounting practice and state, county, and municipal auditing requirements.",
+        "Some data needs to be retained for 7 years for audit purposes. The system needs to enforce retention policies."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-AAC87674",
+      "name": "Report Template Cloning",
+      "description": "Allow users to clone an existing report template into a distinct new variant rather than modifying the original.",
+      "category": "configuration",
+      "priority": "High",
+      "source_ids": [
+        "email_report_features.eml"
+      ],
+      "evidence": [
+        "Cloning creates a new report variant and is distinct from modifying the existing template.",
+        "We also need the ability to \"clone\" reports - take an existing template and create a new one based on it. This is different from modifying the template - it's creating a new variant."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-AB0BAB26",
+      "name": "Merged Transit Report",
+      "description": "Combine transit-to and transit-from information into one report for frontline staff.",
+      "category": "merging records",
+      "priority": "High",
+      "source_ids": [
+        "conversations/conv_pines019_020_missing_intransit.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "merge the transit-to and transit-from into one report for ease of front-line staff use.",
+        "Merge transit-to and transit-from so frontline staff do not need two reports.",
+        "The report should merge transit-to and transit-from so front-line staff don't have to run two reports."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-AC92E87A",
+      "name": "Null and Blank Report Values",
+      "description": "Include null and blank fields in report results, including missing optional patron fields, rather than silently excluding those records.",
+      "category": "reporting",
+      "priority": "Medium",
+      "source_ids": [
+        "conversations/conv_pines023_patron_characteristics.eml",
+        "early_draft_srs_galecia.txt",
+        "meeting_tech_subcommittee_2009-06-30.txt",
+        "survey_results_2009.txt"
+      ],
+      "evidence": [
+        "\"All nulls and blank fields must be included in the results\"",
+        "All null and blank fields must be included in results, including missing optional patron fields.",
+        "All nulls and blank fields must be included in results rather than excluded.",
+        "All nulls and blank fields must be included in the results",
+        "All nulls and blank fields must be included in the results no matter what is being filtered or displayed.",
+        "We should include them in the report (with null values) rather than excluding them, because excluding data silently can lead to misleading results."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-AD6F42BB",
+      "name": "Batch Item Transfers",
+      "description": "Provide a utility for transferring batches of items between branches, including mobile libraries, outreach collections, and just-in-time warehouses.",
+      "category": "merging records",
+      "priority": "Critical",
+      "source_ids": [
+        "conversations/conv_pines018_item_transfer.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "System should provide a utility for transferring batches of items between branches. Uses include: moving books into a mobile library, an outreach program collection, or a \"just-in-time\" warehouse.",
+        "The \"item transfer utility is crucial\" ... move batches of items between branches.",
+        "The item transfer utility is described as crucial and supports moving batches between branches, mobile libraries, outreach collections, and warehouses.",
+        "The utility needs: Query for candidate materials ... Change records of selected items to new location",
+        "The utility transfers batches between branches for mobile libraries, outreach collections, and just-in-time warehouses."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-B043C41D",
+      "name": "Deletion Tracking",
+      "description": "Count and track item, patron, and other record deletions by location and system for auditing.",
+      "category": "reporting",
+      "priority": "Critical",
+      "source_ids": [
+        "conversations/conv_pines022_deletions.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "Ability to count and track record deletions (e.g., item records, patron records) per location and per system.",
+        "Ability to count and track record deletions per location and per system.",
+        "Count and track record deletions per location and per system for auditing.",
+        "track record deletions (e.g., item records, patron records) per location and per system. This is for auditing purposes."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-B131A0DE",
+      "name": "Branch Capacity Overview",
+      "description": "Provide an interface showing capacity across all branches at a high level, with drill-down views for individual branches.",
+      "category": "configuration",
+      "priority": "Critical",
+      "source_ids": [
+        "conversations/conv_pines015_capacity_interface.eml",
+        "early_draft_srs_galecia.txt"
+      ],
+      "evidence": [
+        "Show a high-level overview of all branches' capacity and allow drill-down into individual branches.",
+        "The system should provide an interface showing the capacity of all branches.",
+        "The system should provide an interface showing the capacity of all branches. This should include: High-level overview of all branches' capacity at once; Ability to drill down into individual branches"
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-B2479F9B",
+      "name": "Query Criteria in Results",
+      "description": "Display the query selections and criteria alongside report results so users can identify how the results were generated.",
+      "category": "reporting",
+      "priority": "High",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "email_report_features.eml"
+      ],
+      "evidence": [
+        "Show query selections with results so users can see the criteria used.",
+        "The system should provide the query selections along with the results, so users can see what criteria were used to generate the report."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-B5D9D99F",
+      "name": "Report Permissions and Shared Folders",
+      "description": "Provide fine-grained permissions for creating, running, and cloning reports, plus administrator-managed shared folders controlling access to reports and ad hoc datasets.",
+      "category": "configuration",
+      "priority": "Critical",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "email_report_features.eml"
+      ],
+      "evidence": [
+        "System administrators should be able to create shared folders to allow or disallow staff from running specific reports, and/or to run ad hoc reports on specific sets of data.",
+        "The system should provide distinct, fine-grained permission levels that limit who can create and clone reports.",
+        "Use distinct permissions for report creation and cloning, and shared folders to control report and ad hoc dataset access."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-BA916A26",
+      "name": "Inactive Patron Exclusions",
+      "description": "Allow specified patrons, including do-not-disturb, VIP, staff, and communication-opt-out patrons, to be excluded from inactive reports.",
+      "category": "configuration",
+      "priority": "Medium",
+      "source_ids": [
+        "conversations/conv_pines024_inactive_patrons.eml"
+      ],
+      "evidence": [
+        "Allow exclusion of do-not-disturb, VIP, staff, and communication-opt-out patrons.",
+        "we should be able to EXCLUDE certain patrons from the inactive report. For example: Patrons with \"do not disturb\" flags; VIP patrons; Staff members; Patrons who have opted out of communications"
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-BC1E1111",
+      "name": "Batch Item Status Conversion",
+      "description": "Provide a report or utility to convert items from one status to another in batch, such as missing to discard/weed.",
+      "category": "configuration",
+      "priority": "High",
+      "source_ids": [
+        "conversations/conv_pines021_item_purging.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "Batch conversion from one item status to another is required, including changing 100 items from missing to discard/weed.",
+        "I need a report to help convert items from one status to another in batch.",
+        "Sometimes I need to change 100 items from \"missing\" to \"discard/weed\" in batch.",
+        "Support batch conversion from one item status to another, including changing 100 items from missing to discard/weed.",
+        "The system should have a report to assist in the conversion of items from one status to another."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-BEE4068E",
+      "name": "Transfer Reversion",
+      "description": "Revert transferred items to their original location after a configured period or when configured criteria occur, including status changes or checkout at the destination.",
+      "category": "configuration",
+      "priority": "Critical",
+      "source_ids": [
+        "conversations/conv_pines018_item_transfer.eml",
+        "early_draft_srs_galecia.txt"
+      ],
+      "evidence": [
+        "Ability to revert items to original location after a set period of time",
+        "Ability to revert items to original location after a set period of time and/or based on other criteria",
+        "Revert after a configured number of days or when criteria such as status change or checkout at the destination occur.",
+        "Revert after X days (date-based) ... Revert when item status changes ... Revert when item is checked out at the destination (event-based)",
+        "Revert by elapsed time or criteria such as status change or checkout at the destination.",
+        "Revert items to original location after a set period of time"
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-C707C756",
+      "name": "Financial Retention and Compliance",
+      "description": "Apply retention and archiving policies to reports and financial data in accordance with accounting practices and applicable state, county, and municipal auditing requirements, including stated seven-year retention needs.",
+      "category": "configuration",
+      "priority": "High",
+      "source_ids": [
+        "email_financial_reports.eml"
+      ],
+      "evidence": [
+        "Reports and archiving must meet accounting and governmental audit requirements; some data must be retained for seven years."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-CB2F2867",
+      "name": "Staff Login Audit",
+      "description": "Track the individual staff member authenticated during each session, including when a card swipe is used, so card login does not bypass individual authentication or auditing.",
+      "category": "reporting",
+      "priority": "High",
+      "source_ids": [
+        "email_staff_login.eml"
+      ],
+      "evidence": [
+        "Card swipe must retain individual authentication and identify the logged-in staff member for auditing.",
+        "even with card swipe, we need individual authentication. The system must track WHICH staff member is logged in for audit purposes.",
+        "it shouldn't bypass individual authentication entirely."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-D3763CBD",
+      "name": "Inactive Patrons Report",
+      "description": "Generate a list of patrons with no circulation or electronic activity during a configurable number of prior days.",
+      "category": "reporting",
+      "priority": "Critical",
+      "source_ids": [
+        "conversations/conv_pines024_inactive_patrons.eml",
+        "early_draft_srs_galecia.txt"
+      ],
+      "evidence": [
+        "generate a list of patrons with no circulation or electronic activity in the last X days (X should be configurable)",
+        "List patrons with no circulation or electronic activity in the last configurable number of days.",
+        "The system should generate a list of patrons with no circulation or electronic activity in the last X days (X configurable)."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-D96608BC",
+      "name": "Transfer Query Management",
+      "description": "Allow transfer users to query candidate materials and save reusable queries for repeated transfers.",
+      "category": "configuration",
+      "priority": "High",
+      "source_ids": [
+        "conversations/conv_pines018_item_transfer.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "Query candidate materials and save queries for repeated monthly use.",
+        "Query candidate materials and save queries for repeated use.",
+        "Second, we need to save these queries for repeated use - we do this monthly.",
+        "The utility needs: Query for candidate materials; Save queries for repeated use",
+        "The utility should include: Ability to query for candidate materials; Ability to save queries for repeated use"
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-D9773F61",
+      "name": "Deletion Audit Details",
+      "description": "Track deletion record type, record identifier, timestamp, deleting user, user location, optionally the pre-deletion status, and denied deletion attempts.",
+      "category": "reporting",
+      "priority": "High",
+      "source_ids": [
+        "conversations/conv_pines022_deletions.eml"
+      ],
+      "evidence": [
+        "Additionally, tracking of denied deletion attempts would be helpful for compliance and troubleshooting.",
+        "Can we also track attempted deletions that were denied? That would tell us if someone is trying to delete things they shouldn't.",
+        "fields: record_type, record_id, deleted_by, deleted_at, location",
+        "Possibly why (status before deletion?)",
+        "The report should show deletions per location and per system.",
+        "Track record type, identifier, deleting user, timestamp, location, possible pre-deletion status, and denied deletion attempts.",
+        "Track record_type, record_id, deleted_by, deleted_at, location, possible pre-deletion status, and denied deletion attempts."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-EA5655AB",
+      "name": "Electronic Activity Definition",
+      "description": "Define electronic activity to include OPAC or patron-account logins, online holds, online renewals, and digital-collection access when integrated.",
+      "category": "configuration",
+      "priority": "High",
+      "source_ids": [
+        "conversations/conv_pines024_inactive_patrons.eml"
+      ],
+      "evidence": [
+        "\"Electronic activity\" should include: 1. Logging into OPAC/patron account 2. Placing holds online 3. Renewing items online 4. Accessing digital collections (if integrated)",
+        "Electronic activity includes OPAC login, online holds, online renewals, and integrated digital-collection access."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-ED8BC201",
+      "name": "CSV Report Export",
+      "description": "Allow applicable reports and capacity or outreach data to be exported in CSV format for spreadsheets and external outreach systems.",
+      "category": "export",
+      "priority": "Medium",
+      "source_ids": [
+        "conversations/conv_pines015_capacity_interface.eml",
+        "conversations/conv_pines024_inactive_patrons.eml",
+        "early_draft_srs_galecia.txt",
+        "evergreen_reference_2009.txt",
+        "meeting_tech_subcommittee_2009-06-30.txt"
+      ],
+      "evidence": [
+        "Also, the report should be exportable. We upload it to our outreach system.",
+        "And export to CSV for the directors who want spreadsheets.",
+        "Excel, HTML, and CSV formats are required.",
+        "Multiple output formats (CSV, HTML, sometimes Excel)",
+        "Output would be in Excel, HTML, and CSV format"
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-F53F3F7C",
+      "name": "Transfer Manual Selection",
+      "description": "Allow users to manually select individual titles or items from transfer-query results, such as through checkboxes.",
+      "category": "configuration",
+      "priority": "High",
+      "source_ids": [
+        "conversations/conv_pines018_item_transfer.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "Ability to manually select titles from query results",
+        "Allow users to select only chosen items from query results, including through checkboxes.",
+        "I also want to be able to MANUALLY SELECT from query results. Maybe I run a query and get 100 candidate items, but I only want to move 25 of them. I should be able to check boxes and select which ones to include.",
+        "Manually select titles from query results",
+        "Users should be able to select only chosen items from query results, including through checkboxes."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-F93B57F2",
+      "name": "Shelf Space Date Filtering",
+      "description": "Filter shelf-space utilization by date range to compare periods such as Q1 and Q2.",
+      "category": "reporting",
+      "priority": "Medium",
+      "source_ids": [
+        "conversations/conv_pines016_shelf_space.eml"
+      ],
+      "evidence": [
+        "Can we also filter by date range? Like, what was the shelf space utilization in Q1 vs. Q2? Seasons matter for our collection.",
+        "Filter shelf-space utilization by date range for comparisons such as Q1 versus Q2."
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-FA6D4CBA",
+      "name": "Inactive Patrons with Fines",
+      "description": "Identify inactive patrons with outstanding fines separately because those accounts require different handling.",
+      "category": "reporting",
+      "priority": "Medium",
+      "source_ids": [
+        "conversations/conv_pines024_inactive_patrons.eml"
+      ],
+      "evidence": [
+        "Flag inactive patrons who owe fines separately.",
+        "flag patrons who are inactive but still owe fines separately. Those accounts need different handling.",
+        "Track inactive patrons with outstanding fines separately"
+      ],
+      "status": "accepted"
+    },
+    {
+      "id": "REQ-FE2EE02B",
+      "name": "Condition Notes",
+      "description": "Include item condition notes, such as water damage or vandalism, in missing and damaged item reports.",
+      "category": "reporting",
+      "priority": "Low",
+      "source_ids": [
+        "conversations/conv_pines019_020_missing_intransit.eml"
+      ],
+      "evidence": [
+        "can the report include item condition notes? Like \"water damage\" or \"vandalism\"? That helps us understand root causes.",
+        "Include condition notes such as water damage or vandalism in the report."
+      ],
+      "status": "accepted"
+    }
+  ],
+  "blacklist": [
+    {
+      "claim": "Nonsensical or unrelated trivia and questions",
+      "reason": "Retained as a consolidated blacklist entry because the cited remarks are unrelated to system requirements.",
+      "source_ids": [
+        "conversations/conv_pines014_material_volume.eml",
+        "conversations/conv_pines018_item_transfer.eml",
+        "conversations/conv_pines024_inactive_patrons.eml"
+      ],
+      "evidence": [
+        "Marvel-movie question.",
+        "Restaurant recommendation question.",
+        "Unrelated pronunciation remark."
+      ]
+    },
+    {
+      "claim": "Nonsensical or unrelated trivia and questions",
+      "reason": "These are explicitly identified as irrelevant to the system requirements and are retained only as blacklist entries.",
+      "source_ids": [
+        "conversations/conv_pines014_material_volume.eml",
+        "conversations/conv_pines018_item_transfer.eml",
+        "conversations/conv_pines024_inactive_patrons.eml"
+      ],
+      "evidence": [
+        "\"(Also, does anyone know if the new Marvel movie is any good?)\"",
+        "\"BTW, anyone know a good restaurant in Athens?\"",
+        "\"P.S. \\\"Italian\\\" is \\\"ee-tal-EE-an.\\\" You're welcome, Susan.\""
+      ]
+    },
+    {
+      "claim": "Nonsensical or unrelated trivia and questions",
+      "reason": "These remarks are explicitly irrelevant to system requirements and are retained as a blacklist entry.",
+      "source_ids": [
+        "conversations/conv_pines014_material_volume.eml",
+        "conversations/conv_pines018_item_transfer.eml",
+        "conversations/conv_pines024_inactive_patrons.eml"
+      ],
+      "evidence": [
+        "Marvel-movie question.",
+        "Restaurant recommendation question.",
+        "Unrelated pronunciation remark."
+      ]
+    },
+    {
+      "claim": "Off-topic personal anecdotes and unrelated conversational remarks",
+      "reason": "Retain only as a source-scoped blacklist classification. The cited examples establish that such remarks are irrelevant where they occur, but the examples are not evidence that every listed source contains or supports the same remarks; no additional disposition is inferred for the other listed sources.",
+      "source_ids": [
+        "conversations/conv_pines014_material_volume.eml",
+        "conversations/conv_pines015_capacity_interface.eml",
+        "conversations/conv_pines016_shelf_space.eml",
+        "conversations/conv_pines018_item_transfer.eml",
+        "conversations/conv_pines019_020_missing_intransit.eml",
+        "conversations/conv_pines021_item_purging.eml",
+        "conversations/conv_pines022_deletions.eml",
+        "conversations/conv_pines023_patron_characteristics.eml",
+        "conversations/conv_pines024_inactive_patrons.eml"
+      ],
+      "evidence": [
+        "Cited examples include a coffee remark, a sports remark, and a personal recital remark; the extracted data does not map each example to an individual source, so the examples do not establish disposition for every listed source."
+      ]
+    },
+    {
+      "claim": "Off-topic personal anecdotes and unrelated conversational remarks",
+      "reason": "Retained only for the sources and examples that are traceable in the extracted data; unsupported attribution to all nine conversation sources was removed.",
+      "source_ids": [
+        "conversations/conv_pines014_material_volume.eml",
+        "conversations/conv_pines015_capacity_interface.eml"
+      ],
+      "evidence": [
+        "Coffee remark attributed to the material-volume conversation.",
+        "Sports remark attributed to the capacity-interface conversation."
+      ]
+    },
+    {
+      "claim": "Off-topic personal anecdotes and unrelated conversational remarks",
+      "reason": "These are explicitly identified as irrelevant to the system requirements and are retained only as blacklist entries.",
+      "source_ids": [
+        "conversations/conv_pines014_material_volume.eml",
+        "conversations/conv_pines015_capacity_interface.eml",
+        "conversations/conv_pines016_shelf_space.eml",
+        "conversations/conv_pines018_item_transfer.eml",
+        "conversations/conv_pines019_020_missing_intransit.eml",
+        "conversations/conv_pines021_item_purging.eml",
+        "conversations/conv_pines022_deletions.eml",
+        "conversations/conv_pines023_patron_characteristics.eml",
+        "conversations/conv_pines024_inactive_patrons.eml"
+      ],
+      "evidence": [
+        "\"Also, I need coffee. Real coffee. Not the office sludge.\"",
+        "\"Go Braves!\"",
+        "\"My daughter has her recital tomorrow and I'm trying not to think about work but here we are. :P\""
+      ]
+    },
+    {
+      "claim": "Support optional streamlined staff login methods such as card swipe while retaining traditional individual username-and-password login as a fallback; card-based login must not be required.",
+      "reason": "Conflicts with an accepted requirement and was not silently merged.",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "email_staff_login.eml"
+      ],
+      "evidence": [
+        "Support optional card-swipe login and traditional username/password login; card login is not required."
+      ]
+    },
+    {
+      "claim": "Support optional streamlined staff login methods such as card swipe while retaining traditional individual username-and-password login as a fallback; card-based login must not be required.",
+      "reason": "Retained as a historical blacklist entry because it appears in the existing blacklist, but the cited claim is supported and is accepted as Staff Login Methods; it is not treated as a rejected functional requirement.",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "email_staff_login.eml"
+      ],
+      "evidence": [
+        "Support optional card-swipe login and traditional username/password login; card login is not required."
+      ]
+    }
+  ],
+  "candidate_dispositions": [
+    {
+      "candidate_id": "CAND-009F60D933",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines018_item_transfer.eml"
+      ],
+      "evidence": [
+        "Also, can we generate transit labels? Like, printable barcodes for the items being transferred?",
+        "Printable transit labels"
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-09321C5AD2",
+      "disposition": "merged into a named canonical requirement",
+      "reason": "Candidate is represented by the canonical requirement.",
+      "source_ids": [
+        "conversations/conv_pines024_inactive_patrons.eml"
+      ],
+      "evidence": [
+        "The report needs to include current mailing addresses."
+      ],
+      "canonical_requirement_id": "REQ-9103154E",
+      "canonical_requirement_name": "Inactive Patron Addresses"
+    },
+    {
+      "candidate_id": "CAND-0A4A2C50CD",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines024_inactive_patrons.eml"
+      ],
+      "evidence": [
+        "\"Electronic activity\" should include: 1. Logging into OPAC/patron account 2. Placing holds online 3. Renewing items online 4. Accessing digital collections (if integrated)"
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-0C111E980D",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines019_020_missing_intransit.eml"
+      ],
+      "evidence": [
+        "can the report include item condition notes? Like \"water damage\" or \"vandalism\"? That helps us understand root causes."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-11D9C28B42",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines018_item_transfer.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "Ability to manually select titles from query results",
+        "I also want to be able to MANUALLY SELECT from query results. Maybe I run a query and get 100 candidate items, but I only want to move 25 of them. I should be able to check boxes and select which ones to include.",
+        "Manually select titles from query results"
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-12A5E55948",
+      "disposition": "merged into a named canonical requirement",
+      "reason": "Candidate is represented by the canonical requirement.",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "email_financial_reports.eml"
+      ],
+      "evidence": [
+        "The system provides financial reports including: - Patron account balances by patron, home library, and system - Fines and charges accrued per time period ... and per type of charge ... - Fines waived per time period and per branch - Payments made per time period and per payment method"
+      ],
+      "canonical_requirement_id": "REQ-611ED553",
+      "canonical_requirement_name": "Financial Reports"
+    },
+    {
+      "candidate_id": "CAND-17CA8D5E80",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "email_report_features.eml",
+        "evergreen_reference_2009.txt",
+        "meeting_tech_subcommittee_2009-06-30.txt",
+        "survey_results_2009.txt"
+      ],
+      "evidence": [
+        "5.3 REPORT CANCELLATION The ability to cancel a scheduled or running report is technically feasible",
+        "Ability to cancel a report that has already been scheduled to run or is currently running",
+        "Ability to cancel a scheduled or running report",
+        "No ability to cancel a running report"
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-1FE29EE87C",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines015_capacity_interface.eml"
+      ],
+      "evidence": [
+        "One more thing - can the capacity interface also show trends? Like, is this branch growing or shrinking? That helps with long-term planning.",
+        "Trend data (growth/shrink patterns)"
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-2004C0649E",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "email_financial_reports.eml"
+      ],
+      "evidence": [
+        "System can generate a report of the value of items (based on data in item record) in the entire collection or a portion.",
+        "Value of all items with status of \"longoverdue\"; value of all DVDs in children's collection; value of entire collection."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-22C0545E1D",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines018_item_transfer.eml"
+      ],
+      "evidence": [
+        "And can we set up alerts? If an item transfer is delayed or has issues, notify me.",
+        "Transfer delay alerts"
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-25FD4F01AB",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines023_patron_characteristics.eml",
+        "early_draft_srs_galecia.txt",
+        "meeting_tech_subcommittee_2009-06-30.txt",
+        "survey_results_2009.txt"
+      ],
+      "evidence": [
+        "\"All nulls and blank fields must be included in the results\"",
+        "All nulls and blank fields must be included in the results",
+        "All nulls and blank fields must be included in the results no matter what is being filtered or displayed.",
+        "We should include them in the report (with null values) rather than excluding them"
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-2832ECFEB1",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines016_shelf_space.eml"
+      ],
+      "evidence": [
+        "can we include a \"comparison\" view that shows each library's breakdown side by side? That would make it easy to spot outliers."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-2C9D983BD2",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines021_item_purging.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "CRITICAL: We need a \"last copy report\" that identifies our library system's last copies.",
+        "Provide a last copy report singling out a library system's last copies, to assist catalogers who need to edit WorldCat entries.",
+        "The last copy report is CRITICAL. This singles out a library system's last copies, to assist catalogers who need to edit WorldCat entries."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-3A0B83ADA6",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines024_inactive_patrons.eml"
+      ],
+      "evidence": [
+        "we should be able to EXCLUDE certain patrons from the inactive report. For example: - Patrons with \"do not disturb\" flags - VIP patrons - Staff members - Patrons who have opted out of communications"
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-3AB72DA03F",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines015_capacity_interface.eml",
+        "conversations/conv_pines024_inactive_patrons.eml"
+      ],
+      "evidence": [
+        "Also, the report should be exportable. We upload it to our outreach system.",
+        "And export to CSV for the directors who want spreadsheets."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-420DE86084",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "email_report_features.eml"
+      ],
+      "evidence": [
+        "System administrators should be able to create shared folders to allow or disallow staff from running specific reports, and/or to run ad hoc reports on specific sets of data.",
+        "The system should provide distinct, fine-grained permission levels that limit who can create and clone reports."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-437AC6259A",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "email_report_features.eml"
+      ],
+      "evidence": [
+        "Activity reports showing traffic and volume of use... Cross-tabulated per terminal, per branch, per system, per hour, per age range, per patron type, per patron location.",
+        "It should be possible to cross-tabulate per terminal, per branch, per library system, per hour, per patron age range, per patron type, and per patron location."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-49762A0C1B",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "email_financial_reports.eml"
+      ],
+      "evidence": [
+        "the financial audit trail is CRITICAL ... They need to be able to trace every payment back to the specific charge it was applied to",
+        "The system maintains a ledger of patron payments, including which charges payments are applied to, to facilitate reconciliation."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-4BCD0D8094",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "email_report_features.eml"
+      ],
+      "evidence": [
+        "We also need the ability to \"clone\" reports - take an existing template and create a new one based on it. This is different from modifying the template - it's creating a new variant."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-5799F3E857",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines015_capacity_interface.eml"
+      ],
+      "evidence": [
+        "I'd want to be able to sort and filter. By region, by library type, by current load...",
+        "Sorting and filtering capabilities (region, type, load)"
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-5864944305",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines023_patron_characteristics.eml"
+      ],
+      "evidence": [
+        "We should include them in the report (with null values) rather than excluding them, because excluding data silently can lead to misleading results."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-58E06DDA64",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "evergreen_reference_2009.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "I need to be able to see the last edit date on reports, but it should be only when the item is edited and not include the last circulation. The current system combines these dates.",
+        "Last edit date not including last circulation - does not exist",
+        "The last edit date not including last circulation - does not exist"
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-598E994577",
+      "disposition": "merged into a named canonical requirement",
+      "reason": "Candidate is represented by the canonical requirement.",
+      "source_ids": [
+        "conversations/conv_pines019_020_missing_intransit.eml"
+      ],
+      "evidence": [
+        "Also, for the in-transit report - can we sort by due date? Front-line staff need to chase the oldest items first."
+      ],
+      "canonical_requirement_id": "REQ-7DAF3E55",
+      "canonical_requirement_name": "Transit Due-Date Sorting"
+    },
+    {
+      "candidate_id": "CAND-5B29FB6B8C",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines018_item_transfer.eml",
+        "early_draft_srs_galecia.txt"
+      ],
+      "evidence": [
+        "Ability to change records of selected items to move to new location - Mechanisms for moving items: changing location field, generating pull lists",
+        "Change records of selected items to new location",
+        "Mechanisms: changing location field, generating pull lists"
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-5B2EF3BC17",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "email_report_features.eml"
+      ],
+      "evidence": [
+        "Admins create templates available to staff. Run as-is or modified. Limit alterable filters/fields. Clone capability.",
+        "System administrators should be able to create report templates that are available to staff. These templates should be runnable as-is or modifiable for individual needs. Changes to templates should not compromise the accuracy of results. Administrators should be able to limit which filters and display fields can be altered."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-5D310557F3",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines014_material_volume.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "Ability to report on the volume of material in a given library at any point in time, based on new acquisitions, items on the shelf, and items out in circulation.",
+        "I need to report on volume based on acquisitions, items on the shelf, and items in circulation, broken down by categories like total items, holds, adult fiction, board books, etc.",
+        "The system should provide the ability to report on the volume of material in a given library at any point in time, based on: - New acquisitions - Items on the shelf (checked in) - Items out in circulation (checked out)"
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-61335334A7",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "email_report_features.eml"
+      ],
+      "evidence": [
+        "The system should provide a user-friendly interface for designing queries against all record types... Staff should be able to: - Select fields to query - Select values from a picklist... - Select regular expressions from a drop-down menu - Use a full range of Boolean operators"
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-62ECCD244A",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines018_item_transfer.eml",
+        "early_draft_srs_galecia.txt"
+      ],
+      "evidence": [
+        "Ability to revert items to original location after a set period of time",
+        "Ability to revert items to original location after a set period of time and/or based on other criteria",
+        "Revert after X days (date-based) ... Revert when item status changes ... Revert when item is checked out at the destination (event-based)",
+        "Revert items to original location after a set period of time"
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-673D9F97D3",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines019_020_missing_intransit.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "merge the transit-to and transit-from into one report for ease of front-line staff use.",
+        "The report should merge transit-to and transit-from so front-line staff don't have to run two reports."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-68958536B8",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "email_report_features.eml"
+      ],
+      "evidence": [
+        "The system should provide the query selections along with the results, so users can see what criteria were used to generate the report."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-689E38EB15",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines018_item_transfer.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "Second, we need to save these queries for repeated use - we do this monthly.",
+        "The utility needs: - Query for candidate materials - Save queries for repeated use",
+        "The utility should include: - Ability to query for candidate materials - Ability to save queries for repeated use"
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-6C2021DC47",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines016_shelf_space.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "The report should be able to run per library and per system.",
+        "The report should be available per library and per system."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-6F32D58A92",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines022_deletions.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "Ability to count and track record deletions (e.g., item records, patron records) per location and per system.",
+        "Ability to count and track record deletions per location and per system.",
+        "track record deletions (e.g., item records, patron records) per location and per system. This is for auditing purposes."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-7414990752",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines024_inactive_patrons.eml",
+        "early_draft_srs_galecia.txt"
+      ],
+      "evidence": [
+        "generate a list of patrons with no circulation or electronic activity in the last X days (X should be configurable)",
+        "The system should generate a list of patrons with no circulation or electronic activity in the last X days (X configurable)."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-7464904E73",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines023_patron_characteristics.eml",
+        "early_draft_srs_galecia.txt"
+      ],
+      "evidence": [
+        "Combining filters is also doable - just add WHERE clauses. We can support both AND and OR logic.",
+        "I need to be able to both LIMIT and GROUP BY patron characteristics.",
+        "The age ranges need to be configurable too."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-77FD62B8B4",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines024_inactive_patrons.eml",
+        "early_draft_srs_galecia.txt"
+      ],
+      "evidence": [
+        "The list should be configurable to different levels - System, Home Library, County, etc.",
+        "The list should be configurable to System, Home Library, County, etc."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-7C649C6099",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines024_inactive_patrons.eml"
+      ],
+      "evidence": [
+        "Also, the report should be exportable. We upload it to our outreach system."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-808FDF4EDB",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "email_staff_login.eml"
+      ],
+      "evidence": [
+        "The system should not REQUIRE card-based login - traditional username/password should also be available as a fallback.",
+        "The system should support BOTH methods - streamlined login (e.g. card swipe) AND traditional login (individual login and password). The streamlined method should be optional but available.",
+        "The system supports (but does not require) streamlined staff login methods, e.g. card swipe or individual login/password."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-871106343F",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines021_item_purging.eml",
+        "early_draft_srs_galecia.txt"
+      ],
+      "evidence": [
+        "A separate confirmation step for actual deletions",
+        "Audit trail for all purges",
+        "Reports show candidates for purging (read-only)",
+        "Safety measures: - Read-only reports for identifying candidates - Separate confirmation step for actual deletions - Audit trail for all purges"
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-87D5514288",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines014_material_volume.eml",
+        "early_draft_srs_galecia.txt",
+        "meeting_tech_subcommittee_2009-06-30.txt",
+        "survey_results_2009.txt"
+      ],
+      "evidence": [
+        "Ability to have historical reporting - a reporting warehouse such that data can be acquired on a given date or date range",
+        "Historical reporting - I want to see what the data looked like on a specific date in the past, even if the shelving location has changed",
+        "We can add date filters - volume at any point in time, not just current.",
+        "We probably need a reporting warehouse for historical data."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-882D0707CC",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines015_capacity_interface.eml"
+      ],
+      "evidence": [
+        "And export to CSV for the directors who want spreadsheets.",
+        "Export to CSV"
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-935F7343E7",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines015_capacity_interface.eml",
+        "early_draft_srs_galecia.txt",
+        "email_report_features.eml"
+      ],
+      "evidence": [
+        "Ability to see where your report is in the queue of reports waiting to run.",
+        "The system should be able to see: - That their report is in the queue - How many reports are ahead of theirs - When their report was submitted - Status (waiting, running, completed, failed)"
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-9C023C91E6",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines021_item_purging.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "identify item records to purge based on customizable criteria. For example: - Item has been in status \"missing\" for more than X months - Item has status \"discard/weed\"",
+        "The system should provide a utility and reports for identifying item records to purge, based on customizable criteria such as: - An item has been in status \"missing\" for more than X months - An item has status \"discard/weed\"",
+        "Weeding reports are my most-used report type. I need to identify items for purging based on customizable criteria."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-A465554E5D",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines019_020_missing_intransit.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "System generates a list of items that have been in-transit for more than X days (X configurable), per branch and per system.",
+        "The report should show items that have been in-transit for more than X days (configurable), per branch and per system.",
+        "The system should generate a list of items that have been in-transit for more than X days (X configurable), per branch and per system."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-A7CF68438A",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines014_material_volume.eml",
+        "conversations/conv_pines015_capacity_interface.eml",
+        "conversations/conv_pines016_shelf_space.eml",
+        "conversations/conv_pines018_item_transfer.eml",
+        "conversations/conv_pines019_020_missing_intransit.eml",
+        "conversations/conv_pines021_item_purging.eml",
+        "conversations/conv_pines022_deletions.eml",
+        "conversations/conv_pines023_patron_characteristics.eml",
+        "conversations/conv_pines024_inactive_patrons.eml"
+      ],
+      "evidence": [
+        "\"Also, I need coffee. Real coffee. Not the office sludge.\"",
+        "\"Go Braves!\"",
+        "\"My daughter has her recital tomorrow and I'm trying not to think about work but here we are. :P\""
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-AC8627CCD5",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines021_item_purging.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "I need a report to help convert items from one status to another in batch.",
+        "Sometimes I need to change 100 items from \"missing\" to \"discard/weed\" in batch.",
+        "The system should have a report to assist in the conversion of items from one status to another."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-AC96B5469B",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines019_020_missing_intransit.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "I need a report that shows all missing and damaged items per branch.",
+        "System provides reports of missing and damaged items per branch.",
+        "The system should provide reports of missing and damaged items per branch."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-AE3E0E9B78",
+      "disposition": "merged into a named canonical requirement",
+      "reason": "Candidate is represented by the canonical requirement.",
+      "source_ids": [
+        "conversations/conv_pines018_item_transfer.eml"
+      ],
+      "evidence": [
+        "And we need an undo function! What if someone clicks the wrong button?"
+      ],
+      "canonical_requirement_id": "REQ-02D88AA9",
+      "canonical_requirement_name": "Transfer Undo"
+    },
+    {
+      "candidate_id": "CAND-AFAC116D4F",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "email_staff_login.eml",
+        "interview_sysadmin_2009-05-10.txt",
+        "meeting_minutes/meeting_2009-03-15_minutes.txt"
+      ],
+      "evidence": [
+        "CO-4: User rights and privileges will be controlled through security groups and/or \"roles\" that allow access control...",
+        "The permission system needs to be controlled through security groups and/or \"roles.\" ... Changing someone's permissions should be a simple matter of changing their role assignment.",
+        "User rights and privileges controlled through security groups/roles."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-AFCE4C1154",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines018_item_transfer.eml"
+      ],
+      "evidence": [
+        "Permission control (limited to managers/admins)",
+        "the utility should be careful about permissions here. Not every staff member should be able to transfer items between branches. This should be limited to certain roles (managers, administrators, transfer coordinators)."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-B3C9BC4AD7",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines021_item_purging.eml"
+      ],
+      "evidence": [
+        "Can we combine these? Like \"items with status 'missing' for more than 6 months AND haven't circulated in 2 years\"?"
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-B685FD0223",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines022_deletions.eml"
+      ],
+      "evidence": [
+        "Additionally, tracking of denied deletion attempts would be helpful for compliance and troubleshooting.",
+        "fields: record_type, record_id, deleted_by, deleted_at, location",
+        "Possibly why (status before deletion?)",
+        "The report should show deletions per location and per system."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-BB4C898B68",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines021_item_purging.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "quick effective method of deleting volume entries along with copy entries, as well as records with no items attached",
+        "Right now, cleaning up these orphaned records takes forever.",
+        "We also need a quick way to delete volume entries along with copy entries, and delete records with no items attached."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-BE54E129F4",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines014_material_volume.eml",
+        "conversations/conv_pines018_item_transfer.eml",
+        "conversations/conv_pines024_inactive_patrons.eml"
+      ],
+      "evidence": [
+        "\"(Also, does anyone know if the new Marvel movie is any good?)\"",
+        "\"BTW, anyone know a good restaurant in Athens?\"",
+        "\"P.S. \"Italian\" is \"ee-tal-EE-an.\" You're welcome, Susan.\""
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-C49D5924EE",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines018_item_transfer.eml"
+      ],
+      "evidence": [
+        "Can we track transfer history? Like, \"this item has been transferred 5 times in the past year.\"",
+        "Transfer history tracking"
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-C620C0457F",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines014_material_volume.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "Ability to report on the volume of material in a given library at any point in time, based on new acquisitions, items on the shelf, and items out in circulation. The report should allow breaking down volume in categories such as: total items in library, number of holds, number of adult fiction, number of board books, etc.",
+        "I need to report on volume based on acquisitions, items on the shelf, and items in circulation, broken down by categories like total items, holds, adult fiction, board books, etc.",
+        "The report should allow breaking down volume in categories such as: - Total items in library - Number of holds - Number of adult fiction - Number of board books - Other customizable categories"
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-C950E6E7B5",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines022_deletions.eml"
+      ],
+      "evidence": [
+        "Can we also track attempted deletions that were denied? That would tell us if someone is trying to delete things they shouldn't."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-CFC8260761",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines016_shelf_space.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "For each genre and format of material, ability to compare: - The percentage of total circulations - The percentage of the collection - The percentage of total shelf space",
+        "for each genre and format of material, compare: 1. Percentage of total circulations 2. Percentage of the collection 3. Percentage of total shelf space",
+        "The shelf space report is important for collection management. For each genre and format, I need to compare: - Percentage of total circulations - Percentage of the collection - Percentage of total shelf space"
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-D0EB90D74B",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "email_financial_reports.eml"
+      ],
+      "evidence": [
+        "all reports and data archiving must comply with standard accounting practice and state, county, and municipal auditing requirements.",
+        "Some data needs to be retained for 7 years for audit purposes. The system needs to enforce retention policies."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-D1C531979B",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines018_item_transfer.eml",
+        "early_draft_srs_galecia.txt",
+        "interview_cataloging_2009-05-08.txt"
+      ],
+      "evidence": [
+        "System should provide a utility for transferring batches of items between branches. Uses include: moving books into a mobile library, an outreach program collection, or a \"just-in-time\" warehouse.",
+        "The \"item transfer utility is crucial\" ... move batches of items between branches.",
+        "The utility needs: - Query for candidate materials ... - Change records of selected items to new location"
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-D6714ABAA6",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines024_inactive_patrons.eml"
+      ],
+      "evidence": [
+        "flag patrons who are inactive but still owe fines separately. Those accounts need different handling.",
+        "Track inactive patrons with outstanding fines separately"
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-DFFC1A08DA",
+      "disposition": "merged into a named canonical requirement",
+      "reason": "Candidate is represented by the canonical requirement.",
+      "source_ids": [
+        "conversations/conv_pines023_patron_characteristics.eml",
+        "early_draft_srs_galecia.txt"
+      ],
+      "evidence": [
+        "Queries and reports can be limited or grouped by various patron characteristics, including: - age range - zip code - county of residence - home branch - patron type - preferred language",
+        "The system should allow queries and reports to be limited or grouped by various patron characteristics, including: - Age range - Zip code - County of residence - Home branch - Patron type - Preferred language"
+      ],
+      "canonical_requirement_id": "REQ-05BBDD0B",
+      "canonical_requirement_name": "Patron Characteristics Reporting"
+    },
+    {
+      "candidate_id": "CAND-E36DB0F51C",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines014_material_volume.eml",
+        "early_draft_srs_galecia.txt"
+      ],
+      "evidence": [
+        "Ability to report on the volume of material in a given library at any point in time, based on new acquisitions, items on the shelf, and items out in circulation.",
+        "We can also add date filters - volume at any point in time, not just current. This would be useful for historical comparisons."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-ED0714BA45",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "email_staff_login.eml"
+      ],
+      "evidence": [
+        "even with card swipe, we need individual authentication. The system must track WHICH staff member is logged in for audit purposes.",
+        "it shouldn't bypass individual authentication entirely."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-F3D2D62423",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines016_shelf_space.eml"
+      ],
+      "evidence": [
+        "Can we also filter by date range? Like, what was the shelf space utilization in Q1 vs. Q2? Seasons matter for our collection."
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-F4A5293CAA",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "early_draft_srs_galecia.txt",
+        "evergreen_reference_2009.txt",
+        "meeting_tech_subcommittee_2009-06-30.txt"
+      ],
+      "evidence": [
+        "Excel, HTML, and CSV formats are required.",
+        "Multiple output formats (CSV, HTML, sometimes Excel)",
+        "Output would be in Excel, HTML, and CSV format"
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-F540E75795",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines015_capacity_interface.eml",
+        "early_draft_srs_galecia.txt"
+      ],
+      "evidence": [
+        "The system should provide an interface showing the capacity of all branches.",
+        "The system should provide an interface showing the capacity of all branches. This should include: - High-level overview of all branches' capacity at once - Ability to drill down into individual branches"
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    },
+    {
+      "candidate_id": "CAND-FDD7C8508A",
+      "disposition": "discarded as unsupported",
+      "reason": "No accepted requirement or blacklist entry represents this candidate; the omission remains unresolved and requires review.",
+      "source_ids": [
+        "conversations/conv_pines018_item_transfer.eml"
+      ],
+      "evidence": [
+        "The utility should show a preview before making changes. \"If you run this now, 25 items will be moved from Dalton-Whitman to Mobile Library Unit 3. Confirm?\""
+      ],
+      "canonical_requirement_id": null,
+      "canonical_requirement_name": null
+    }
+  ],
+  "review_findings": {
+    "omissions": [
+      "Extracted candidate was not represented: Blacklist candidate: nonsensical/irrelevant trivia or unrelated questions (e.g., restaurant recommendations, myths).",
+      "Extracted candidate was not represented: Blacklist candidate: off-topic personal anecdotes (e.g., coffee, pets, dinner plans) mentioned in the source text.",
+      "Extracted candidate was not represented: Cancel scheduled/running reports: ability to cancel a scheduled or running report.",
+      "Extracted candidate was not represented: Canned/board reports cross-tabulation: pre-defined board reports with basic statistics and ability to cross-tabulate by terminal, branch, system, hour, patron age range, patron type, and patron location.",
+      "Extracted candidate was not represented: Compliance with retention/auditing: all reports and data archiving comply with standard accounting practice and state/county/municipal auditing requirements; enforce retention policies (e.g., retain certain data for 7 years per audit).",
+      "Extracted candidate was not represented: Delete volume entries along with copy entries and delete orphan records: provide a quick effective method for deleting volume entries along with copy entries and deleting records with no items attached.",
+      "Extracted candidate was not represented: Deletions Tracking denied attempts: track attempted deletions that were denied for compliance and troubleshooting.",
+      "Extracted candidate was not represented: Deletions Tracking fields: track record type, timestamp, user who performed deletion, and location of the user; optionally include status before deletion; track denied deletion attempts.",
+      "Extracted candidate was not represented: Deletions Tracking: count and track record deletions (item/patron/bib types) per location and per system for auditing.",
+      "Extracted candidate was not represented: Export to CSV for outreach-integrated reports: reports should be exportable to CSV for systems requiring spreadsheets.",
+      "Extracted candidate was not represented: Financial audit trail: maintain a ledger of patron payments including which charges payments are applied to, for reconciliation.",
+      "Extracted candidate was not represented: Financial reporting: value of items report aggregating purchase price field for entire collection or portion and supporting filters by item status/collection subset.",
+      "Extracted candidate was not represented: Fine-grained report permissions and shared folders: provide distinct fine-grained permission levels controlling who can create/run/clone reports; administrators can use shared folders to allow/disallow staff from running specific reports and/or running ad hoc reports on specific datasets.",
+      "Extracted candidate was not represented: In-Transit Items Report merge: merge transit-to and transit-from into one report for ease of front-line staff.",
+      "Extracted candidate was not represented: In-Transit Items Report: generate list of items in-transit for more than X days (X configurable), per branch and per system.",
+      "Extracted candidate was not represented: Inactive Patrons electronic activity definition: electronic activity includes OPAC login, placing holds online, renewing items online, and accessing digital collections if integrated.",
+      "Extracted candidate was not represented: Inactive Patrons exclusion: allow excluding certain patrons from the inactive report (e.g., do not disturb flags, VIP patrons, staff, patrons opted out of communications).",
+      "Extracted candidate was not represented: Inactive Patrons export: provide exportable format (CSV) to integrate with outreach system.",
+      "Extracted candidate was not represented: Inactive Patrons report handling of fines: track inactive patrons with outstanding fines separately; accounts need different handling.",
+      "Extracted candidate was not represented: Inactive Patrons Report scope levels: make the list configurable to different levels such as System, Home Library, County, etc.",
+      "Extracted candidate was not represented: Inactive Patrons Report: generate list of patrons with no circulation or electronic activity in the last X days (X configurable).",
+      "Extracted candidate was not represented: Inclusion of null/blank fields in results: all nulls and blank fields must be included in report results.",
+      "Extracted candidate was not represented: Item record Last edit date requirement excluding last circulation: ability to see the last edit date on item reports, but only when the item is edited and not include the last circulation; current system combines these dates.",
+      "Extracted candidate was not represented: Item Record Purging utility: provide utility and reports to identify item records to purge based on customizable criteria (status-based, time-based, activity-based, and combinable).",
+      "Extracted candidate was not represented: Item status conversion report: provide a report to assist converting items from one status to another in batch (e.g., missing -> discard/weed).",
+      "Extracted candidate was not represented: Item Transfer Utility batch location update and pull lists/transfers mechanisms: change records of selected items to new location and generate pull lists; mechanism includes changing location field.",
+      "Extracted candidate was not represented: Item Transfer Utility delay alerts: notify users if a transfer is delayed or has issues.",
+      "Extracted candidate was not represented: Item Transfer Utility manual selection: manually select titles from query results (e.g., via checkboxes).",
+      "Extracted candidate was not represented: Item Transfer Utility permission control: limit transfer utility usage to specific roles (e.g., managers/admins/transfer coordinators).",
+      "Extracted candidate was not represented: Item Transfer Utility preview before changes: show a preview of how many items will be moved before applying changes; confirmation required.",
+      "Extracted candidate was not represented: Item Transfer Utility printable transit labels: generate printable transit labels/barcodes for items being transferred.",
+      "Extracted candidate was not represented: Item Transfer Utility query builder and reusable saved queries: query for candidate materials and save queries for repeated use.",
+      "Extracted candidate was not represented: Item Transfer Utility revert/auto-revert after set period of time and/or based on criteria: revert items to original location after a set period of time and/or based on other criteria (time-based and event-based/status-based).",
+      "Extracted candidate was not represented: Item Transfer Utility transfer history tracking: track transfer history (e.g., how many times an item has been transferred in the past year).",
+      "Extracted candidate was not represented: Item Transfer Utility: provide a utility for transferring batches of items between branches (mobile library, outreach collection, just-in-time warehouse).",
+      "Extracted candidate was not represented: Last copy report: provide a last copy report that singles out a library system's last copies to assist catalogers editing WorldCat entries; available per library and per system.",
+      "Extracted candidate was not represented: Material Volume Report category breakdown: break down material volume into categories including total items in library, number of holds, number of adult fiction, and number of board books; support other customizable categories.",
+      "Extracted candidate was not represented: Material Volume Report time-travel/historical capability: generate volume at any point in time (not just current) for historical comparisons.",
+      "Extracted candidate was not represented: Material Volume Report: report volume of material in a given library at any point in time, based on new acquisitions, items on the shelf (checked in), and items out in circulation (checked out).",
+      "Extracted candidate was not represented: Missing and Damaged Items Report condition notes: include item condition notes (e.g., water damage or vandalism) in the report.",
+      "Extracted candidate was not represented: Missing and Damaged Items Report: provide reports of missing and damaged items per branch.",
+      "Extracted candidate was not represented: Patron null handling: include null values (missing optional patron fields) in results rather than excluding them.",
+      "Extracted candidate was not represented: Patron report filtering and grouping: support LIMIT (filter) and GROUP BY (aggregate) plus combining filters using AND/OR logic; allow configurable age brackets.",
+      "Extracted candidate was not represented: Purging criteria combinability: allow combining criteria such as (status missing for >6 months) AND (haven't circulated in 2 years).",
+      "Extracted candidate was not represented: Purging safety: provide read-only reports for identifying purge candidates; separate confirmation step for actual deletions; maintain an audit trail for all purges.",
+      "Extracted candidate was not represented: Query selections display: show the query selections/criteria alongside results so users can see what criteria generated the report.",
+      "Extracted candidate was not represented: Query Tool: user-friendly interface for designing queries against all record types; allow selecting fields, values from picklists, regular expressions via dropdown, and using Boolean operators.",
+      "Extracted candidate was not represented: Real-time vs historical reporting snapshot/warehouse: support historical reporting warehouse and ability to acquire data on a given date or date range for historical comparisons.",
+      "Extracted candidate was not represented: Report output formats: report output supports Excel, HTML, and CSV; CSV most reliable for data export.",
+      "Extracted candidate was not represented: Report Queue visibility: provide ability to see where a submitted report is in the queue and its status/position (waiting/running/completed/failed).",
+      "Extracted candidate was not represented: Report Templates cloning: allow cloning an existing report template to create a new variant (distinct from modifying).",
+      "Extracted candidate was not represented: Report Templates creation and modification with safety: admins can create report templates runnable as-is or modifiable; changes to templates must not compromise accuracy; limit which filters/display fields can be altered by non-admins.",
+      "Extracted candidate was not represented: Role-based access control: user rights and privileges controlled through security groups/roles; changing role assignment updates permissions automatically.",
+      "Extracted candidate was not represented: Shelf Space Report comparison view: provide a comparison view showing each library's breakdown side by side to spot outliers.",
+      "Extracted candidate was not represented: Shelf Space Report date filtering: support filtering by date range (e.g., Q1 vs Q2) for shelf space utilization.",
+      "Extracted candidate was not represented: Shelf Space Report scope: run report per library and per system (and allow system-level and branch-level views).",
+      "Extracted candidate was not represented: Shelf Space Report: for each genre and format, compare percentage of total circulations, percentage of the collection, and percentage of total shelf space.",
+      "Extracted candidate was not represented: Staff login audit: system must track which staff member is logged in for audit purposes; card swipe should not bypass individual authentication entirely.",
+      "Extracted candidate was not represented: Staff login supports streamlined optional method (card swipe) and fallback traditional username/password; streamlined not required.",
+      "Extracted candidate was not represented: System Capacity Interface export: export capacity data to CSV.",
+      "Extracted candidate was not represented: System Capacity Interface sorting/filtering: support sorting and filtering (e.g., by region, by library type, by current load).",
+      "Extracted candidate was not represented: System Capacity Interface trends: show trend data (growth/shrink patterns) for branches to support long-term planning.",
+      "Extracted candidate was not represented: System Capacity Interface: provide an interface showing capacity of all branches (high-level summary across all branches) with ability to drill down into individual branches.",
+      "meeting_minutes/meeting_2009-07-20_minutes.txt is in the source inventory but absent from candidate_source_ids, covered_source_ids, every requirement, and the blacklist. Inspect it and record each candidate’s disposition with traceable evidence; do not infer its contents.",
+      "Source document is not represented by an accepted or blacklisted claim: meeting_minutes/meeting_2009-07-20_minutes.txt.",
+      "The candidate blacklist examples include “pets,” “dinner plans,” and “myths,” which are not supported by the cited evidence. Either provide source-traced evidence or remove those examples."
+    ],
+    "contradictions": [
+      "The staff-login blacklist says the optional card-swipe requirement conflicts with an accepted requirement, but REQ-077EC40C accepts that same claim. Remove the functional claim from the blacklist; it is supported, not rejected."
+    ],
+    "duplicates": [
+      "REQ-0EFA2466 and REQ-0C9516DA are duplicate general report-output-format requirements. Merge them and retain all applicable evidence and sources.",
+      "REQ-179FAD82 and REQ-9D7B675D duplicate the same use-case-specific CSV export requirement. Consolidate them while preserving both source traces.",
+      "REQ-C707C756 and REQ-A6F40A33 duplicate financial retention/compliance. Consolidate them, preserving the seven-year retention need and all compliance obligations and source evidence.",
+      "REQ-ED8BC201 mixes use-case CSV exports with general report formats and overlaps both the use-case export requirements and REQ-0EFA2466/REQ-0C9516DA. Separate general output formats from capacity/outreach exports, then consolidate duplicates within each scope.",
+      "Several blacklist entries repeat the same trivia or anecdote claims. Merge duplicate entries, retaining only evidence and source IDs that are actually traceable."
+    ],
+    "terminology_issues": [
+      "Clarify the distinction between general historical reporting (REQ-5425B331) and material-volume reporting at a point in time (REQ-7599D70F), so the related but non-duplicate capabilities are not conflated.",
+      "Standardize “branch,” “library,” and “system” terminology where they refer to reporting scope; retain distinct terms only where the sources establish distinct scopes.",
+      "Transfer requirements use the category “merging records” (REQ-AD6F42BB and REQ-2B75C104), which does not describe transfers. Reclassify them consistently under an appropriate transfer or configuration category."
+    ],
+    "repair_instructions": [
+      "For all consolidations, preserve valid requirements, accepted evidence, source IDs, and justified blacklist entries. Remove only duplicate or unsupported dispositions.",
+      "Keep complementary deletion requirements separate: REQ-B043C41D covers deletion counts by location and system, while REQ-D9773F61 covers audit details and denied attempts. Do not merge them as duplicates.",
+      "Keep historical reporting and material-volume reporting distinct while making their relationship explicit; preserve their different scopes and source IDs.",
+      "Remove the broad anecdote blacklist entry attributed to all nine conversation sources, or narrow it to source IDs individually supported by the cited examples. Preserve the supported coffee and sports attributions without implying that every listed source contains off-topic remarks.",
+      "Review priority labels against source evidence and the project’s prioritization rationale. Add traceable rationale where available, especially for Critical and High assignments; otherwise apply the approved prioritization method rather than presenting unsupported priority levels as source-backed."
+    ]
+  },
+  "review_history": [
+    {
+      "status": "needs_revision",
+      "omissions": [
+        "The candidate explicitly says the last-copy report should be available per library and per system. REQ-CD075B81 describes the report but does not clearly state both reporting scopes. Add that scope and retain the existing WorldCat purpose.",
+        "meeting_minutes/meeting_2009-07-20_minutes.txt is in all_source_ids but absent from candidate_source_ids and missing_source_ids. Review it, add any supported claims with source tracing or a justified blacklist disposition, and update the coverage lists."
+      ],
+      "contradictions": [],
+      "duplicates": [
+        "REQ-ED8BC201 and REQ-0EFA2466 overlap on CSV output, but are not full duplicates: one covers exports for reports/capacity/outreach, while the other specifies report formats. Clarify their scopes and avoid duplicating the CSV requirement."
+      ],
+      "terminology_issues": [
+        "The category “merging records” is used for item transfers (REQ-AD6F42BB and REQ-2B75C104), and “sorting” is used for category breakdowns and query logic. Apply a consistent taxonomy or rename these categories without changing requirement meaning.",
+        "Priorities are populated, but their rationale is not consistently visible in the evidence. Trace explicit priority language where available and label other priority assignments as assessed rather than source-stated; preserve explicitly critical requests."
+      ],
+      "repair_instructions": [
+        "Map the last-copy scope to its supporting source evidence and state explicitly that the report can be run per library and per system.",
+        "Resolve the July 20 meeting source’s disposition before claiming complete source coverage; do not infer its contents from the filename.",
+        "Keep the two CSV-related requirements distinct if their different scopes are intentional; otherwise consolidate the overlapping CSV capability while preserving all supported output formats and use cases.",
+        "For the broad personal-anecdote blacklist entry, map evidence to the source IDs it supports. Retain justified blacklist entries, but do not imply that the cited examples establish every listed source’s disposition without checking those sources."
+      ]
+    },
+    {
+      "status": "needs_revision",
+      "omissions": [
+        "meeting_minutes/meeting_2009-07-20_minutes.txt is in the required source list but absent from candidate_source_ids and every disposition. Review it and add supported requirements or a justified disposition; do not infer its contents."
+      ],
+      "contradictions": [
+        "The blacklist entry for optional card-swipe login says it conflicts with an accepted requirement, but it repeats REQ-077EC40C’s accepted requirement and provides no conflicting evidence. Remove it from the blacklist or document the actual conflict and resolve the disposition.",
+        "The personal-anecdote blacklist entries conflict on source scope: one says the examples do not establish disposition for all listed sources, while another says the remarks are explicitly irrelevant across those sources. Retain only source attributions supported by traceable evidence."
+      ],
+      "duplicates": [
+        "REQ-0EFA2466 and REQ-0C9516DA specify the same Excel, HTML, and CSV report formats with the same sources. Consolidate them, preserving all valid evidence and IDs or recording the superseded ID.",
+        "REQ-C707C756 and REQ-A6F40A33 duplicate financial retention and audit compliance; both cover the seven-year need. Consolidate without dropping the retention detail or source evidence.",
+        "The two “Nonsensical or unrelated trivia and questions” blacklist entries duplicate the same claim and sources. Consolidate their evidence and preserve the justified blacklist disposition.",
+        "The two “Off-topic personal anecdotes and unrelated conversational remarks” entries duplicate the same classification and sources. Consolidate them while correcting the unsupported source scope noted above."
+      ],
+      "terminology_issues": [
+        "The “merging records” category is applied to batch transfers, transfer location updates, and the merged transit report, although these concern transfers or reporting, not record merging. Use consistent, descriptive categories.",
+        "REQ-44319E0E uses the “sorting” category for material-volume category breakdowns. Reclassify it as reporting or grouping, consistent with the requirement’s function.",
+        "CSV export scope is unclear across REQ-179FAD82, REQ-ED8BC201, and the report-output-format requirements. Define general report formats separately from use-case-specific capacity/outreach exports, then remove overlapping scope."
+      ],
+      "repair_instructions": [
+        "Check that every candidate claim has an accepted, rejected, or blacklisted disposition. The listed functional candidates appear represented, but verify this after consolidating duplicate entries.",
+        "The blacklist candidate examples include “pets,” “dinner plans,” and “myths,” which are not supported by the cited blacklist evidence. Remove them or provide source-specific evidence; retain the cited coffee, sports, recital, movie, restaurant, and pronunciation examples only where traceable.",
+        "The broad personal-anecdote blacklist cites all nine conversation sources, but its examples are not mapped to individual sources. Restrict source_ids to verified occurrences or document the mapping; do not imply every source contains those remarks.",
+        "Review priority assignments, especially Critical requirements, against explicit source evidence or documented prioritization rationale. Preserve source-supported priorities such as the stated critical last-copy need.",
+        "Keep the distinct deletion-counting requirement and deletion-detail/audit requirement separate: they cover related but non-identical functions. Likewise, retain the distinct purge safety, purge identification, and batch status-conversion requirements."
+      ]
+    },
+    {
+      "status": "needs_revision",
+      "omissions": [
+        "meeting_minutes/meeting_2009-07-20_minutes.txt is in the source inventory but absent from candidate_source_ids, covered_source_ids, every requirement, and the blacklist. Inspect it and record each candidate’s disposition with traceable evidence; do not infer its contents.",
+        "The candidate blacklist examples include “pets,” “dinner plans,” and “myths,” which are not supported by the cited evidence. Either provide source-traced evidence or remove those examples."
+      ],
+      "contradictions": [
+        "The staff-login blacklist says the optional card-swipe requirement conflicts with an accepted requirement, but REQ-077EC40C accepts that same claim. Remove the functional claim from the blacklist; it is supported, not rejected."
+      ],
+      "duplicates": [
+        "REQ-179FAD82 and REQ-9D7B675D duplicate the same use-case-specific CSV export requirement. Consolidate them while preserving both source traces.",
+        "REQ-ED8BC201 mixes use-case CSV exports with general report formats and overlaps both the use-case export requirements and REQ-0EFA2466/REQ-0C9516DA. Separate general output formats from capacity/outreach exports, then consolidate duplicates within each scope.",
+        "REQ-0EFA2466 and REQ-0C9516DA are duplicate general report-output-format requirements. Merge them and retain all applicable evidence and sources.",
+        "REQ-C707C756 and REQ-A6F40A33 duplicate financial retention/compliance. Consolidate them, preserving the seven-year retention need and all compliance obligations and source evidence.",
+        "Several blacklist entries repeat the same trivia or anecdote claims. Merge duplicate entries, retaining only evidence and source IDs that are actually traceable."
+      ],
+      "terminology_issues": [
+        "Transfer requirements use the category “merging records” (REQ-AD6F42BB and REQ-2B75C104), which does not describe transfers. Reclassify them consistently under an appropriate transfer or configuration category.",
+        "Standardize “branch,” “library,” and “system” terminology where they refer to reporting scope; retain distinct terms only where the sources establish distinct scopes.",
+        "Clarify the distinction between general historical reporting (REQ-5425B331) and material-volume reporting at a point in time (REQ-7599D70F), so the related but non-duplicate capabilities are not conflated."
+      ],
+      "repair_instructions": [
+        "Remove the broad anecdote blacklist entry attributed to all nine conversation sources, or narrow it to source IDs individually supported by the cited examples. Preserve the supported coffee and sports attributions without implying that every listed source contains off-topic remarks.",
+        "Review priority labels against source evidence and the project’s prioritization rationale. Add traceable rationale where available, especially for Critical and High assignments; otherwise apply the approved prioritization method rather than presenting unsupported priority levels as source-backed.",
+        "Keep complementary deletion requirements separate: REQ-B043C41D covers deletion counts by location and system, while REQ-D9773F61 covers audit details and denied attempts. Do not merge them as duplicates.",
+        "Keep historical reporting and material-volume reporting distinct while making their relationship explicit; preserve their different scopes and source IDs.",
+        "For all consolidations, preserve valid requirements, accepted evidence, source IDs, and justified blacklist entries. Remove only duplicate or unsupported dispositions."
+      ]
+    }
+  ],
+  "status": "provisional",
+  "checks": {
+    "source_count": 20,
+    "requirement_count": 64,
+    "blacklist_count": 8,
+    "completeness": false,
+    "consistency": false,
+    "review_status": "needs_revision",
+    "feedback_iterations": 3,
+    "provisional": true,
+    "coverage": {
+      "all_source_ids": [
+        "conversations/conv_pines014_material_volume.eml",
+        "conversations/conv_pines015_capacity_interface.eml",
+        "conversations/conv_pines016_shelf_space.eml",
+        "conversations/conv_pines018_item_transfer.eml",
+        "conversations/conv_pines019_020_missing_intransit.eml",
+        "conversations/conv_pines021_item_purging.eml",
+        "conversations/conv_pines022_deletions.eml",
+        "conversations/conv_pines023_patron_characteristics.eml",
+        "conversations/conv_pines024_inactive_patrons.eml",
+        "early_draft_srs_galecia.txt",
+        "email_financial_reports.eml",
+        "email_report_features.eml",
+        "email_staff_login.eml",
+        "evergreen_reference_2009.txt",
+        "interview_cataloging_2009-05-08.txt",
+        "interview_sysadmin_2009-05-10.txt",
+        "meeting_minutes/meeting_2009-03-15_minutes.txt",
+        "meeting_minutes/meeting_2009-07-20_minutes.txt",
+        "meeting_tech_subcommittee_2009-06-30.txt",
+        "survey_results_2009.txt"
+      ],
+      "candidate_source_ids": [
+        "conversations/conv_pines014_material_volume.eml",
+        "conversations/conv_pines015_capacity_interface.eml",
+        "conversations/conv_pines016_shelf_space.eml",
+        "conversations/conv_pines018_item_transfer.eml",
+        "conversations/conv_pines019_020_missing_intransit.eml",
+        "conversations/conv_pines021_item_purging.eml",
+        "conversations/conv_pines022_deletions.eml",
+        "conversations/conv_pines023_patron_characteristics.eml",
+        "conversations/conv_pines024_inactive_patrons.eml",
+        "early_draft_srs_galecia.txt",
+        "email_financial_reports.eml",
+        "email_report_features.eml",
+        "email_staff_login.eml",
+        "evergreen_reference_2009.txt",
+        "interview_cataloging_2009-05-08.txt",
+        "interview_sysadmin_2009-05-10.txt",
+        "meeting_minutes/meeting_2009-03-15_minutes.txt",
+        "meeting_tech_subcommittee_2009-06-30.txt",
+        "survey_results_2009.txt"
+      ],
+      "covered_source_ids": [
+        "conversations/conv_pines014_material_volume.eml",
+        "conversations/conv_pines015_capacity_interface.eml",
+        "conversations/conv_pines016_shelf_space.eml",
+        "conversations/conv_pines018_item_transfer.eml",
+        "conversations/conv_pines019_020_missing_intransit.eml",
+        "conversations/conv_pines021_item_purging.eml",
+        "conversations/conv_pines022_deletions.eml",
+        "conversations/conv_pines023_patron_characteristics.eml",
+        "conversations/conv_pines024_inactive_patrons.eml",
+        "early_draft_srs_galecia.txt",
+        "email_financial_reports.eml",
+        "email_report_features.eml",
+        "email_staff_login.eml",
+        "evergreen_reference_2009.txt",
+        "interview_cataloging_2009-05-08.txt",
+        "interview_sysadmin_2009-05-10.txt",
+        "meeting_minutes/meeting_2009-03-15_minutes.txt",
+        "meeting_tech_subcommittee_2009-06-30.txt",
+        "survey_results_2009.txt"
+      ],
+      "missing_source_ids": [
+        "meeting_minutes/meeting_2009-07-20_minutes.txt"
+      ],
+      "missing_candidate_claims": [
+        "Material Volume Report: report volume of material in a given library at any point in time, based on new acquisitions, items on the shelf (checked in), and items out in circulation (checked out).",
+        "Material Volume Report category breakdown: break down material volume into categories including total items in library, number of holds, number of adult fiction, and number of board books; support other customizable categories.",
+        "Material Volume Report time-travel/historical capability: generate volume at any point in time (not just current) for historical comparisons.",
+        "System Capacity Interface: provide an interface showing capacity of all branches (high-level summary across all branches) with ability to drill down into individual branches.",
+        "System Capacity Interface sorting/filtering: support sorting and filtering (e.g., by region, by library type, by current load).",
+        "System Capacity Interface trends: show trend data (growth/shrink patterns) for branches to support long-term planning.",
+        "System Capacity Interface export: export capacity data to CSV.",
+        "Shelf Space Report: for each genre and format, compare percentage of total circulations, percentage of the collection, and percentage of total shelf space.",
+        "Shelf Space Report scope: run report per library and per system (and allow system-level and branch-level views).",
+        "Shelf Space Report date filtering: support filtering by date range (e.g., Q1 vs Q2) for shelf space utilization.",
+        "Shelf Space Report comparison view: provide a comparison view showing each library's breakdown side by side to spot outliers.",
+        "Item Transfer Utility: provide a utility for transferring batches of items between branches (mobile library, outreach collection, just-in-time warehouse).",
+        "Item Transfer Utility query builder and reusable saved queries: query for candidate materials and save queries for repeated use.",
+        "Item Transfer Utility manual selection: manually select titles from query results (e.g., via checkboxes).",
+        "Item Transfer Utility batch location update and pull lists/transfers mechanisms: change records of selected items to new location and generate pull lists; mechanism includes changing location field.",
+        "Item Transfer Utility revert/auto-revert after set period of time and/or based on criteria: revert items to original location after a set period of time and/or based on other criteria (time-based and event-based/status-based).",
+        "Item Transfer Utility preview before changes: show a preview of how many items will be moved before applying changes; confirmation required.",
+        "Item Transfer Utility permission control: limit transfer utility usage to specific roles (e.g., managers/admins/transfer coordinators).",
+        "Item Transfer Utility transfer history tracking: track transfer history (e.g., how many times an item has been transferred in the past year).",
+        "Item Transfer Utility printable transit labels: generate printable transit labels/barcodes for items being transferred.",
+        "Item Transfer Utility delay alerts: notify users if a transfer is delayed or has issues.",
+        "Missing and Damaged Items Report: provide reports of missing and damaged items per branch.",
+        "Missing and Damaged Items Report condition notes: include item condition notes (e.g., water damage or vandalism) in the report.",
+        "In-Transit Items Report: generate list of items in-transit for more than X days (X configurable), per branch and per system.",
+        "In-Transit Items Report merge: merge transit-to and transit-from into one report for ease of front-line staff.",
+        "Item Record Purging utility: provide utility and reports to identify item records to purge based on customizable criteria (status-based, time-based, activity-based, and combinable).",
+        "Purging criteria combinability: allow combining criteria such as (status missing for >6 months) AND (haven't circulated in 2 years).",
+        "Item status conversion report: provide a report to assist converting items from one status to another in batch (e.g., missing -> discard/weed).",
+        "Last copy report: provide a last copy report that singles out a library system's last copies to assist catalogers editing WorldCat entries; available per library and per system.",
+        "Delete volume entries along with copy entries and delete orphan records: provide a quick effective method for deleting volume entries along with copy entries and deleting records with no items attached.",
+        "Purging safety: provide read-only reports for identifying purge candidates; separate confirmation step for actual deletions; maintain an audit trail for all purges.",
+        "Deletions Tracking: count and track record deletions (item/patron/bib types) per location and per system for auditing.",
+        "Deletions Tracking fields: track record type, timestamp, user who performed deletion, and location of the user; optionally include status before deletion; track denied deletion attempts.",
+        "Patron report filtering and grouping: support LIMIT (filter) and GROUP BY (aggregate) plus combining filters using AND/OR logic; allow configurable age brackets.",
+        "Patron null handling: include null values (missing optional patron fields) in results rather than excluding them.",
+        "Inactive Patrons Report: generate list of patrons with no circulation or electronic activity in the last X days (X configurable).",
+        "Inactive Patrons Report scope levels: make the list configurable to different levels such as System, Home Library, County, etc.",
+        "Inactive Patrons electronic activity definition: electronic activity includes OPAC login, placing holds online, renewing items online, and accessing digital collections if integrated.",
+        "Inactive Patrons report handling of fines: track inactive patrons with outstanding fines separately; accounts need different handling.",
+        "Inactive Patrons exclusion: allow excluding certain patrons from the inactive report (e.g., do not disturb flags, VIP patrons, staff, patrons opted out of communications).",
+        "Inactive Patrons export: provide exportable format (CSV) to integrate with outreach system.",
+        "Report Queue visibility: provide ability to see where a submitted report is in the queue and its status/position (waiting/running/completed/failed).",
+        "Report Templates creation and modification with safety: admins can create report templates runnable as-is or modifiable; changes to templates must not compromise accuracy; limit which filters/display fields can be altered by non-admins.",
+        "Report Templates cloning: allow cloning an existing report template to create a new variant (distinct from modifying).",
+        "Fine-grained report permissions and shared folders: provide distinct fine-grained permission levels controlling who can create/run/clone reports; administrators can use shared folders to allow/disallow staff from running specific reports and/or running ad hoc reports on specific datasets.",
+        "Query Tool: user-friendly interface for designing queries against all record types; allow selecting fields, values from picklists, regular expressions via dropdown, and using Boolean operators.",
+        "Query selections display: show the query selections/criteria alongside results so users can see what criteria generated the report.",
+        "Canned/board reports cross-tabulation: pre-defined board reports with basic statistics and ability to cross-tabulate by terminal, branch, system, hour, patron age range, patron type, and patron location.",
+        "Real-time vs historical reporting snapshot/warehouse: support historical reporting warehouse and ability to acquire data on a given date or date range for historical comparisons.",
+        "Cancel scheduled/running reports: ability to cancel a scheduled or running report.",
+        "Report output formats: report output supports Excel, HTML, and CSV; CSV most reliable for data export.",
+        "Item record Last edit date requirement excluding last circulation: ability to see the last edit date on item reports, but only when the item is edited and not include the last circulation; current system combines these dates.",
+        "Staff login supports streamlined optional method (card swipe) and fallback traditional username/password; streamlined not required.",
+        "Staff login audit: system must track which staff member is logged in for audit purposes; card swipe should not bypass individual authentication entirely.",
+        "Role-based access control: user rights and privileges controlled through security groups/roles; changing role assignment updates permissions automatically.",
+        "Inclusion of null/blank fields in results: all nulls and blank fields must be included in report results.",
+        "Export to CSV for outreach-integrated reports: reports should be exportable to CSV for systems requiring spreadsheets.",
+        "Financial reporting: value of items report aggregating purchase price field for entire collection or portion and supporting filters by item status/collection subset.",
+        "Financial audit trail: maintain a ledger of patron payments including which charges payments are applied to, for reconciliation.",
+        "Compliance with retention/auditing: all reports and data archiving comply with standard accounting practice and state/county/municipal auditing requirements; enforce retention policies (e.g., retain certain data for 7 years per audit).",
+        "Deletions Tracking denied attempts: track attempted deletions that were denied for compliance and troubleshooting.",
+        "Blacklist candidate: off-topic personal anecdotes (e.g., coffee, pets, dinner plans) mentioned in the source text.",
+        "Blacklist candidate: nonsensical/irrelevant trivia or unrelated questions (e.g., restaurant recommendations, myths)."
+      ]
+    },
+    "candidate_disposition_count": 68
+  }
+}
