@@ -1,0 +1,9 @@
+# Chunking strategy for the cloned repository
+
+The script processes Python files in sorted path order and splits each file into consecutive line groups. It starts a new chunk before adding a line that would take the current chunk over the target of approximately 1,200 characters. It does not parse Python syntax or identify function, class, or other logical boundaries. A long individual line can also exceed the target. Therefore, a chunk may divide a function or other code unit; the report should not be read as a claim of AST-aware or semantic chunking.
+
+Line-based chunking was chosen as a small, deterministic, dependency-free baseline. It is straightforward to reproduce and records the source path, chunk ID, and start/end line numbers. Its trade-off is that chunk boundaries can separate related code, while a fixed character target can group unrelated neighboring lines. A syntax-aware strategy could improve coherence, but was outside this implementation.
+
+Chunks are stored as a JSON list. Each record contains a unique ID, relative source path, start and end line numbers, and chunk content, making the result inspectable and suitable for the embedding step.
+
+The generated [repository_chunks.json](repository_chunks.json) and Task 3 embeddings are the **pre-Task-5 retrieval snapshot**. Task 5 used this fixed corpus to retrieve context for the ten missing-method tasks; the later generated implementations and manifest-aligned test update were not incorporated into the chunk/embedding files. Keeping the snapshot unchanged preserves the retrieval inputs recorded for that Task 5 run. Re-running the chunker on the updated clone can produce different chunk boundaries, IDs, and a different corpus, so doing so would require regenerating Task 3 embeddings and would not reproduce the original Task 5 retrieval run.

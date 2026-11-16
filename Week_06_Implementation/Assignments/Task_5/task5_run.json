@@ -1,0 +1,2611 @@
+{
+  "connectivity_check": {
+    "model_id": "gpt-5.4-nano",
+    "request_succeeded": true,
+    "sanitized_error": null
+  },
+  "model_id": "gpt-5.4-nano",
+  "top_k": 5,
+  "tasks": [
+    {
+      "file": "playground/playground/enums.py",
+      "class_name": "OrderStatus",
+      "method": "is_terminal",
+      "description": "    \"\"\"True when the status ends further transitions.\"\"\"",
+      "model_id": "gpt-5.4-nano",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "playground/playground/orders.py#1",
+          "source_file": "playground/playground/orders.py",
+          "start_line": 1,
+          "end_line": 31,
+          "similarity_score": 0.319771050374148
+        },
+        {
+          "chunk_id": "playground/tests/test_enums.py#3",
+          "source_file": "playground/tests/test_enums.py",
+          "start_line": 58,
+          "end_line": 83,
+          "similarity_score": 0.31849791771905694
+        },
+        {
+          "chunk_id": "playground/tests/test_orders.py#2",
+          "source_file": "playground/tests/test_orders.py",
+          "start_line": 31,
+          "end_line": 53,
+          "similarity_score": 0.22440218700395612
+        },
+        {
+          "chunk_id": "playground/tests/test_orders.py#7",
+          "source_file": "playground/tests/test_orders.py",
+          "start_line": 163,
+          "end_line": 193,
+          "similarity_score": 0.2086141040875074
+        },
+        {
+          "chunk_id": "playground/tests/test_orders.py#3",
+          "source_file": "playground/tests/test_orders.py",
+          "start_line": 54,
+          "end_line": 78,
+          "similarity_score": 0.2006105699978656
+        }
+      ],
+      "api_generation_status": "succeeded",
+      "validation_status": "passed",
+      "staged_code_applied": true,
+      "sanitized_error": null,
+      "validated_generated_body": "return self in (OrderStatus.SHIPPED, OrderStatus.CANCELLED)",
+      "initial_generation": {
+        "model_id": "gpt-5.4-nano",
+        "api_generation_status": "succeeded",
+        "validation_status": "passed",
+        "retrieved_chunks": [
+          {
+            "chunk_id": "playground/playground/orders.py#1",
+            "similarity_score": 0.319771050374148
+          },
+          {
+            "chunk_id": "playground/tests/test_enums.py#3",
+            "similarity_score": 0.31849791771905694
+          },
+          {
+            "chunk_id": "playground/tests/test_orders.py#2",
+            "similarity_score": 0.22440218700395612
+          },
+          {
+            "chunk_id": "playground/tests/test_orders.py#7",
+            "similarity_score": 0.2086141040875074
+          },
+          {
+            "chunk_id": "playground/tests/test_orders.py#3",
+            "similarity_score": 0.2006105699978656
+          }
+        ],
+        "validated_generated_body": "return len(OrderStateMachine.TRANSITIONS.get(self, frozenset())) == 0"
+      },
+      "status": "staged_validated",
+      "regeneration_attempts": [
+        {
+          "attempt": 1,
+          "model_id": "gpt-5.4-nano",
+          "api_generation_status": "succeeded",
+          "validation_status": "passed",
+          "retrieved_chunk_ids_and_scores": [
+            {
+              "chunk_id": "playground/playground/orders.py#1",
+              "source_file": "playground/playground/orders.py",
+              "start_line": 1,
+              "end_line": 31,
+              "similarity_score": 0.319771050374148
+            },
+            {
+              "chunk_id": "playground/tests/test_enums.py#3",
+              "source_file": "playground/tests/test_enums.py",
+              "start_line": 58,
+              "end_line": 83,
+              "similarity_score": 0.31849791771905694
+            },
+            {
+              "chunk_id": "playground/tests/test_orders.py#2",
+              "source_file": "playground/tests/test_orders.py",
+              "start_line": 31,
+              "end_line": 53,
+              "similarity_score": 0.22440218700395612
+            },
+            {
+              "chunk_id": "playground/tests/test_orders.py#7",
+              "source_file": "playground/tests/test_orders.py",
+              "start_line": 163,
+              "end_line": 193,
+              "similarity_score": 0.2086141040875074
+            },
+            {
+              "chunk_id": "playground/tests/test_orders.py#3",
+              "source_file": "playground/tests/test_orders.py",
+              "start_line": 54,
+              "end_line": 78,
+              "similarity_score": 0.2006105699978656
+            }
+          ],
+          "validated_body_sha256": "8c6b044a7ffc9c45cbfccacbb4ff1a0b24930596b118ab3758ca98660bb8f606"
+        },
+        {
+          "attempt": 2,
+          "model_id": "gpt-5.4-nano",
+          "api_generation_status": "succeeded",
+          "validation_status": "passed",
+          "retrieved_chunk_ids_and_scores": [
+            {
+              "chunk_id": "playground/playground/orders.py#1",
+              "source_file": "playground/playground/orders.py",
+              "start_line": 1,
+              "end_line": 31,
+              "similarity_score": 0.319771050374148
+            },
+            {
+              "chunk_id": "playground/tests/test_enums.py#3",
+              "source_file": "playground/tests/test_enums.py",
+              "start_line": 58,
+              "end_line": 83,
+              "similarity_score": 0.31849791771905694
+            },
+            {
+              "chunk_id": "playground/tests/test_orders.py#2",
+              "source_file": "playground/tests/test_orders.py",
+              "start_line": 31,
+              "end_line": 53,
+              "similarity_score": 0.22440218700395612
+            },
+            {
+              "chunk_id": "playground/tests/test_orders.py#7",
+              "source_file": "playground/tests/test_orders.py",
+              "start_line": 163,
+              "end_line": 193,
+              "similarity_score": 0.2086141040875074
+            },
+            {
+              "chunk_id": "playground/tests/test_orders.py#3",
+              "source_file": "playground/tests/test_orders.py",
+              "start_line": 54,
+              "end_line": 78,
+              "similarity_score": 0.2006105699978656
+            }
+          ],
+          "validated_body_sha256": "373d4ceda8b9b8b83eb15efbbd9e87b3321c8385b4768550d5039f073b59a6eb"
+        }
+      ],
+      "actual_clone_code_applied": true
+    },
+    {
+      "file": "playground/playground/inventory.py",
+      "class_name": "InventoryLedger",
+      "method": "__contains__",
+      "description": "        \"\"\"Return whether ``sku`` normalises to a SKU with positive on-hand stock.\"\"\"",
+      "model_id": "gpt-5.4-nano",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "playground/playground/inventory.py#1",
+          "similarity_score": 0.3166140094923613,
+          "source_file": "playground/playground/inventory.py",
+          "start_line": 1,
+          "end_line": 31
+        },
+        {
+          "chunk_id": "playground/playground/inventory.py#6",
+          "similarity_score": 0.311374739617001,
+          "source_file": "playground/playground/inventory.py",
+          "start_line": 147,
+          "end_line": 155
+        },
+        {
+          "chunk_id": "playground/playground/inventory.py#3",
+          "similarity_score": 0.3097570602545223,
+          "source_file": "playground/playground/inventory.py",
+          "start_line": 57,
+          "end_line": 86
+        },
+        {
+          "chunk_id": "playground/tests/test_inventory.py#8",
+          "similarity_score": 0.30395997278314774,
+          "source_file": "playground/tests/test_inventory.py",
+          "start_line": 205,
+          "end_line": 233
+        },
+        {
+          "chunk_id": "playground/playground/inventory.py#2",
+          "similarity_score": 0.28419477742623506,
+          "source_file": "playground/playground/inventory.py",
+          "start_line": 32,
+          "end_line": 56
+        }
+      ],
+      "api_generation_status": "succeeded",
+      "validation_status": "passed",
+      "staged_code_applied": true,
+      "sanitized_error": null,
+      "validated_generated_body": "sku_obj = sku\nif not isinstance(sku_obj, str):\n    return False\ntry:\n    norm_sku = normalize_sku(sku_obj)\nexcept (TypeError, ValueError):\n    return False\nreturn self._on_hand.get(norm_sku, 0) > 0",
+      "initial_generation": {
+        "model_id": "gpt-5.4-nano",
+        "api_generation_status": "succeeded",
+        "validation_status": "passed",
+        "retrieved_chunks": [
+          {
+            "chunk_id": "playground/playground/inventory.py#1",
+            "similarity_score": 0.3166140094923613
+          },
+          {
+            "chunk_id": "playground/playground/inventory.py#6",
+            "similarity_score": 0.311374739617001
+          },
+          {
+            "chunk_id": "playground/playground/inventory.py#3",
+            "similarity_score": 0.3097570602545223
+          },
+          {
+            "chunk_id": "playground/tests/test_inventory.py#8",
+            "similarity_score": 0.30395997278314774
+          },
+          {
+            "chunk_id": "playground/playground/inventory.py#2",
+            "similarity_score": 0.28419477742623506
+          }
+        ],
+        "validated_generated_body": "sku = normalize_sku(sku) if isinstance(sku, str) else sku\nreturn isinstance(sku, str) and sku in self._on_hand and self._on_hand[sku] > 0"
+      },
+      "status": "staged_validated",
+      "regeneration_attempts": [
+        {
+          "attempt": 1,
+          "model_id": "gpt-5.4-nano",
+          "api_generation_status": "succeeded",
+          "validation_status": "passed",
+          "retrieved_chunk_ids_and_scores": [
+            {
+              "chunk_id": "playground/playground/inventory.py#1",
+              "source_file": "playground/playground/inventory.py",
+              "start_line": 1,
+              "end_line": 31,
+              "similarity_score": 0.3166140094923613
+            },
+            {
+              "chunk_id": "playground/playground/inventory.py#6",
+              "source_file": "playground/playground/inventory.py",
+              "start_line": 147,
+              "end_line": 155,
+              "similarity_score": 0.311374739617001
+            },
+            {
+              "chunk_id": "playground/playground/inventory.py#3",
+              "source_file": "playground/playground/inventory.py",
+              "start_line": 57,
+              "end_line": 86,
+              "similarity_score": 0.3097570602545223
+            },
+            {
+              "chunk_id": "playground/tests/test_inventory.py#8",
+              "source_file": "playground/tests/test_inventory.py",
+              "start_line": 205,
+              "end_line": 233,
+              "similarity_score": 0.30395997278314774
+            },
+            {
+              "chunk_id": "playground/playground/inventory.py#2",
+              "source_file": "playground/playground/inventory.py",
+              "start_line": 32,
+              "end_line": 56,
+              "similarity_score": 0.28419477742623506
+            }
+          ],
+          "validated_body_sha256": "61c4df2879b7ade1d296079bb1b75369f2f7dee1df01630a3a6f4021a104f3b4"
+        },
+        {
+          "attempt": 2,
+          "model_id": "gpt-5.4-nano",
+          "api_generation_status": "succeeded",
+          "validation_status": "passed",
+          "retrieved_chunk_ids_and_scores": [
+            {
+              "chunk_id": "playground/playground/inventory.py#1",
+              "source_file": "playground/playground/inventory.py",
+              "start_line": 1,
+              "end_line": 31,
+              "similarity_score": 0.3166140094923613
+            },
+            {
+              "chunk_id": "playground/playground/inventory.py#6",
+              "source_file": "playground/playground/inventory.py",
+              "start_line": 147,
+              "end_line": 155,
+              "similarity_score": 0.311374739617001
+            },
+            {
+              "chunk_id": "playground/playground/inventory.py#3",
+              "source_file": "playground/playground/inventory.py",
+              "start_line": 57,
+              "end_line": 86,
+              "similarity_score": 0.3097570602545223
+            },
+            {
+              "chunk_id": "playground/tests/test_inventory.py#8",
+              "source_file": "playground/tests/test_inventory.py",
+              "start_line": 205,
+              "end_line": 233,
+              "similarity_score": 0.30395997278314774
+            },
+            {
+              "chunk_id": "playground/playground/inventory.py#2",
+              "source_file": "playground/playground/inventory.py",
+              "start_line": 32,
+              "end_line": 56,
+              "similarity_score": 0.28419477742623506
+            }
+          ],
+          "validated_body_sha256": "e06d50ea53ad6632288bd73e440fcf8d2746ebb76a53d57172e8b5bdaf9aa044"
+        },
+        {
+          "attempt": 3,
+          "model_id": "gpt-5.4-nano",
+          "api_generation_status": "succeeded",
+          "validation_status": "passed",
+          "retrieved_chunk_ids_and_scores": [
+            {
+              "chunk_id": "playground/playground/inventory.py#1",
+              "source_file": "playground/playground/inventory.py",
+              "start_line": 1,
+              "end_line": 31,
+              "similarity_score": 0.3166140094923613
+            },
+            {
+              "chunk_id": "playground/playground/inventory.py#6",
+              "source_file": "playground/playground/inventory.py",
+              "start_line": 147,
+              "end_line": 155,
+              "similarity_score": 0.311374739617001
+            },
+            {
+              "chunk_id": "playground/playground/inventory.py#3",
+              "source_file": "playground/playground/inventory.py",
+              "start_line": 57,
+              "end_line": 86,
+              "similarity_score": 0.3097570602545223
+            },
+            {
+              "chunk_id": "playground/tests/test_inventory.py#8",
+              "source_file": "playground/tests/test_inventory.py",
+              "start_line": 205,
+              "end_line": 233,
+              "similarity_score": 0.30395997278314774
+            },
+            {
+              "chunk_id": "playground/playground/inventory.py#2",
+              "source_file": "playground/playground/inventory.py",
+              "start_line": 32,
+              "end_line": 56,
+              "similarity_score": 0.28419477742623506
+            }
+          ],
+          "validated_body_sha256": "b9c4be84b557218946fd1e0d5fbb8611f87e8f49197a32a57436e6783901230b"
+        },
+        {
+          "attempt": 4,
+          "model_id": "gpt-5.4-nano",
+          "api_generation_status": "succeeded",
+          "validation_status": "passed",
+          "retrieved_chunk_ids_and_scores": [
+            {
+              "chunk_id": "playground/playground/inventory.py#1",
+              "similarity_score": 0.3166140094923613
+            },
+            {
+              "chunk_id": "playground/playground/inventory.py#6",
+              "similarity_score": 0.311374739617001
+            },
+            {
+              "chunk_id": "playground/playground/inventory.py#3",
+              "similarity_score": 0.3097570602545223
+            },
+            {
+              "chunk_id": "playground/tests/test_inventory.py#8",
+              "similarity_score": 0.30395997278314774
+            },
+            {
+              "chunk_id": "playground/playground/inventory.py#2",
+              "similarity_score": 0.28419477742623506
+            }
+          ],
+          "validated_body_sha256": "3824af7a8ababf6fdb19cd2ae8f37dbe0dae8350a8798b2d45ad676e87b97cfb",
+          "reason": "User selected manifest behavior; stage test should be reported as a contract mismatch."
+        },
+        {
+          "attempt": 5,
+          "model_id": "gpt-5.4-nano",
+          "api_generation_status": "succeeded",
+          "validation_status": "passed",
+          "retrieved_chunk_ids_and_scores": [
+            {
+              "chunk_id": "playground/playground/inventory.py#1",
+              "similarity_score": 0.3166140094923613
+            },
+            {
+              "chunk_id": "playground/playground/inventory.py#6",
+              "similarity_score": 0.311374739617001
+            },
+            {
+              "chunk_id": "playground/playground/inventory.py#3",
+              "similarity_score": 0.3097570602545223
+            },
+            {
+              "chunk_id": "playground/tests/test_inventory.py#8",
+              "similarity_score": 0.30395997278314774
+            },
+            {
+              "chunk_id": "playground/playground/inventory.py#2",
+              "similarity_score": 0.28419477742623506
+            }
+          ],
+          "validated_body_sha256": "d19b24e4dcc6427be380666e9a51946017cadf8595a1ba297c337bda49b66cdd",
+          "reason": "Manifest-authoritative stage exposed malformed-SKU ValueError; regenerated to return False for invalid inputs."
+        },
+        {
+          "attempt": 6,
+          "model_id": "gpt-5.4-nano",
+          "api_generation_status": "succeeded",
+          "validation_status": "passed",
+          "retrieved_chunk_ids_and_scores": [
+            {
+              "chunk_id": "playground/playground/inventory.py#1",
+              "similarity_score": 0.3166140094923613
+            },
+            {
+              "chunk_id": "playground/playground/inventory.py#6",
+              "similarity_score": 0.311374739617001
+            },
+            {
+              "chunk_id": "playground/playground/inventory.py#3",
+              "similarity_score": 0.3097570602545223
+            },
+            {
+              "chunk_id": "playground/tests/test_inventory.py#8",
+              "similarity_score": 0.30395997278314774
+            },
+            {
+              "chunk_id": "playground/playground/inventory.py#2",
+              "similarity_score": 0.28419477742623506
+            }
+          ],
+          "validated_body_sha256": "894d9fa7f6d59397b6f7e7e93953b5979176c51dd4fbe2cdc1e35c1b26e53a80",
+          "reason": "Regenerate for manifest behavior and invalid-input handling after two API responses failed existing non-conflicting input tests."
+        },
+        {
+          "attempt": 7,
+          "model_id": "gpt-5.4-nano",
+          "api_generation_status": "succeeded",
+          "validation_status": "passed",
+          "retrieved_chunk_ids_and_scores": [
+            {
+              "chunk_id": "playground/playground/inventory.py#1",
+              "similarity_score": 0.3166140094923613
+            },
+            {
+              "chunk_id": "playground/playground/inventory.py#6",
+              "similarity_score": 0.311374739617001
+            },
+            {
+              "chunk_id": "playground/playground/inventory.py#3",
+              "similarity_score": 0.3097570602545223
+            },
+            {
+              "chunk_id": "playground/tests/test_inventory.py#8",
+              "similarity_score": 0.30395997278314774
+            },
+            {
+              "chunk_id": "playground/playground/inventory.py#2",
+              "similarity_score": 0.28419477742623506
+            }
+          ],
+          "validated_body_sha256": "e417b3e7fcb3ef10a33f4f9c1b89bb178418060acb7b07cc947eaa4754e1fb2a",
+          "reason": "Correct malformed and non-string input errors while retaining the manifest-authoritative positive-stock rule."
+        }
+      ],
+      "specification_test_conflict": {
+        "status": "manifest_authoritative_choice_recorded",
+        "manifest_contract": "Membership is true only for SKUs with positive on-hand stock.",
+        "test_contract": "A fully committed tracked SKU is still expected by the existing test to be a member.",
+        "test_modified": false,
+        "resolution": "Implement the manifest contract; preserve the conflicting test unchanged. The test mismatch remains a known staging failure."
+      },
+      "actual_clone_code_applied": true
+    },
+    {
+      "file": "playground/playground/inventory.py",
+      "class_name": "Warehouse",
+      "method": "stock_report",
+      "description": "        \"\"\"Return a mapping of SKU to available quantity.\"\"\"",
+      "model_id": "gpt-5.4-nano",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "playground/playground/inventory.py#6",
+          "source_file": "playground/playground/inventory.py",
+          "start_line": 147,
+          "end_line": 155,
+          "similarity_score": 0.3530181627739271
+        },
+        {
+          "chunk_id": "playground/tests/test_simulation.py#8",
+          "source_file": "playground/tests/test_simulation.py",
+          "start_line": 213,
+          "end_line": 237,
+          "similarity_score": 0.250327891700742
+        },
+        {
+          "chunk_id": "playground/playground/inventory.py#2",
+          "source_file": "playground/playground/inventory.py",
+          "start_line": 32,
+          "end_line": 56,
+          "similarity_score": 0.23963627853313843
+        },
+        {
+          "chunk_id": "playground/playground/simulation.py#5",
+          "source_file": "playground/playground/simulation.py",
+          "start_line": 139,
+          "end_line": 175,
+          "similarity_score": 0.22349853028311364
+        },
+        {
+          "chunk_id": "playground/tests/test_inventory.py#14",
+          "source_file": "playground/tests/test_inventory.py",
+          "start_line": 385,
+          "end_line": 417,
+          "similarity_score": 0.21206474721931537
+        }
+      ],
+      "api_generation_status": "succeeded",
+      "validation_status": "passed",
+      "staged_code_applied": true,
+      "sanitized_error": null,
+      "validated_generated_body": "available_by_sku: Dict[str, int] = {}\nfor sku in self._ledger:\n    qty = self._ledger.available(sku)\n    if qty > 0:\n        available_by_sku[sku] = qty\nreturn available_by_sku",
+      "initial_generation": {
+        "model_id": "gpt-5.4-nano",
+        "api_generation_status": "succeeded",
+        "validation_status": "passed",
+        "retrieved_chunks": [
+          {
+            "chunk_id": "playground/playground/inventory.py#6",
+            "similarity_score": 0.3530181627739271
+          },
+          {
+            "chunk_id": "playground/tests/test_simulation.py#8",
+            "similarity_score": 0.250327891700742
+          },
+          {
+            "chunk_id": "playground/playground/inventory.py#2",
+            "similarity_score": 0.23963627853313843
+          },
+          {
+            "chunk_id": "playground/playground/simulation.py#5",
+            "similarity_score": 0.22349853028311364
+          },
+          {
+            "chunk_id": "playground/tests/test_inventory.py#14",
+            "similarity_score": 0.21206474721931537
+          }
+        ],
+        "validated_generated_body": "return {sku: qty for sku, qty in self._ledger._on_hand.items() if qty - self._ledger._reserved.get(sku, 0) > 0}"
+      },
+      "status": "staged_validated",
+      "regeneration_attempts": [
+        {
+          "attempt": 1,
+          "model_id": "gpt-5.4-nano",
+          "api_generation_status": "succeeded",
+          "validation_status": "passed",
+          "retrieved_chunk_ids_and_scores": [
+            {
+              "chunk_id": "playground/playground/inventory.py#6",
+              "source_file": "playground/playground/inventory.py",
+              "start_line": 147,
+              "end_line": 155,
+              "similarity_score": 0.3530181627739271
+            },
+            {
+              "chunk_id": "playground/tests/test_simulation.py#8",
+              "source_file": "playground/tests/test_simulation.py",
+              "start_line": 213,
+              "end_line": 237,
+              "similarity_score": 0.250327891700742
+            },
+            {
+              "chunk_id": "playground/playground/inventory.py#2",
+              "source_file": "playground/playground/inventory.py",
+              "start_line": 32,
+              "end_line": 56,
+              "similarity_score": 0.23963627853313843
+            },
+            {
+              "chunk_id": "playground/playground/simulation.py#5",
+              "source_file": "playground/playground/simulation.py",
+              "start_line": 139,
+              "end_line": 175,
+              "similarity_score": 0.22349853028311364
+            },
+            {
+              "chunk_id": "playground/tests/test_inventory.py#14",
+              "source_file": "playground/tests/test_inventory.py",
+              "start_line": 385,
+              "end_line": 417,
+              "similarity_score": 0.21206474721931537
+            }
+          ],
+          "validated_body_sha256": "a6343d20e5ddbe35c80722dc552f01be9a8032d884b3df7ca69a351cd6dcaff0"
+        },
+        {
+          "attempt": 2,
+          "model_id": "gpt-5.4-nano",
+          "api_generation_status": "succeeded",
+          "validation_status": "passed",
+          "retrieved_chunk_ids_and_scores": [
+            {
+              "chunk_id": "playground/playground/inventory.py#6",
+              "source_file": "playground/playground/inventory.py",
+              "start_line": 147,
+              "end_line": 155,
+              "similarity_score": 0.3530181627739271
+            },
+            {
+              "chunk_id": "playground/tests/test_simulation.py#8",
+              "source_file": "playground/tests/test_simulation.py",
+              "start_line": 213,
+              "end_line": 237,
+              "similarity_score": 0.250327891700742
+            },
+            {
+              "chunk_id": "playground/playground/inventory.py#2",
+              "source_file": "playground/playground/inventory.py",
+              "start_line": 32,
+              "end_line": 56,
+              "similarity_score": 0.23963627853313843
+            },
+            {
+              "chunk_id": "playground/playground/simulation.py#5",
+              "source_file": "playground/playground/simulation.py",
+              "start_line": 139,
+              "end_line": 175,
+              "similarity_score": 0.22349853028311364
+            },
+            {
+              "chunk_id": "playground/tests/test_inventory.py#14",
+              "source_file": "playground/tests/test_inventory.py",
+              "start_line": 385,
+              "end_line": 417,
+              "similarity_score": 0.21206474721931537
+            }
+          ],
+          "validated_body_sha256": "b2ff29885ddddb15f25a170cce666ade169303b9d33b45ca4fe545f7bf57bf27"
+        },
+        {
+          "attempt": 3,
+          "model_id": "gpt-5.4-nano",
+          "api_generation_status": "succeeded",
+          "validation_status": "passed",
+          "retrieved_chunk_ids_and_scores": [
+            {
+              "chunk_id": "playground/playground/inventory.py#6",
+              "source_file": "playground/playground/inventory.py",
+              "start_line": 147,
+              "end_line": 155,
+              "similarity_score": 0.3530181627739271
+            },
+            {
+              "chunk_id": "playground/tests/test_simulation.py#8",
+              "source_file": "playground/tests/test_simulation.py",
+              "start_line": 213,
+              "end_line": 237,
+              "similarity_score": 0.250327891700742
+            },
+            {
+              "chunk_id": "playground/playground/inventory.py#2",
+              "source_file": "playground/playground/inventory.py",
+              "start_line": 32,
+              "end_line": 56,
+              "similarity_score": 0.23963627853313843
+            },
+            {
+              "chunk_id": "playground/playground/simulation.py#5",
+              "source_file": "playground/playground/simulation.py",
+              "start_line": 139,
+              "end_line": 175,
+              "similarity_score": 0.22349853028311364
+            },
+            {
+              "chunk_id": "playground/tests/test_inventory.py#14",
+              "source_file": "playground/tests/test_inventory.py",
+              "start_line": 385,
+              "end_line": 417,
+              "similarity_score": 0.21206474721931537
+            }
+          ],
+          "validated_body_sha256": "eb00dd8b2cced3e519b4d8cd8cb0d88af1e5b282443cefab8e4f883aa4295fbd"
+        }
+      ],
+      "actual_clone_code_applied": true
+    },
+    {
+      "file": "playground/playground/orders.py",
+      "class_name": "OrderStateMachine",
+      "method": "transition",
+      "description": "        \"\"\"Return ``target`` if the transition is allowed, else raise.\"\"\"",
+      "model_id": "gpt-5.4-nano",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "playground/tests/test_orders.py#2",
+          "similarity_score": 0.41140683318763643
+        },
+        {
+          "chunk_id": "playground/tests/test_orders.py#3",
+          "similarity_score": 0.41124899313819463
+        },
+        {
+          "chunk_id": "playground/playground/orders.py#2",
+          "similarity_score": 0.38142614929143065
+        },
+        {
+          "chunk_id": "playground/playground/orders.py#1",
+          "similarity_score": 0.30697514888841837
+        },
+        {
+          "chunk_id": "playground/playground/orders.py#4",
+          "similarity_score": 0.2871968462426992
+        }
+      ],
+      "api_generation_status": "succeeded",
+      "validation_status": "passed",
+      "staged_code_applied": true,
+      "sanitized_error": null,
+      "validated_generated_body": "if not self.can_transition(source, target):\n    raise InvalidTransitionError(source=source, target=target)\nreturn target",
+      "initial_generation": {
+        "model_id": "gpt-5.4-nano",
+        "api_generation_status": "succeeded",
+        "validation_status": "passed",
+        "retrieved_chunks": [
+          {
+            "chunk_id": "playground/tests/test_orders.py#2",
+            "similarity_score": 0.41140683318763643
+          },
+          {
+            "chunk_id": "playground/tests/test_orders.py#3",
+            "similarity_score": 0.41124899313819463
+          },
+          {
+            "chunk_id": "playground/playground/orders.py#2",
+            "similarity_score": 0.38142614929143065
+          },
+          {
+            "chunk_id": "playground/playground/orders.py#1",
+            "similarity_score": 0.30697514888841837
+          },
+          {
+            "chunk_id": "playground/playground/orders.py#4",
+            "similarity_score": 0.2871968462426992
+          }
+        ],
+        "validated_generated_body": "if not self.can_transition(source, target):\n    raise InvalidTransitionError(source=source, target=target)\nreturn target"
+      },
+      "staging_note": "Restored from unchanged clone; not regenerated during recovery because it did not cause an initial test failure.",
+      "status": "generated_not_applied_in_recovery_stage",
+      "actual_clone_code_applied": true
+    },
+    {
+      "file": "playground/playground/orders.py",
+      "class_name": "OrderLog",
+      "method": "by_status",
+      "description": "        \"\"\"Yield orders whose status matches ``status``.\"\"\"",
+      "model_id": "gpt-5.4-nano",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "playground/tests/test_orders.py#15",
+          "source_file": "playground/tests/test_orders.py",
+          "start_line": 398,
+          "end_line": 413,
+          "similarity_score": 0.33332104391634654
+        },
+        {
+          "chunk_id": "playground/tests/test_orders.py#14",
+          "source_file": "playground/tests/test_orders.py",
+          "start_line": 374,
+          "end_line": 397,
+          "similarity_score": 0.26466035295920526
+        },
+        {
+          "chunk_id": "playground/playground/orders.py#6",
+          "source_file": "playground/playground/orders.py",
+          "start_line": 153,
+          "end_line": 186,
+          "similarity_score": 0.24582283919926987
+        },
+        {
+          "chunk_id": "playground/playground/orders.py#7",
+          "source_file": "playground/playground/orders.py",
+          "start_line": 187,
+          "end_line": 196,
+          "similarity_score": 0.22182008717756085
+        },
+        {
+          "chunk_id": "playground/playground/orders.py#4",
+          "source_file": "playground/playground/orders.py",
+          "start_line": 94,
+          "end_line": 127,
+          "similarity_score": 0.2169117058652452
+        }
+      ],
+      "api_generation_status": "succeeded",
+      "validation_status": "passed",
+      "staged_code_applied": true,
+      "sanitized_error": null,
+      "validated_generated_body": "if not isinstance(status, OrderStatus):\n    raise TypeError(\"status must be OrderStatus\")\nfor order in self._orders:\n    if order.status == status:\n        yield order",
+      "initial_generation": {
+        "model_id": "gpt-5.4-nano",
+        "api_generation_status": "succeeded",
+        "validation_status": "passed",
+        "retrieved_chunks": [
+          {
+            "chunk_id": "playground/tests/test_orders.py#15",
+            "similarity_score": 0.33332104391634654
+          },
+          {
+            "chunk_id": "playground/tests/test_orders.py#14",
+            "similarity_score": 0.26466035295920526
+          },
+          {
+            "chunk_id": "playground/playground/orders.py#6",
+            "similarity_score": 0.24582283919926987
+          },
+          {
+            "chunk_id": "playground/playground/orders.py#7",
+            "similarity_score": 0.22182008717756085
+          },
+          {
+            "chunk_id": "playground/playground/orders.py#4",
+            "similarity_score": 0.2169117058652452
+          }
+        ],
+        "validated_generated_body": "for order in self._orders:\n    if order.status == status:\n        yield order"
+      },
+      "status": "staged_validated",
+      "regeneration_attempts": [
+        {
+          "attempt": 1,
+          "model_id": "gpt-5.4-nano",
+          "api_generation_status": "succeeded",
+          "validation_status": "passed",
+          "retrieved_chunk_ids_and_scores": [
+            {
+              "chunk_id": "playground/tests/test_orders.py#15",
+              "source_file": "playground/tests/test_orders.py",
+              "start_line": 398,
+              "end_line": 413,
+              "similarity_score": 0.33332104391634654
+            },
+            {
+              "chunk_id": "playground/tests/test_orders.py#14",
+              "source_file": "playground/tests/test_orders.py",
+              "start_line": 374,
+              "end_line": 397,
+              "similarity_score": 0.26466035295920526
+            },
+            {
+              "chunk_id": "playground/playground/orders.py#6",
+              "source_file": "playground/playground/orders.py",
+              "start_line": 153,
+              "end_line": 186,
+              "similarity_score": 0.24582283919926987
+            },
+            {
+              "chunk_id": "playground/playground/orders.py#7",
+              "source_file": "playground/playground/orders.py",
+              "start_line": 187,
+              "end_line": 196,
+              "similarity_score": 0.22182008717756085
+            },
+            {
+              "chunk_id": "playground/playground/orders.py#4",
+              "source_file": "playground/playground/orders.py",
+              "start_line": 94,
+              "end_line": 127,
+              "similarity_score": 0.2169117058652452
+            }
+          ],
+          "validated_body_sha256": "6361725207a90367b7145ba53b1b3c478c5ab3c142ede172c5516fb78f1c8e8e"
+        },
+        {
+          "attempt": 2,
+          "model_id": "gpt-5.4-nano",
+          "api_generation_status": "succeeded",
+          "validation_status": "passed",
+          "retrieved_chunk_ids_and_scores": [
+            {
+              "chunk_id": "playground/tests/test_orders.py#15",
+              "source_file": "playground/tests/test_orders.py",
+              "start_line": 398,
+              "end_line": 413,
+              "similarity_score": 0.33332104391634654
+            },
+            {
+              "chunk_id": "playground/tests/test_orders.py#14",
+              "source_file": "playground/tests/test_orders.py",
+              "start_line": 374,
+              "end_line": 397,
+              "similarity_score": 0.26466035295920526
+            },
+            {
+              "chunk_id": "playground/playground/orders.py#6",
+              "source_file": "playground/playground/orders.py",
+              "start_line": 153,
+              "end_line": 186,
+              "similarity_score": 0.24582283919926987
+            },
+            {
+              "chunk_id": "playground/playground/orders.py#7",
+              "source_file": "playground/playground/orders.py",
+              "start_line": 187,
+              "end_line": 196,
+              "similarity_score": 0.22182008717756085
+            },
+            {
+              "chunk_id": "playground/playground/orders.py#4",
+              "source_file": "playground/playground/orders.py",
+              "start_line": 94,
+              "end_line": 127,
+              "similarity_score": 0.2169117058652452
+            }
+          ],
+          "validated_body_sha256": "b8f3f4c7a45641b6f0d038a8d3348817a8bb49c6e01adc673575b078c4abea68"
+        }
+      ],
+      "actual_clone_code_applied": true
+    },
+    {
+      "file": "playground/playground/models.py",
+      "class_name": "Customer",
+      "method": "can_afford",
+      "description": "        \"\"\"Return True if ``balance + total`` does not exceed the credit limit.\"\"\"",
+      "model_id": "gpt-5.4-nano",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "playground/playground/models.py#8",
+          "similarity_score": 0.6235417410914497
+        },
+        {
+          "chunk_id": "playground/tests/test_models.py#16",
+          "similarity_score": 0.4094797725980643
+        },
+        {
+          "chunk_id": "playground/tests/test_models.py#15",
+          "similarity_score": 0.37635859466942434
+        },
+        {
+          "chunk_id": "playground/playground/models.py#7",
+          "similarity_score": 0.34947074621617547
+        },
+        {
+          "chunk_id": "playground/tests/test_models.py#14",
+          "similarity_score": 0.3178513106889123
+        }
+      ],
+      "api_generation_status": "succeeded",
+      "validation_status": "passed",
+      "staged_code_applied": true,
+      "sanitized_error": null,
+      "validated_generated_body": "if self._balance + total > self._credit_limit:\n    return False\nreturn True",
+      "initial_generation": {
+        "model_id": "gpt-5.4-nano",
+        "api_generation_status": "succeeded",
+        "validation_status": "passed",
+        "retrieved_chunks": [
+          {
+            "chunk_id": "playground/playground/models.py#8",
+            "similarity_score": 0.6235417410914497
+          },
+          {
+            "chunk_id": "playground/tests/test_models.py#16",
+            "similarity_score": 0.4094797725980643
+          },
+          {
+            "chunk_id": "playground/tests/test_models.py#15",
+            "similarity_score": 0.37635859466942434
+          },
+          {
+            "chunk_id": "playground/playground/models.py#7",
+            "similarity_score": 0.34947074621617547
+          },
+          {
+            "chunk_id": "playground/tests/test_models.py#14",
+            "similarity_score": 0.3178513106889123
+          }
+        ],
+        "validated_generated_body": "if self._balance + total > self._credit_limit:\n    return False\nreturn True"
+      },
+      "staging_note": "Restored from unchanged clone; not regenerated during recovery because it did not cause an initial test failure.",
+      "status": "generated_not_applied_in_recovery_stage",
+      "actual_clone_code_applied": true
+    },
+    {
+      "file": "playground/playground/orders.py",
+      "class_name": "Order",
+      "method": "__len__",
+      "description": "        \"\"\"Return the number of line items.\"\"\"",
+      "model_id": "gpt-5.4-nano",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "playground/playground/orders.py#7",
+          "similarity_score": 0.29625252854397954
+        },
+        {
+          "chunk_id": "playground/playground/orders.py#3",
+          "similarity_score": 0.2682839565318109
+        },
+        {
+          "chunk_id": "playground/playground/orders.py#6",
+          "similarity_score": 0.250640435877883
+        },
+        {
+          "chunk_id": "playground/playground/orders.py#4",
+          "similarity_score": 0.24832966266741688
+        },
+        {
+          "chunk_id": "playground/tests/test_orders.py#8",
+          "similarity_score": 0.20652715060979848
+        }
+      ],
+      "api_generation_status": "succeeded",
+      "validation_status": "passed",
+      "staged_code_applied": true,
+      "sanitized_error": null,
+      "validated_generated_body": "return len(self._items)",
+      "initial_generation": {
+        "model_id": "gpt-5.4-nano",
+        "api_generation_status": "succeeded",
+        "validation_status": "passed",
+        "retrieved_chunks": [
+          {
+            "chunk_id": "playground/playground/orders.py#7",
+            "similarity_score": 0.29625252854397954
+          },
+          {
+            "chunk_id": "playground/playground/orders.py#3",
+            "similarity_score": 0.2682839565318109
+          },
+          {
+            "chunk_id": "playground/playground/orders.py#6",
+            "similarity_score": 0.250640435877883
+          },
+          {
+            "chunk_id": "playground/playground/orders.py#4",
+            "similarity_score": 0.24832966266741688
+          },
+          {
+            "chunk_id": "playground/tests/test_orders.py#8",
+            "similarity_score": 0.20652715060979848
+          }
+        ],
+        "validated_generated_body": "return len(self._items)"
+      },
+      "staging_note": "Restored from unchanged clone; not regenerated during recovery because it did not cause an initial test failure.",
+      "status": "generated_not_applied_in_recovery_stage",
+      "actual_clone_code_applied": true
+    },
+    {
+      "file": "playground/playground/pricing.py",
+      "class_name": "BulkDiscountPricing",
+      "method": "price",
+      "description": "        \"\"\"Return the base price, less the discount if the quantity qualifies.\"\"\"",
+      "model_id": "gpt-5.4-nano",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "playground/tests/test_pricing.py#3",
+          "source_file": "playground/tests/test_pricing.py",
+          "start_line": 65,
+          "end_line": 93,
+          "similarity_score": 0.3405336286503249
+        },
+        {
+          "chunk_id": "playground/tests/test_pricing.py#6",
+          "source_file": "playground/tests/test_pricing.py",
+          "start_line": 146,
+          "end_line": 168,
+          "similarity_score": 0.32437926717080373
+        },
+        {
+          "chunk_id": "playground/tests/test_pricing.py#4",
+          "source_file": "playground/tests/test_pricing.py",
+          "start_line": 94,
+          "end_line": 119,
+          "similarity_score": 0.3111266549163192
+        },
+        {
+          "chunk_id": "playground/tests/test_pricing.py#5",
+          "source_file": "playground/tests/test_pricing.py",
+          "start_line": 120,
+          "end_line": 145,
+          "similarity_score": 0.30063418282328636
+        },
+        {
+          "chunk_id": "playground/playground/pricing.py#2",
+          "source_file": "playground/playground/pricing.py",
+          "start_line": 37,
+          "end_line": 65,
+          "similarity_score": 0.2923456094430349
+        }
+      ],
+      "api_generation_status": "succeeded",
+      "validation_status": "passed",
+      "staged_code_applied": true,
+      "sanitized_error": null,
+      "validated_generated_body": "base_total = self._base.price(items)\nif not items:\n    return Money(0)\n\ntotal_qty = sum(item.quantity for item in items)\nif total_qty < self._threshold or self._percent_off == 0:\n    return base_total\n\ndiscount_cents = (base_total.cents * self._percent_off) // 100\nreturn base_total - Money(discount_cents)",
+      "initial_generation": {
+        "model_id": "gpt-5.4-nano",
+        "api_generation_status": "succeeded",
+        "validation_status": "passed",
+        "retrieved_chunks": [
+          {
+            "chunk_id": "playground/tests/test_pricing.py#3",
+            "similarity_score": 0.3405336286503249
+          },
+          {
+            "chunk_id": "playground/tests/test_pricing.py#6",
+            "similarity_score": 0.32437926717080373
+          },
+          {
+            "chunk_id": "playground/tests/test_pricing.py#4",
+            "similarity_score": 0.3111266549163192
+          },
+          {
+            "chunk_id": "playground/tests/test_pricing.py#5",
+            "similarity_score": 0.30063418282328636
+          },
+          {
+            "chunk_id": "playground/playground/pricing.py#2",
+            "similarity_score": 0.2923456094430349
+          }
+        ],
+        "validated_generated_body": "base_total = self._base.price(items)\ntotal_qty = sum(item.quantity for item in items)\nif total_qty < self._threshold or self._percent_off == 0:\n    return base_total\ndiscount_amount = (base_total.amount * self._percent_off) // 100\nreturn Money(base_total.amount - discount_amount)"
+      },
+      "status": "staged_validated",
+      "regeneration_attempts": [
+        {
+          "attempt": 1,
+          "model_id": "gpt-5.4-nano",
+          "api_generation_status": "succeeded",
+          "validation_status": "passed",
+          "retrieved_chunk_ids_and_scores": [
+            {
+              "chunk_id": "playground/tests/test_pricing.py#3",
+              "source_file": "playground/tests/test_pricing.py",
+              "start_line": 65,
+              "end_line": 93,
+              "similarity_score": 0.3405336286503249
+            },
+            {
+              "chunk_id": "playground/tests/test_pricing.py#6",
+              "source_file": "playground/tests/test_pricing.py",
+              "start_line": 146,
+              "end_line": 168,
+              "similarity_score": 0.32437926717080373
+            },
+            {
+              "chunk_id": "playground/tests/test_pricing.py#4",
+              "source_file": "playground/tests/test_pricing.py",
+              "start_line": 94,
+              "end_line": 119,
+              "similarity_score": 0.3111266549163192
+            },
+            {
+              "chunk_id": "playground/tests/test_pricing.py#5",
+              "source_file": "playground/tests/test_pricing.py",
+              "start_line": 120,
+              "end_line": 145,
+              "similarity_score": 0.30063418282328636
+            },
+            {
+              "chunk_id": "playground/playground/pricing.py#2",
+              "source_file": "playground/playground/pricing.py",
+              "start_line": 37,
+              "end_line": 65,
+              "similarity_score": 0.2923456094430349
+            }
+          ],
+          "validated_body_sha256": "26abe07d5bebea396048e73cc768ee4188fff0c79a9dce249cb7fe0ba667d652"
+        },
+        {
+          "attempt": 2,
+          "model_id": "gpt-5.4-nano",
+          "api_generation_status": "succeeded",
+          "validation_status": "passed",
+          "retrieved_chunk_ids_and_scores": [
+            {
+              "chunk_id": "playground/tests/test_pricing.py#3",
+              "source_file": "playground/tests/test_pricing.py",
+              "start_line": 65,
+              "end_line": 93,
+              "similarity_score": 0.3405336286503249
+            },
+            {
+              "chunk_id": "playground/tests/test_pricing.py#6",
+              "source_file": "playground/tests/test_pricing.py",
+              "start_line": 146,
+              "end_line": 168,
+              "similarity_score": 0.32437926717080373
+            },
+            {
+              "chunk_id": "playground/tests/test_pricing.py#4",
+              "source_file": "playground/tests/test_pricing.py",
+              "start_line": 94,
+              "end_line": 119,
+              "similarity_score": 0.3111266549163192
+            },
+            {
+              "chunk_id": "playground/tests/test_pricing.py#5",
+              "source_file": "playground/tests/test_pricing.py",
+              "start_line": 120,
+              "end_line": 145,
+              "similarity_score": 0.30063418282328636
+            },
+            {
+              "chunk_id": "playground/playground/pricing.py#2",
+              "source_file": "playground/playground/pricing.py",
+              "start_line": 37,
+              "end_line": 65,
+              "similarity_score": 0.2923456094430349
+            }
+          ],
+          "validated_body_sha256": "b64d96ed55220e16aa107ac8415b0c297dcb17fba9fa22adf3f84df3c1b92b72"
+        }
+      ],
+      "actual_clone_code_applied": true
+    },
+    {
+      "file": "playground/playground/events.py",
+      "class_name": "EventBus",
+      "method": "__contains__",
+      "description": "        \"\"\"Return whether any handlers are registered for ``event_type``.\"\"\"",
+      "model_id": "gpt-5.4-nano",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "playground/playground/events.py#2",
+          "similarity_score": 0.32425424577997003
+        },
+        {
+          "chunk_id": "playground/tests/test_events.py#6",
+          "similarity_score": 0.32269836185658024
+        },
+        {
+          "chunk_id": "playground/playground/events.py#1",
+          "similarity_score": 0.29199607627634744
+        },
+        {
+          "chunk_id": "playground/tests/test_events.py#2",
+          "similarity_score": 0.21133296570358392
+        },
+        {
+          "chunk_id": "playground/tests/test_events.py#3",
+          "similarity_score": 0.1984310522540207
+        }
+      ],
+      "api_generation_status": "succeeded",
+      "validation_status": "passed",
+      "staged_code_applied": true,
+      "sanitized_error": null,
+      "validated_generated_body": "if not isinstance(event_type, EventType):\n    return False\nreturn bool(self._handlers.get(event_type))",
+      "initial_generation": {
+        "model_id": "gpt-5.4-nano",
+        "api_generation_status": "succeeded",
+        "validation_status": "passed",
+        "retrieved_chunks": [
+          {
+            "chunk_id": "playground/playground/events.py#2",
+            "similarity_score": 0.32425424577997003
+          },
+          {
+            "chunk_id": "playground/tests/test_events.py#6",
+            "similarity_score": 0.32269836185658024
+          },
+          {
+            "chunk_id": "playground/playground/events.py#1",
+            "similarity_score": 0.29199607627634744
+          },
+          {
+            "chunk_id": "playground/tests/test_events.py#2",
+            "similarity_score": 0.21133296570358392
+          },
+          {
+            "chunk_id": "playground/tests/test_events.py#3",
+            "similarity_score": 0.1984310522540207
+          }
+        ],
+        "validated_generated_body": "if not isinstance(event_type, EventType):\n    return False\nreturn bool(self._handlers.get(event_type))"
+      },
+      "staging_note": "Restored from unchanged clone; not regenerated during recovery because it did not cause an initial test failure.",
+      "status": "generated_not_applied_in_recovery_stage",
+      "actual_clone_code_applied": true
+    },
+    {
+      "file": "playground/playground/models.py",
+      "class_name": "Money",
+      "method": "__bool__",
+      "description": "        \"\"\"Return True when the amount is non-zero.\"\"\"",
+      "model_id": "gpt-5.4-nano",
+      "retrieved_chunks": [
+        {
+          "chunk_id": "playground/playground/models.py#3",
+          "similarity_score": 0.20330535322097595
+        },
+        {
+          "chunk_id": "playground/playground/models.py#1",
+          "similarity_score": 0.18774885892024942
+        },
+        {
+          "chunk_id": "playground/playground/simulation.py#2",
+          "similarity_score": 0.1873982470275329
+        },
+        {
+          "chunk_id": "playground/tests/test_models.py#4",
+          "similarity_score": 0.15934269816753988
+        },
+        {
+          "chunk_id": "playground/tests/test_models.py#6",
+          "similarity_score": 0.15183600621924478
+        }
+      ],
+      "api_generation_status": "succeeded",
+      "validation_status": "passed",
+      "staged_code_applied": true,
+      "sanitized_error": null,
+      "validated_generated_body": "return self._cents != 0",
+      "initial_generation": {
+        "model_id": "gpt-5.4-nano",
+        "api_generation_status": "succeeded",
+        "validation_status": "passed",
+        "retrieved_chunks": [
+          {
+            "chunk_id": "playground/playground/models.py#3",
+            "similarity_score": 0.20330535322097595
+          },
+          {
+            "chunk_id": "playground/playground/models.py#1",
+            "similarity_score": 0.18774885892024942
+          },
+          {
+            "chunk_id": "playground/playground/simulation.py#2",
+            "similarity_score": 0.1873982470275329
+          },
+          {
+            "chunk_id": "playground/tests/test_models.py#4",
+            "similarity_score": 0.15934269816753988
+          },
+          {
+            "chunk_id": "playground/tests/test_models.py#6",
+            "similarity_score": 0.15183600621924478
+          }
+        ],
+        "validated_generated_body": "return self._cents != 0"
+      },
+      "staging_note": "Restored from unchanged clone; not regenerated during recovery because it did not cause an initial test failure.",
+      "status": "generated_not_applied_in_recovery_stage",
+      "actual_clone_code_applied": true
+    }
+  ],
+  "staging": {
+    "stage_directory": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l",
+    "working_directory": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l\\repo\\playground",
+    "command": [
+      "C:\\Users\\Bombom\\AppData\\Local\\Python\\pythoncore-3.12-64\\python.exe",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "exit_code": 0,
+    "passed": true,
+    "summary": "481 tests passed.",
+    "diff_review_status": "reviewed_and_applied_via_runner",
+    "full_diff_path": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l\\full_review_diff.patch",
+    "diff_sha256": "540ff92d3f4d7c6217f4b45d0d8ff5f9899597264a923cdfe5239ebc37792237",
+    "additional_staged_files": [
+      "playground/tests/test_inventory.py"
+    ],
+    "test_update": {
+      "file": "playground/tests/test_inventory.py",
+      "test": "test_contains_false_after_zero_on_hand_after_commit",
+      "changes": [
+        "renamed test to describe the manifest contract",
+        "updated explanatory comment",
+        "changed zero-stock expectation to assertFalse"
+      ],
+      "only_test_updated": true
+    },
+    "file_hashes_after_final_tests": {
+      "playground/playground/orders.py": "81be002d740170074ec501908d4b759d7123f20a8ff5fc7cd3479d479bf6d772",
+      "playground/playground/models.py": "99aa0c197041f54163996a64e404d2e0721c3f1fa81488d3b0122c188764961e",
+      "playground/playground/inventory.py": "86fd291b0b5c981f9e1e120936c370ad81c044800b8ce725dad3fde2a1b00452",
+      "playground/playground/enums.py": "8fde45fe89ce440ac99fa997afb84441c06c35acb1ab2a1262b93711ceb421f4",
+      "playground/playground/events.py": "f1a6008f4f3a429570796cc2850c3282d03cfca4dd0423386ddb74611b564609",
+      "playground/tests/test_inventory.py": "72672637f326a26af73f4ca2818047bedbc68213c4a3e0199f9a99e5e7db7f3f",
+      "playground/playground/pricing.py": "6a302724c206a7db99f5870d4ab36b31b98de3105631aef5a4bbd7f87d8db85d"
+    },
+    "tests": {
+      "command": [
+        "C:\\Users\\Bombom\\AppData\\Local\\Python\\pythoncore-3.12-64\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "working_directory": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l\\repo\\playground",
+      "exit_code": 0,
+      "passed": true,
+      "summary": "481 tests passed."
+    }
+  },
+  "actual_clone": {
+    "applied": true,
+    "tests": {
+      "command": [
+        "C:\\Users\\Bombom\\AppData\\Local\\Python\\pythoncore-3.12-64\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "working_directory": "C:\\Users\\Bombom\\Desktop\\AI4SE_Labs_2026\\Week_06_Implementation\\Assignments\\Task_1\\AI4SE_Playground\\playground",
+      "exit_code": 0,
+      "passed": true,
+      "summary": "481 tests passed."
+    },
+    "backup_directory": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l\\actual_clone_backup_20261116T155255782077Z",
+    "backup_manifest": {
+      "playground/playground/orders.py": {
+        "backup_path": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l\\actual_clone_backup_20261116T155255782077Z\\playground\\playground\\orders.py",
+        "sha256": "8ad73f9506fa2f4e34d115abd33312ea76e17a9fe6ee543d33e8565be611b849"
+      },
+      "playground/playground/models.py": {
+        "backup_path": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l\\actual_clone_backup_20261116T155255782077Z\\playground\\playground\\models.py",
+        "sha256": "c806f32e0f4ca14072669225344b093a9dd64602cb3df087458a4a1cd6e90438"
+      },
+      "playground/playground/inventory.py": {
+        "backup_path": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l\\actual_clone_backup_20261116T155255782077Z\\playground\\playground\\inventory.py",
+        "sha256": "67042f5121e60d3cf31d701702d9bf562d118f14423d6ea613cb161dcb429c16"
+      },
+      "playground/playground/enums.py": {
+        "backup_path": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l\\actual_clone_backup_20261116T155255782077Z\\playground\\playground\\enums.py",
+        "sha256": "864e2823c39b5f40349a185f2f01396978d29a3cf9d9c2f55a101f6b6da6f026"
+      },
+      "playground/playground/events.py": {
+        "backup_path": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l\\actual_clone_backup_20261116T155255782077Z\\playground\\playground\\events.py",
+        "sha256": "45a9433a615fc7e6cb67b08fe1df444fea1618be773adca220d5ae90a564f402"
+      },
+      "playground/tests/test_inventory.py": {
+        "backup_path": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l\\actual_clone_backup_20261116T155255782077Z\\playground\\tests\\test_inventory.py",
+        "sha256": "662bb11a9ad4e6299796c78bcd5b7a8366e0decc547e3f39d62d49f379e9cf4a"
+      },
+      "playground/playground/pricing.py": {
+        "backup_path": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l\\actual_clone_backup_20261116T155255782077Z\\playground\\playground\\pricing.py",
+        "sha256": "0db145e474c6426fb7aed3f871ad2e97af35dc020d8d32edf8526a687f73f6d2"
+      }
+    },
+    "target_files_match_staging": true,
+    "backup_files_verified": true,
+    "backup_file_count": 7,
+    "test_update": {
+      "file": "playground/tests/test_inventory.py",
+      "test": "test_contains_false_after_zero_on_hand_after_commit",
+      "changes": [
+        "renamed test to describe the manifest contract",
+        "updated explanatory comment",
+        "changed zero-stock expectation to assertFalse"
+      ],
+      "only_test_updated": true
+    }
+  },
+  "outcome": {
+    "current_code_status": "all ten validated generated method bodies and the manifest-aligned inventory test update are present; full suite passed.",
+    "retrieval_plus_approved_model_generation_completed": true,
+    "staging_unit_test_success": true,
+    "staging_test_summary": "481 tests passed.",
+    "actual_clone_unit_test_success": true,
+    "actual_clone_test_summary": "481 tests passed.",
+    "generated_changes_applied_to_clone": true,
+    "manifest_test_conflict_resolved_by_authorized_test_update": true
+  },
+  "completed_at": "2026-11-16T15:53:42.189911+00:00",
+  "recovery": {
+    "staging_directory": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l",
+    "working_directory": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l\\repo\\playground",
+    "source_clone_target_hashes_verified_unchanged": true,
+    "staging_method_hashes_verified_after_final_tests": true,
+    "credential_rotation_confirmed_by_user": true,
+    "approved_model_id": "gpt-5.4-nano",
+    "regenerated_methods": [
+      {
+        "class_name": "OrderStatus",
+        "method": "is_terminal",
+        "api_generation_status": "succeeded",
+        "validation_status": "passed",
+        "retrieval_count_per_attempt": 5,
+        "retrieved_chunk_ids_and_scores": [
+          {
+            "chunk_id": "playground/playground/orders.py#1",
+            "source_file": "playground/playground/orders.py",
+            "start_line": 1,
+            "end_line": 31,
+            "similarity_score": 0.319771050374148
+          },
+          {
+            "chunk_id": "playground/tests/test_enums.py#3",
+            "source_file": "playground/tests/test_enums.py",
+            "start_line": 58,
+            "end_line": 83,
+            "similarity_score": 0.31849791771905694
+          },
+          {
+            "chunk_id": "playground/tests/test_orders.py#2",
+            "source_file": "playground/tests/test_orders.py",
+            "start_line": 31,
+            "end_line": 53,
+            "similarity_score": 0.22440218700395612
+          },
+          {
+            "chunk_id": "playground/tests/test_orders.py#7",
+            "source_file": "playground/tests/test_orders.py",
+            "start_line": 163,
+            "end_line": 193,
+            "similarity_score": 0.2086141040875074
+          },
+          {
+            "chunk_id": "playground/tests/test_orders.py#3",
+            "source_file": "playground/tests/test_orders.py",
+            "start_line": 54,
+            "end_line": 78,
+            "similarity_score": 0.2006105699978656
+          }
+        ],
+        "attempt_count": 2,
+        "staged_code_applied": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "model_id": "gpt-5.4-nano",
+            "api_generation_status": "succeeded",
+            "validation_status": "passed",
+            "retrieved_chunk_ids_and_scores": [
+              {
+                "chunk_id": "playground/playground/orders.py#1",
+                "source_file": "playground/playground/orders.py",
+                "start_line": 1,
+                "end_line": 31,
+                "similarity_score": 0.319771050374148
+              },
+              {
+                "chunk_id": "playground/tests/test_enums.py#3",
+                "source_file": "playground/tests/test_enums.py",
+                "start_line": 58,
+                "end_line": 83,
+                "similarity_score": 0.31849791771905694
+              },
+              {
+                "chunk_id": "playground/tests/test_orders.py#2",
+                "source_file": "playground/tests/test_orders.py",
+                "start_line": 31,
+                "end_line": 53,
+                "similarity_score": 0.22440218700395612
+              },
+              {
+                "chunk_id": "playground/tests/test_orders.py#7",
+                "source_file": "playground/tests/test_orders.py",
+                "start_line": 163,
+                "end_line": 193,
+                "similarity_score": 0.2086141040875074
+              },
+              {
+                "chunk_id": "playground/tests/test_orders.py#3",
+                "source_file": "playground/tests/test_orders.py",
+                "start_line": 54,
+                "end_line": 78,
+                "similarity_score": 0.2006105699978656
+              }
+            ],
+            "validated_body_sha256": "8c6b044a7ffc9c45cbfccacbb4ff1a0b24930596b118ab3758ca98660bb8f606"
+          },
+          {
+            "attempt": 2,
+            "model_id": "gpt-5.4-nano",
+            "api_generation_status": "succeeded",
+            "validation_status": "passed",
+            "retrieved_chunk_ids_and_scores": [
+              {
+                "chunk_id": "playground/playground/orders.py#1",
+                "source_file": "playground/playground/orders.py",
+                "start_line": 1,
+                "end_line": 31,
+                "similarity_score": 0.319771050374148
+              },
+              {
+                "chunk_id": "playground/tests/test_enums.py#3",
+                "source_file": "playground/tests/test_enums.py",
+                "start_line": 58,
+                "end_line": 83,
+                "similarity_score": 0.31849791771905694
+              },
+              {
+                "chunk_id": "playground/tests/test_orders.py#2",
+                "source_file": "playground/tests/test_orders.py",
+                "start_line": 31,
+                "end_line": 53,
+                "similarity_score": 0.22440218700395612
+              },
+              {
+                "chunk_id": "playground/tests/test_orders.py#7",
+                "source_file": "playground/tests/test_orders.py",
+                "start_line": 163,
+                "end_line": 193,
+                "similarity_score": 0.2086141040875074
+              },
+              {
+                "chunk_id": "playground/tests/test_orders.py#3",
+                "source_file": "playground/tests/test_orders.py",
+                "start_line": 54,
+                "end_line": 78,
+                "similarity_score": 0.2006105699978656
+              }
+            ],
+            "validated_body_sha256": "373d4ceda8b9b8b83eb15efbbd9e87b3321c8385b4768550d5039f073b59a6eb"
+          }
+        ]
+      },
+      {
+        "class_name": "InventoryLedger",
+        "method": "__contains__",
+        "api_generation_status": "succeeded",
+        "validation_status": "passed",
+        "retrieval_count_per_attempt": 5,
+        "retrieved_chunk_ids_and_scores": [
+          {
+            "chunk_id": "playground/playground/inventory.py#1",
+            "source_file": "playground/playground/inventory.py",
+            "start_line": 1,
+            "end_line": 31,
+            "similarity_score": 0.3166140094923613
+          },
+          {
+            "chunk_id": "playground/playground/inventory.py#6",
+            "source_file": "playground/playground/inventory.py",
+            "start_line": 147,
+            "end_line": 155,
+            "similarity_score": 0.311374739617001
+          },
+          {
+            "chunk_id": "playground/playground/inventory.py#3",
+            "source_file": "playground/playground/inventory.py",
+            "start_line": 57,
+            "end_line": 86,
+            "similarity_score": 0.3097570602545223
+          },
+          {
+            "chunk_id": "playground/tests/test_inventory.py#8",
+            "source_file": "playground/tests/test_inventory.py",
+            "start_line": 205,
+            "end_line": 233,
+            "similarity_score": 0.30395997278314774
+          },
+          {
+            "chunk_id": "playground/playground/inventory.py#2",
+            "source_file": "playground/playground/inventory.py",
+            "start_line": 32,
+            "end_line": 56,
+            "similarity_score": 0.28419477742623506
+          }
+        ],
+        "attempt_count": 7,
+        "staged_code_applied": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "model_id": "gpt-5.4-nano",
+            "api_generation_status": "succeeded",
+            "validation_status": "passed",
+            "retrieved_chunk_ids_and_scores": [
+              {
+                "chunk_id": "playground/playground/inventory.py#1",
+                "source_file": "playground/playground/inventory.py",
+                "start_line": 1,
+                "end_line": 31,
+                "similarity_score": 0.3166140094923613
+              },
+              {
+                "chunk_id": "playground/playground/inventory.py#6",
+                "source_file": "playground/playground/inventory.py",
+                "start_line": 147,
+                "end_line": 155,
+                "similarity_score": 0.311374739617001
+              },
+              {
+                "chunk_id": "playground/playground/inventory.py#3",
+                "source_file": "playground/playground/inventory.py",
+                "start_line": 57,
+                "end_line": 86,
+                "similarity_score": 0.3097570602545223
+              },
+              {
+                "chunk_id": "playground/tests/test_inventory.py#8",
+                "source_file": "playground/tests/test_inventory.py",
+                "start_line": 205,
+                "end_line": 233,
+                "similarity_score": 0.30395997278314774
+              },
+              {
+                "chunk_id": "playground/playground/inventory.py#2",
+                "source_file": "playground/playground/inventory.py",
+                "start_line": 32,
+                "end_line": 56,
+                "similarity_score": 0.28419477742623506
+              }
+            ],
+            "validated_body_sha256": "61c4df2879b7ade1d296079bb1b75369f2f7dee1df01630a3a6f4021a104f3b4"
+          },
+          {
+            "attempt": 2,
+            "model_id": "gpt-5.4-nano",
+            "api_generation_status": "succeeded",
+            "validation_status": "passed",
+            "retrieved_chunk_ids_and_scores": [
+              {
+                "chunk_id": "playground/playground/inventory.py#1",
+                "source_file": "playground/playground/inventory.py",
+                "start_line": 1,
+                "end_line": 31,
+                "similarity_score": 0.3166140094923613
+              },
+              {
+                "chunk_id": "playground/playground/inventory.py#6",
+                "source_file": "playground/playground/inventory.py",
+                "start_line": 147,
+                "end_line": 155,
+                "similarity_score": 0.311374739617001
+              },
+              {
+                "chunk_id": "playground/playground/inventory.py#3",
+                "source_file": "playground/playground/inventory.py",
+                "start_line": 57,
+                "end_line": 86,
+                "similarity_score": 0.3097570602545223
+              },
+              {
+                "chunk_id": "playground/tests/test_inventory.py#8",
+                "source_file": "playground/tests/test_inventory.py",
+                "start_line": 205,
+                "end_line": 233,
+                "similarity_score": 0.30395997278314774
+              },
+              {
+                "chunk_id": "playground/playground/inventory.py#2",
+                "source_file": "playground/playground/inventory.py",
+                "start_line": 32,
+                "end_line": 56,
+                "similarity_score": 0.28419477742623506
+              }
+            ],
+            "validated_body_sha256": "e06d50ea53ad6632288bd73e440fcf8d2746ebb76a53d57172e8b5bdaf9aa044"
+          },
+          {
+            "attempt": 3,
+            "model_id": "gpt-5.4-nano",
+            "api_generation_status": "succeeded",
+            "validation_status": "passed",
+            "retrieved_chunk_ids_and_scores": [
+              {
+                "chunk_id": "playground/playground/inventory.py#1",
+                "source_file": "playground/playground/inventory.py",
+                "start_line": 1,
+                "end_line": 31,
+                "similarity_score": 0.3166140094923613
+              },
+              {
+                "chunk_id": "playground/playground/inventory.py#6",
+                "source_file": "playground/playground/inventory.py",
+                "start_line": 147,
+                "end_line": 155,
+                "similarity_score": 0.311374739617001
+              },
+              {
+                "chunk_id": "playground/playground/inventory.py#3",
+                "source_file": "playground/playground/inventory.py",
+                "start_line": 57,
+                "end_line": 86,
+                "similarity_score": 0.3097570602545223
+              },
+              {
+                "chunk_id": "playground/tests/test_inventory.py#8",
+                "source_file": "playground/tests/test_inventory.py",
+                "start_line": 205,
+                "end_line": 233,
+                "similarity_score": 0.30395997278314774
+              },
+              {
+                "chunk_id": "playground/playground/inventory.py#2",
+                "source_file": "playground/playground/inventory.py",
+                "start_line": 32,
+                "end_line": 56,
+                "similarity_score": 0.28419477742623506
+              }
+            ],
+            "validated_body_sha256": "b9c4be84b557218946fd1e0d5fbb8611f87e8f49197a32a57436e6783901230b"
+          },
+          {
+            "attempt": 4,
+            "model_id": "gpt-5.4-nano",
+            "api_generation_status": "succeeded",
+            "validation_status": "passed",
+            "retrieved_chunk_ids_and_scores": [
+              {
+                "chunk_id": "playground/playground/inventory.py#1",
+                "similarity_score": 0.3166140094923613
+              },
+              {
+                "chunk_id": "playground/playground/inventory.py#6",
+                "similarity_score": 0.311374739617001
+              },
+              {
+                "chunk_id": "playground/playground/inventory.py#3",
+                "similarity_score": 0.3097570602545223
+              },
+              {
+                "chunk_id": "playground/tests/test_inventory.py#8",
+                "similarity_score": 0.30395997278314774
+              },
+              {
+                "chunk_id": "playground/playground/inventory.py#2",
+                "similarity_score": 0.28419477742623506
+              }
+            ],
+            "validated_body_sha256": "3824af7a8ababf6fdb19cd2ae8f37dbe0dae8350a8798b2d45ad676e87b97cfb"
+          },
+          {
+            "attempt": 5,
+            "model_id": "gpt-5.4-nano",
+            "api_generation_status": "succeeded",
+            "validation_status": "passed",
+            "retrieved_chunk_ids_and_scores": [
+              {
+                "chunk_id": "playground/playground/inventory.py#1",
+                "similarity_score": 0.3166140094923613
+              },
+              {
+                "chunk_id": "playground/playground/inventory.py#6",
+                "similarity_score": 0.311374739617001
+              },
+              {
+                "chunk_id": "playground/playground/inventory.py#3",
+                "similarity_score": 0.3097570602545223
+              },
+              {
+                "chunk_id": "playground/tests/test_inventory.py#8",
+                "similarity_score": 0.30395997278314774
+              },
+              {
+                "chunk_id": "playground/playground/inventory.py#2",
+                "similarity_score": 0.28419477742623506
+              }
+            ],
+            "validated_body_sha256": "d19b24e4dcc6427be380666e9a51946017cadf8595a1ba297c337bda49b66cdd"
+          },
+          {
+            "attempt": 6,
+            "model_id": "gpt-5.4-nano",
+            "api_generation_status": "succeeded",
+            "validation_status": "passed",
+            "retrieved_chunk_ids_and_scores": [
+              {
+                "chunk_id": "playground/playground/inventory.py#1",
+                "similarity_score": 0.3166140094923613
+              },
+              {
+                "chunk_id": "playground/playground/inventory.py#6",
+                "similarity_score": 0.311374739617001
+              },
+              {
+                "chunk_id": "playground/playground/inventory.py#3",
+                "similarity_score": 0.3097570602545223
+              },
+              {
+                "chunk_id": "playground/tests/test_inventory.py#8",
+                "similarity_score": 0.30395997278314774
+              },
+              {
+                "chunk_id": "playground/playground/inventory.py#2",
+                "similarity_score": 0.28419477742623506
+              }
+            ],
+            "validated_body_sha256": "894d9fa7f6d59397b6f7e7e93953b5979176c51dd4fbe2cdc1e35c1b26e53a80"
+          },
+          {
+            "attempt": 7,
+            "model_id": "gpt-5.4-nano",
+            "api_generation_status": "succeeded",
+            "validation_status": "passed",
+            "retrieved_chunk_ids_and_scores": [
+              {
+                "chunk_id": "playground/playground/inventory.py#1",
+                "similarity_score": 0.3166140094923613
+              },
+              {
+                "chunk_id": "playground/playground/inventory.py#6",
+                "similarity_score": 0.311374739617001
+              },
+              {
+                "chunk_id": "playground/playground/inventory.py#3",
+                "similarity_score": 0.3097570602545223
+              },
+              {
+                "chunk_id": "playground/tests/test_inventory.py#8",
+                "similarity_score": 0.30395997278314774
+              },
+              {
+                "chunk_id": "playground/playground/inventory.py#2",
+                "similarity_score": 0.28419477742623506
+              }
+            ],
+            "validated_body_sha256": "e417b3e7fcb3ef10a33f4f9c1b89bb178418060acb7b07cc947eaa4754e1fb2a"
+          }
+        ]
+      },
+      {
+        "class_name": "Warehouse",
+        "method": "stock_report",
+        "api_generation_status": "succeeded",
+        "validation_status": "passed",
+        "retrieval_count_per_attempt": 5,
+        "retrieved_chunk_ids_and_scores": [
+          {
+            "chunk_id": "playground/playground/inventory.py#6",
+            "source_file": "playground/playground/inventory.py",
+            "start_line": 147,
+            "end_line": 155,
+            "similarity_score": 0.3530181627739271
+          },
+          {
+            "chunk_id": "playground/tests/test_simulation.py#8",
+            "source_file": "playground/tests/test_simulation.py",
+            "start_line": 213,
+            "end_line": 237,
+            "similarity_score": 0.250327891700742
+          },
+          {
+            "chunk_id": "playground/playground/inventory.py#2",
+            "source_file": "playground/playground/inventory.py",
+            "start_line": 32,
+            "end_line": 56,
+            "similarity_score": 0.23963627853313843
+          },
+          {
+            "chunk_id": "playground/playground/simulation.py#5",
+            "source_file": "playground/playground/simulation.py",
+            "start_line": 139,
+            "end_line": 175,
+            "similarity_score": 0.22349853028311364
+          },
+          {
+            "chunk_id": "playground/tests/test_inventory.py#14",
+            "source_file": "playground/tests/test_inventory.py",
+            "start_line": 385,
+            "end_line": 417,
+            "similarity_score": 0.21206474721931537
+          }
+        ],
+        "attempt_count": 3,
+        "staged_code_applied": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "model_id": "gpt-5.4-nano",
+            "api_generation_status": "succeeded",
+            "validation_status": "passed",
+            "retrieved_chunk_ids_and_scores": [
+              {
+                "chunk_id": "playground/playground/inventory.py#6",
+                "source_file": "playground/playground/inventory.py",
+                "start_line": 147,
+                "end_line": 155,
+                "similarity_score": 0.3530181627739271
+              },
+              {
+                "chunk_id": "playground/tests/test_simulation.py#8",
+                "source_file": "playground/tests/test_simulation.py",
+                "start_line": 213,
+                "end_line": 237,
+                "similarity_score": 0.250327891700742
+              },
+              {
+                "chunk_id": "playground/playground/inventory.py#2",
+                "source_file": "playground/playground/inventory.py",
+                "start_line": 32,
+                "end_line": 56,
+                "similarity_score": 0.23963627853313843
+              },
+              {
+                "chunk_id": "playground/playground/simulation.py#5",
+                "source_file": "playground/playground/simulation.py",
+                "start_line": 139,
+                "end_line": 175,
+                "similarity_score": 0.22349853028311364
+              },
+              {
+                "chunk_id": "playground/tests/test_inventory.py#14",
+                "source_file": "playground/tests/test_inventory.py",
+                "start_line": 385,
+                "end_line": 417,
+                "similarity_score": 0.21206474721931537
+              }
+            ],
+            "validated_body_sha256": "a6343d20e5ddbe35c80722dc552f01be9a8032d884b3df7ca69a351cd6dcaff0"
+          },
+          {
+            "attempt": 2,
+            "model_id": "gpt-5.4-nano",
+            "api_generation_status": "succeeded",
+            "validation_status": "passed",
+            "retrieved_chunk_ids_and_scores": [
+              {
+                "chunk_id": "playground/playground/inventory.py#6",
+                "source_file": "playground/playground/inventory.py",
+                "start_line": 147,
+                "end_line": 155,
+                "similarity_score": 0.3530181627739271
+              },
+              {
+                "chunk_id": "playground/tests/test_simulation.py#8",
+                "source_file": "playground/tests/test_simulation.py",
+                "start_line": 213,
+                "end_line": 237,
+                "similarity_score": 0.250327891700742
+              },
+              {
+                "chunk_id": "playground/playground/inventory.py#2",
+                "source_file": "playground/playground/inventory.py",
+                "start_line": 32,
+                "end_line": 56,
+                "similarity_score": 0.23963627853313843
+              },
+              {
+                "chunk_id": "playground/playground/simulation.py#5",
+                "source_file": "playground/playground/simulation.py",
+                "start_line": 139,
+                "end_line": 175,
+                "similarity_score": 0.22349853028311364
+              },
+              {
+                "chunk_id": "playground/tests/test_inventory.py#14",
+                "source_file": "playground/tests/test_inventory.py",
+                "start_line": 385,
+                "end_line": 417,
+                "similarity_score": 0.21206474721931537
+              }
+            ],
+            "validated_body_sha256": "b2ff29885ddddb15f25a170cce666ade169303b9d33b45ca4fe545f7bf57bf27"
+          },
+          {
+            "attempt": 3,
+            "model_id": "gpt-5.4-nano",
+            "api_generation_status": "succeeded",
+            "validation_status": "passed",
+            "retrieved_chunk_ids_and_scores": [
+              {
+                "chunk_id": "playground/playground/inventory.py#6",
+                "source_file": "playground/playground/inventory.py",
+                "start_line": 147,
+                "end_line": 155,
+                "similarity_score": 0.3530181627739271
+              },
+              {
+                "chunk_id": "playground/tests/test_simulation.py#8",
+                "source_file": "playground/tests/test_simulation.py",
+                "start_line": 213,
+                "end_line": 237,
+                "similarity_score": 0.250327891700742
+              },
+              {
+                "chunk_id": "playground/playground/inventory.py#2",
+                "source_file": "playground/playground/inventory.py",
+                "start_line": 32,
+                "end_line": 56,
+                "similarity_score": 0.23963627853313843
+              },
+              {
+                "chunk_id": "playground/playground/simulation.py#5",
+                "source_file": "playground/playground/simulation.py",
+                "start_line": 139,
+                "end_line": 175,
+                "similarity_score": 0.22349853028311364
+              },
+              {
+                "chunk_id": "playground/tests/test_inventory.py#14",
+                "source_file": "playground/tests/test_inventory.py",
+                "start_line": 385,
+                "end_line": 417,
+                "similarity_score": 0.21206474721931537
+              }
+            ],
+            "validated_body_sha256": "eb00dd8b2cced3e519b4d8cd8cb0d88af1e5b282443cefab8e4f883aa4295fbd"
+          }
+        ]
+      },
+      {
+        "class_name": "OrderLog",
+        "method": "by_status",
+        "api_generation_status": "succeeded",
+        "validation_status": "passed",
+        "retrieval_count_per_attempt": 5,
+        "retrieved_chunk_ids_and_scores": [
+          {
+            "chunk_id": "playground/tests/test_orders.py#15",
+            "source_file": "playground/tests/test_orders.py",
+            "start_line": 398,
+            "end_line": 413,
+            "similarity_score": 0.33332104391634654
+          },
+          {
+            "chunk_id": "playground/tests/test_orders.py#14",
+            "source_file": "playground/tests/test_orders.py",
+            "start_line": 374,
+            "end_line": 397,
+            "similarity_score": 0.26466035295920526
+          },
+          {
+            "chunk_id": "playground/playground/orders.py#6",
+            "source_file": "playground/playground/orders.py",
+            "start_line": 153,
+            "end_line": 186,
+            "similarity_score": 0.24582283919926987
+          },
+          {
+            "chunk_id": "playground/playground/orders.py#7",
+            "source_file": "playground/playground/orders.py",
+            "start_line": 187,
+            "end_line": 196,
+            "similarity_score": 0.22182008717756085
+          },
+          {
+            "chunk_id": "playground/playground/orders.py#4",
+            "source_file": "playground/playground/orders.py",
+            "start_line": 94,
+            "end_line": 127,
+            "similarity_score": 0.2169117058652452
+          }
+        ],
+        "attempt_count": 2,
+        "staged_code_applied": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "model_id": "gpt-5.4-nano",
+            "api_generation_status": "succeeded",
+            "validation_status": "passed",
+            "retrieved_chunk_ids_and_scores": [
+              {
+                "chunk_id": "playground/tests/test_orders.py#15",
+                "source_file": "playground/tests/test_orders.py",
+                "start_line": 398,
+                "end_line": 413,
+                "similarity_score": 0.33332104391634654
+              },
+              {
+                "chunk_id": "playground/tests/test_orders.py#14",
+                "source_file": "playground/tests/test_orders.py",
+                "start_line": 374,
+                "end_line": 397,
+                "similarity_score": 0.26466035295920526
+              },
+              {
+                "chunk_id": "playground/playground/orders.py#6",
+                "source_file": "playground/playground/orders.py",
+                "start_line": 153,
+                "end_line": 186,
+                "similarity_score": 0.24582283919926987
+              },
+              {
+                "chunk_id": "playground/playground/orders.py#7",
+                "source_file": "playground/playground/orders.py",
+                "start_line": 187,
+                "end_line": 196,
+                "similarity_score": 0.22182008717756085
+              },
+              {
+                "chunk_id": "playground/playground/orders.py#4",
+                "source_file": "playground/playground/orders.py",
+                "start_line": 94,
+                "end_line": 127,
+                "similarity_score": 0.2169117058652452
+              }
+            ],
+            "validated_body_sha256": "6361725207a90367b7145ba53b1b3c478c5ab3c142ede172c5516fb78f1c8e8e"
+          },
+          {
+            "attempt": 2,
+            "model_id": "gpt-5.4-nano",
+            "api_generation_status": "succeeded",
+            "validation_status": "passed",
+            "retrieved_chunk_ids_and_scores": [
+              {
+                "chunk_id": "playground/tests/test_orders.py#15",
+                "source_file": "playground/tests/test_orders.py",
+                "start_line": 398,
+                "end_line": 413,
+                "similarity_score": 0.33332104391634654
+              },
+              {
+                "chunk_id": "playground/tests/test_orders.py#14",
+                "source_file": "playground/tests/test_orders.py",
+                "start_line": 374,
+                "end_line": 397,
+                "similarity_score": 0.26466035295920526
+              },
+              {
+                "chunk_id": "playground/playground/orders.py#6",
+                "source_file": "playground/playground/orders.py",
+                "start_line": 153,
+                "end_line": 186,
+                "similarity_score": 0.24582283919926987
+              },
+              {
+                "chunk_id": "playground/playground/orders.py#7",
+                "source_file": "playground/playground/orders.py",
+                "start_line": 187,
+                "end_line": 196,
+                "similarity_score": 0.22182008717756085
+              },
+              {
+                "chunk_id": "playground/playground/orders.py#4",
+                "source_file": "playground/playground/orders.py",
+                "start_line": 94,
+                "end_line": 127,
+                "similarity_score": 0.2169117058652452
+              }
+            ],
+            "validated_body_sha256": "b8f3f4c7a45641b6f0d038a8d3348817a8bb49c6e01adc673575b078c4abea68"
+          }
+        ]
+      },
+      {
+        "class_name": "BulkDiscountPricing",
+        "method": "price",
+        "api_generation_status": "succeeded",
+        "validation_status": "passed",
+        "retrieval_count_per_attempt": 5,
+        "retrieved_chunk_ids_and_scores": [
+          {
+            "chunk_id": "playground/tests/test_pricing.py#3",
+            "source_file": "playground/tests/test_pricing.py",
+            "start_line": 65,
+            "end_line": 93,
+            "similarity_score": 0.3405336286503249
+          },
+          {
+            "chunk_id": "playground/tests/test_pricing.py#6",
+            "source_file": "playground/tests/test_pricing.py",
+            "start_line": 146,
+            "end_line": 168,
+            "similarity_score": 0.32437926717080373
+          },
+          {
+            "chunk_id": "playground/tests/test_pricing.py#4",
+            "source_file": "playground/tests/test_pricing.py",
+            "start_line": 94,
+            "end_line": 119,
+            "similarity_score": 0.3111266549163192
+          },
+          {
+            "chunk_id": "playground/tests/test_pricing.py#5",
+            "source_file": "playground/tests/test_pricing.py",
+            "start_line": 120,
+            "end_line": 145,
+            "similarity_score": 0.30063418282328636
+          },
+          {
+            "chunk_id": "playground/playground/pricing.py#2",
+            "source_file": "playground/playground/pricing.py",
+            "start_line": 37,
+            "end_line": 65,
+            "similarity_score": 0.2923456094430349
+          }
+        ],
+        "attempt_count": 2,
+        "staged_code_applied": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "model_id": "gpt-5.4-nano",
+            "api_generation_status": "succeeded",
+            "validation_status": "passed",
+            "retrieved_chunk_ids_and_scores": [
+              {
+                "chunk_id": "playground/tests/test_pricing.py#3",
+                "source_file": "playground/tests/test_pricing.py",
+                "start_line": 65,
+                "end_line": 93,
+                "similarity_score": 0.3405336286503249
+              },
+              {
+                "chunk_id": "playground/tests/test_pricing.py#6",
+                "source_file": "playground/tests/test_pricing.py",
+                "start_line": 146,
+                "end_line": 168,
+                "similarity_score": 0.32437926717080373
+              },
+              {
+                "chunk_id": "playground/tests/test_pricing.py#4",
+                "source_file": "playground/tests/test_pricing.py",
+                "start_line": 94,
+                "end_line": 119,
+                "similarity_score": 0.3111266549163192
+              },
+              {
+                "chunk_id": "playground/tests/test_pricing.py#5",
+                "source_file": "playground/tests/test_pricing.py",
+                "start_line": 120,
+                "end_line": 145,
+                "similarity_score": 0.30063418282328636
+              },
+              {
+                "chunk_id": "playground/playground/pricing.py#2",
+                "source_file": "playground/playground/pricing.py",
+                "start_line": 37,
+                "end_line": 65,
+                "similarity_score": 0.2923456094430349
+              }
+            ],
+            "validated_body_sha256": "26abe07d5bebea396048e73cc768ee4188fff0c79a9dce249cb7fe0ba667d652"
+          },
+          {
+            "attempt": 2,
+            "model_id": "gpt-5.4-nano",
+            "api_generation_status": "succeeded",
+            "validation_status": "passed",
+            "retrieved_chunk_ids_and_scores": [
+              {
+                "chunk_id": "playground/tests/test_pricing.py#3",
+                "source_file": "playground/tests/test_pricing.py",
+                "start_line": 65,
+                "end_line": 93,
+                "similarity_score": 0.3405336286503249
+              },
+              {
+                "chunk_id": "playground/tests/test_pricing.py#6",
+                "source_file": "playground/tests/test_pricing.py",
+                "start_line": 146,
+                "end_line": 168,
+                "similarity_score": 0.32437926717080373
+              },
+              {
+                "chunk_id": "playground/tests/test_pricing.py#4",
+                "source_file": "playground/tests/test_pricing.py",
+                "start_line": 94,
+                "end_line": 119,
+                "similarity_score": 0.3111266549163192
+              },
+              {
+                "chunk_id": "playground/tests/test_pricing.py#5",
+                "source_file": "playground/tests/test_pricing.py",
+                "start_line": 120,
+                "end_line": 145,
+                "similarity_score": 0.30063418282328636
+              },
+              {
+                "chunk_id": "playground/playground/pricing.py#2",
+                "source_file": "playground/playground/pricing.py",
+                "start_line": 37,
+                "end_line": 65,
+                "similarity_score": 0.2923456094430349
+              }
+            ],
+            "validated_body_sha256": "b64d96ed55220e16aa107ac8415b0c297dcb17fba9fa22adf3f84df3c1b92b72"
+          }
+        ]
+      }
+    ],
+    "diagnosed_initial_failures": [
+      {
+        "method": "OrderStatus.is_terminal",
+        "tests_affected": 4,
+        "cause": "Generated body referenced undefined OrderStateMachine, causing NameError."
+      },
+      {
+        "method": "InventoryLedger.__contains__",
+        "tests_affected": 2,
+        "cause": "Malformed SKU raised ValueError; positive-stock membership failed the test expecting membership after a full commit."
+      },
+      {
+        "method": "Warehouse.stock_report",
+        "tests_affected": 1,
+        "cause": "Generated report returned on-hand instead of available quantity after reservation."
+      },
+      {
+        "method": "OrderLog.by_status",
+        "tests_affected": 1,
+        "cause": "Invalid status did not raise TypeError when the generator advanced; next() raised StopIteration."
+      },
+      {
+        "method": "BulkDiscountPricing.price",
+        "tests_affected": 7,
+        "cause": "Generated body accessed Money.amount, which does not exist; Money uses cents."
+      }
+    ],
+    "initial_reproduction": {
+      "working_directory": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l\\repo\\playground",
+      "command": [
+        "C:\\Users\\Bombom\\AppData\\Local\\Python\\pythoncore-3.12-64\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 1,
+      "summary": "481 tests; 2 failures and 13 errors.",
+      "full_sanitized_log": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l\\test_output_initial.txt"
+    },
+    "final_staging_run": {
+      "working_directory": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l\\repo\\playground",
+      "command": [
+        "C:\\Users\\Bombom\\AppData\\Local\\Python\\pythoncore-3.12-64\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "summary": "481 tests passed.",
+      "full_diff_path": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l\\full_review_diff.patch",
+      "full_diff_sha256": "540ff92d3f4d7c6217f4b45d0d8ff5f9899597264a923cdfe5239ebc37792237",
+      "test_update": {
+        "file": "playground/tests/test_inventory.py",
+        "test": "test_contains_false_after_zero_on_hand_after_commit",
+        "changes": [
+          "renamed test to describe the manifest contract",
+          "updated explanatory comment",
+          "changed zero-stock expectation to assertFalse"
+        ],
+        "only_test_updated": true
+      }
+    },
+    "intermediate_attempts": "Earlier recovery attempts regenerated only failing methods through the approved course API. For the final user-authorized resolution, the already recorded and validated bodies for all ten tasks were reused without another API request; the single zero-stock test was aligned to the manifest, all ten bodies were staged, and both complete test suites passed.",
+    "specification_test_conflicts": [
+      {
+        "file": "playground/playground/inventory.py",
+        "class_name": "InventoryLedger",
+        "method": "__contains__",
+        "status": "resolved_by_authorized_test_update",
+        "manifest_contract": "Membership is true only for SKUs with positive on-hand stock.",
+        "test_contract": "The zero-stock test now expects false after a full commit.",
+        "test_modified": true,
+        "resolution": "Updated only the conflicting test name/comment/assertion as authorized."
+      }
+    ],
+    "full_diff_path": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l\\full_review_diff.patch",
+    "full_diff_sha256": "540ff92d3f4d7c6217f4b45d0d8ff5f9899597264a923cdfe5239ebc37792237",
+    "diff_review": "Reviewed complete staged diff; it contains the generated method-body changes and only the authorized zero-stock membership test update. Applied through the Task 5 runner after the 481-test staging suite passed.",
+    "actual_clone_modified": true,
+    "previous_verified_actual_clone_tests": {
+      "command": [
+        "C:\\Users\\Bombom\\AppData\\Local\\Python\\pythoncore-3.12-64\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "working_directory": "C:\\Users\\Bombom\\Desktop\\AI4SE_Labs_2026\\Week_06_Implementation\\Assignments\\Task_1\\AI4SE_Playground\\playground",
+      "exit_code": 0,
+      "summary": "481 tests passed."
+    },
+    "final_staging_file_sha256": {
+      "playground/playground/orders.py": "81be002d740170074ec501908d4b759d7123f20a8ff5fc7cd3479d479bf6d772",
+      "playground/playground/models.py": "99aa0c197041f54163996a64e404d2e0721c3f1fa81488d3b0122c188764961e",
+      "playground/playground/inventory.py": "86fd291b0b5c981f9e1e120936c370ad81c044800b8ce725dad3fde2a1b00452",
+      "playground/playground/enums.py": "8fde45fe89ce440ac99fa997afb84441c06c35acb1ab2a1262b93711ceb421f4",
+      "playground/playground/events.py": "f1a6008f4f3a429570796cc2850c3282d03cfca4dd0423386ddb74611b564609",
+      "playground/tests/test_inventory.py": "72672637f326a26af73f4ca2818047bedbc68213c4a3e0199f9a99e5e7db7f3f",
+      "playground/playground/pricing.py": "6a302724c206a7db99f5870d4ab36b31b98de3105631aef5a4bbd7f87d8db85d"
+    },
+    "previous_recorded_staging_directory": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-staging-ea2cd0f7902d4938bcd1ddd9be94bf75",
+    "previous_staging_directory_status": "missing; previous staged file hashes were unavailable, so no files from it were reused",
+    "manifest_authoritative_choice": {
+      "selected_by_user": true,
+      "test_modified": true,
+      "manifest": "Membership is true only for positive on-hand stock.",
+      "test_update": {
+        "file": "playground/tests/test_inventory.py",
+        "test": "test_contains_false_after_zero_on_hand_after_commit",
+        "changes": [
+          "renamed test to describe the manifest contract",
+          "updated explanatory comment",
+          "changed zero-stock expectation to assertFalse"
+        ],
+        "only_test_updated": true
+      },
+      "automated_test_contract_mismatch_remains": false
+    },
+    "diff_review_status": "reviewed_and_applied_via_runner",
+    "final_actual_clone_run": {
+      "working_directory": "C:\\Users\\Bombom\\Desktop\\AI4SE_Labs_2026\\Week_06_Implementation\\Assignments\\Task_1\\AI4SE_Playground\\playground",
+      "command": [
+        "C:\\Users\\Bombom\\AppData\\Local\\Python\\pythoncore-3.12-64\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "summary": "481 tests passed.",
+      "target_files_match_staging": true,
+      "backup_directory": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l\\actual_clone_backup_20261116T155255782077Z",
+      "backup_manifest": {
+        "playground/playground/orders.py": {
+          "backup_path": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l\\actual_clone_backup_20261116T155255782077Z\\playground\\playground\\orders.py",
+          "sha256": "8ad73f9506fa2f4e34d115abd33312ea76e17a9fe6ee543d33e8565be611b849"
+        },
+        "playground/playground/models.py": {
+          "backup_path": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l\\actual_clone_backup_20261116T155255782077Z\\playground\\playground\\models.py",
+          "sha256": "c806f32e0f4ca14072669225344b093a9dd64602cb3df087458a4a1cd6e90438"
+        },
+        "playground/playground/inventory.py": {
+          "backup_path": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l\\actual_clone_backup_20261116T155255782077Z\\playground\\playground\\inventory.py",
+          "sha256": "67042f5121e60d3cf31d701702d9bf562d118f14423d6ea613cb161dcb429c16"
+        },
+        "playground/playground/enums.py": {
+          "backup_path": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l\\actual_clone_backup_20261116T155255782077Z\\playground\\playground\\enums.py",
+          "sha256": "864e2823c39b5f40349a185f2f01396978d29a3cf9d9c2f55a101f6b6da6f026"
+        },
+        "playground/playground/events.py": {
+          "backup_path": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l\\actual_clone_backup_20261116T155255782077Z\\playground\\playground\\events.py",
+          "sha256": "45a9433a615fc7e6cb67b08fe1df444fea1618be773adca220d5ae90a564f402"
+        },
+        "playground/tests/test_inventory.py": {
+          "backup_path": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l\\actual_clone_backup_20261116T155255782077Z\\playground\\tests\\test_inventory.py",
+          "sha256": "662bb11a9ad4e6299796c78bcd5b7a8366e0decc547e3f39d62d49f379e9cf4a"
+        },
+        "playground/playground/pricing.py": {
+          "backup_path": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l\\actual_clone_backup_20261116T155255782077Z\\playground\\playground\\pricing.py",
+          "sha256": "0db145e474c6426fb7aed3f871ad2e97af35dc020d8d32edf8526a687f73f6d2"
+        }
+      }
+    },
+    "runner_apply_workflow": {
+      "command": [
+        "C:\\Users\\Bombom\\Desktop\\AI4SE_Labs_2026\\Week_06_Implementation\\Assignments\\Task_5\\rag_coding_agent.py",
+        "--mode",
+        "apply",
+        "--stage-dir",
+        "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l",
+        "--confirm-review"
+      ],
+      "reviewed_diff_hash": "540ff92d3f4d7c6217f4b45d0d8ff5f9899597264a923cdfe5239ebc37792237",
+      "backup_directory": "C:\\Users\\Bombom\\AppData\\Local\\Temp\\task5-diagnosis-ry33li4l\\actual_clone_backup_20261116T155255782077Z",
+      "applied_method_count": 10,
+      "test_update_applied": true,
+      "actual_test_exit_code": 0
+    },
+    "final_resolution_no_api_request": true,
+    "final_test_update_applied_in_staging_and_clone": true
+  }
+}
